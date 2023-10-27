@@ -17,7 +17,7 @@ Github：[https://github.com/Hny1216](https://github.com/Hny1216)
 
 
 
-### 教育经历
+## 教育经历
 
 `·`2020年9月—至今，本科，[中山大学智能工程学院](https://ise.sysu.edu.cn/index.htm)，智能科学与技术
 
@@ -29,7 +29,7 @@ Github：[https://github.com/Hny1216](https://github.com/Hny1216)
 
 
 
-### 技能知识
+## 技能知识
 
 `·`编程语言：C，C++，R（可视化），Python，Matlab
 
@@ -43,7 +43,7 @@ Github：[https://github.com/Hny1216](https://github.com/Hny1216)
 
 
 
-### 个人荣誉
+## 个人荣誉
 
 `·`2023年06月，第二届“长江杯”动力电池集成与管理技术挑战赛 优秀奖
 
@@ -59,7 +59,7 @@ Github：[https://github.com/Hny1216](https://github.com/Hny1216)
 
 
 
-### 研究方向及专业知识
+## 研究方向及专业知识
 
 `·`数据结构与算法，人工智能编程语言，机器学习，深度学习，信号与系统，自动控制原理，现代控制理论，智能机器人技术
 
@@ -69,7 +69,7 @@ Github：[https://github.com/Hny1216](https://github.com/Hny1216)
 
 
 
-### 项目经历
+## 项目经历
 
 `·`大数据下新能源汽车锂电池早期性能预测。（Concluded）
 
@@ -79,13 +79,13 @@ Github：[https://github.com/Hny1216](https://github.com/Hny1216)
 
 
 
-### 科研成果
+## 科研成果
 
-##### 论文
+### 论文
 
 [[1] He N, Wang Q, Lu Z, et al. Early prediction of battery lifetime based on graphical features and convolutional neural networks[J]. Applied Energy, 2024, 353: 122048.](https://authors.elsevier.com/c/1hwPi15eif8INj)
 
-##### 专利
+### 专利
 
 [[1] 杨芳芳, 何宁, 柴艺柯, 李弈霆, 郭烨年. 一种基于三维电压特征的锂离子电池早期寿命预测方法, CN115856646A[P],2023.](http://epub.cnipa.gov.cn/patent/CN115856646B?8kt2YOWWXQBD=1698297409975)
 
@@ -97,7 +97,7 @@ Github：[https://github.com/Hny1216](https://github.com/Hny1216)
 
 ---
 
-### 附.预推免简历：
+## 附.预推免简历：
 
 <embed src="\about\简历20231025.pdf#toolbar=0" type="application/pdf" width="100%" height="1131px" />
 
