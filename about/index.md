@@ -13,7 +13,7 @@ date: 2023-10-25 13:58:03
 
 Github：[https://github.com/Hny1216](https://github.com/Hny1216)
 
-个人简历：[预推免面试简历](/source/downloads/简历20231025.pdf)
+个人简历：[预推免面试简历](/source/downloads/cv20231025.pdf)
 
 
 
