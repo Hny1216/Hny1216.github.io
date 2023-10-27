@@ -149,7 +149,7 @@ System.out.println (in.nextLine ()); System.out.println (&amp;quot;Hello&amp;quo
 &lt;/li&gt;
 &lt;/ol&gt;
 </content>
-        <category term="现代控制理论" scheme="http://hening25.gitee.io/categories/%E7%8E%B0%E4%BB%A3%E6%8E%A7%E5%88%B6%E7%90%86%E8%AE%BA/" />
+        <category term="自动控制原理" scheme="http://hening25.gitee.io/categories/%E8%87%AA%E5%8A%A8%E6%8E%A7%E5%88%B6%E5%8E%9F%E7%90%86/" />
         <category term="test" scheme="http://hening25.gitee.io/tags/test/" />
         <updated>2023-10-20T16:00:00.000Z</updated>
     </entry>
