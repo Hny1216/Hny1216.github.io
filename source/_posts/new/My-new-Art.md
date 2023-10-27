@@ -4,6 +4,8 @@ quiz: true
 date: 2023-10-21
 categories:
 - 现代控制理论
+tags: 
+  - test
 ---
 
 这是摘要部分。

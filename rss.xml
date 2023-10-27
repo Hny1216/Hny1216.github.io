@@ -22,6 +22,7 @@
             <title>My Article</title>
             <link>http://hening25.gitee.io/2023/10/21/new/My-new-Art/</link>
             <category term="现代控制理论" scheme="http://hening25.gitee.io/categories/%E7%8E%B0%E4%BB%A3%E6%8E%A7%E5%88%B6%E7%90%86%E8%AE%BA/" />
+            <category term="test" scheme="http://hening25.gitee.io/tags/test/" />
             <pubDate>Sat, 21 Oct 2023 00:00:00 +0800</pubDate>
             <description><![CDATA[ &lt;p&gt;这是摘要部分。&lt;/p&gt;
 &lt;p&gt;&lt;span id=&#34;more&#34;&gt;&lt;/span&gt;&lt;/p&gt;
