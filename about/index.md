@@ -97,9 +97,6 @@ Github：[https://github.com/Hny1216](https://github.com/Hny1216)
 
 ---
 
-## 附.预推免简历：
+## 附:预推免简历：
 
 <embed src="\about\简历20231025.pdf#toolbar=0" type="application/pdf" width="100%" height="1131px" />
-
-
-
