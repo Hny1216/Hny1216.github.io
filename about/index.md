@@ -99,4 +99,4 @@ Github：[https://github.com/Hny1216](https://github.com/Hny1216)
 
 ## 附:预推免简历：
 
-<embed src="\source\downloads\cv20231025.pdf#toolbar=0" type="application/pdf" width="100%" height="1131px" />
+<embed src="/source/downloads/cv20231025.pdf#toolbar=0" type="application/pdf" width="100%" height="1131px" />
