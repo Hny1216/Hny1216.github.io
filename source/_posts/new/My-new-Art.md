@@ -1,5 +1,6 @@
 ---
 title: My Article
+quiz: true
 date: 2023-10-21
 categories:
 - 现代控制理论
