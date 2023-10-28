@@ -9,7 +9,7 @@ categories:
 
 Article link: [Realistic fault detection of li-ion battery via dynamical deep learning (nature.com)](https://www.nature.com/articles/s41467-023-41226-5.pdf)
 
-local link: [Realistic fault detection of li-ion battery via dynamical deep learning](/source/downloads/2023-10-09 Realistic fault detection of li-ion battery via dynamical deep learning.pdf)
+local link: [Realistic fault detection of li-ion battery via dynamical deep learning](/downloads/2023-10-09 Realistic fault detection of li-ion battery via dynamical deep learning.pdf)
 
 Date: 2023-10-09
 
