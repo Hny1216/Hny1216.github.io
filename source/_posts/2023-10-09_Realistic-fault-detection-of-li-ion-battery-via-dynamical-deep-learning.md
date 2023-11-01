@@ -15,7 +15,7 @@ Date: 2023-10-09
 
 ## 1.论文主旨
 
-​	文章针对当前电池动力电池数据的隐私以及成本问题，提出了一种现实可应用的深度学习框架模型（动态自编码异常检测，`Dynamical autoencoder for Anomaly Detection`, `DyAD` ），并且公布了347个电动汽车的690000个[锂电池充电片段数据](https://figshare.com/articles/dataset/Realistic_fault_detection_of_Li-ion_battery_via_dynamical_deep_learning_approach/23659323)。
+​	文章针对当前电池动力电池数据的隐私以及成本问题，提出了一种现实可应用的深度学习框架模型（动态自编码异常检测，Dynamical autoencoder for Anomaly Detection, DyAD ），并且公布了347个电动汽车的690000个[锂电池充电片段数据](https://figshare.com/articles/dataset/Realistic_fault_detection_of_Li-ion_battery_via_dynamical_deep_learning_approach/23659323)。
 
 ​	此前研究面临的问题主要有：（1）传统的数据使用方法（温度、电压的方差等）难以辨认异常与正常汽车，数据关联性表现较弱，ROC在0.5左右；（2）数据直接上传容易泄露，用户隐私难以保护；为此，文章提出了一种可大规模使用的定制深度学习框架。
 
@@ -33,37 +33,25 @@ Date: 2023-10-09
 
 
 
-
-
-
-
 ## 2.复现
+
+数据集以及代码的连接如下：[Code with datasets](https://disk.pku.edu.cn/#/link/37D733DF405D8D7998B8F57E4487515A)
 
 ### 2.1.数据集
 
-<center class="half">
-    <img src="2023-10-09_Realistic-fault-detection-of-li-ion-battery-via-dynamical-deep-learning/cover.jpg" width="300"/>
-    <img src="2023-10-09_Realistic-fault-detection-of-li-ion-battery-via-dynamical-deep-learning/cover.jpg" width="300"/>
-</center>
+数据可视化处理过程代码[下载链接](/downloads/Code_2023-10-09_data-visualization.zip)。
 
-<div style="display: flex; justify-content: center;">
-    <img src="2023-10-09_Realistic-fault-detection-of-li-ion-battery-via-dynamical-deep-learning/cover.jpg" alt="Image 1" style="width: 50%;">
-    <img src="2023-10-09_Realistic-fault-detection-of-li-ion-battery-via-dynamical-deep-learning/cover.jpg" alt="Image 2" style="width: 50%;">
-</div>
+
+
+### 2.2 模型
 
 
 
 
 
+### 2.3 代码细节
 
-
-
-
-
-
-
-
-
+从代码角度来看，这个代码写的太牛辣。那我们就来好好欣赏一下这优雅的代码吧。
 
 
 
