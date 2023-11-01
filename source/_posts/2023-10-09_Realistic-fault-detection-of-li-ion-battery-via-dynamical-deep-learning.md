@@ -46,7 +46,10 @@ Date: 2023-10-09
     <img src="2023-10-09_Realistic-fault-detection-of-li-ion-battery-via-dynamical-deep-learning/cover.jpg" width="300"/>
 </center>
 
-
+<div style="display: flex; justify-content: center;">
+    <img src="2023-10-09_Realistic-fault-detection-of-li-ion-battery-via-dynamical-deep-learning/cover.jpg" alt="Image 1" style="width: 50%;">
+    <img src="2023-10-09_Realistic-fault-detection-of-li-ion-battery-via-dynamical-deep-learning/cover.jpg" alt="Image 2" style="width: 50%;">
+</div>
 
 
 
