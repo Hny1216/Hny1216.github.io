@@ -11,8 +11,17 @@ date: 2023-11-03
 
 ```log
 2023 年 11 月 03 日 —— 日志6
-为了方便复制内容，剔除了复制时加入的文字水印。
-本地端修改文件路径：my-hexo-blog\themes\shoka\layout\_partials\post\copyright.njk
+1. 为了方便复制内容，剔除了复制时加入的文字水印。
+ 本地端修改文件路径：my-hexo-blog\themes\shoka\layout\_partials\post\copyright.njk
+2. 关闭切换页面时自动显示加载动画。
+ 本地端修改文件路径：my-hexo-blog\themes\shoka\_config.yml
+ loader:
+   switch: false # When switching to another page
+3. 关闭底部部件：随机文章和最近评论。
+ 本地端修改文件路径：my-hexo-blog\themes\shoka\_config.yml
+ widgets:
+  random_posts: false       # if true, will show random posts
+  recent_comments: false    # if true, will show recent comments
 ```
 
 
@@ -81,7 +90,7 @@ date: 2023-11-03
 建站成功！
 ```
 
-# 已知问题（待修改）
+# 已知问题/待优化问题
 
 
 
@@ -89,8 +98,8 @@ date: 2023-11-03
 
 - [x] 修改随机图库
 - [x] 数据备份
-- [ ] 评论区管理
-- [ ] Social区域样式丢失（已知问题：本地端测试无问题，部署后无法正常显示样式）
+- [ ] 评论区管理（优化方向：登录管理和评论区批量剔除）
+- [ ] Social区域样式丢失（已知：本地端测试无问题，部署后无法正常显示样式）
 
 
 
