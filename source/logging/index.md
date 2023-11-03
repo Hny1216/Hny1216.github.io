@@ -21,6 +21,7 @@ date: 2023-11-03
 2023 年 11 月 03 日 —— 日志5
 更换随机图库，并更换图床。
 大部分图片图片取自Wallhaven，图床采用ImageHub。
+本地端修改文件路径：my-hexo-blog\themes\shoka\_images.yml
 图片链接如下：
 - https://s1.imagehub.cc/images/2023/11/03/59a81ec6028c58fe55359d6226280a5c.jpeg
 - https://s1.imagehub.cc/images/2023/11/03/262cbd05463579b9d65b97bbe7724b87.jpeg
