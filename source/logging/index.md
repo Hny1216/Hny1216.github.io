@@ -7,7 +7,9 @@ date: 2023-11-03
 
 
 
-```Log
+
+
+```log
 2023 年 11 月 03 日 —— 日志6
 为了方便复制内容，剔除了复制时加入的文字水印。
 本地端修改文件路径：my-hexo-blog\themes\shoka\layout\_partials\post\copyright.njk
