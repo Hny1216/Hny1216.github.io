@@ -8,6 +8,33 @@ date: 2023-11-03
 
 
 
+```log
+2023 年 11 月 04 日 —— 日志7
+新增随机图库。
+本地端修改文件路径：my-hexo-blog\themes\shoka\_images.yml
+图片链接如下：
+- https://s1.imagehub.cc/images/2023/11/04/e3fe8aa8151ea16bc5649c20576baf27.jpeg
+- https://s1.imagehub.cc/images/2023/11/04/7507f9c3c17b4a9856476488e77e742e.png
+- https://s1.imagehub.cc/images/2023/11/04/5f0f05cc781cfa0fe05459b816007717.png
+- https://s1.imagehub.cc/images/2023/11/04/40895cc052e70f866a627b8873393616.jpeg
+- https://s1.imagehub.cc/images/2023/11/04/f28e2a008972c31aa95649e46d8d0569.jpeg
+- https://s1.imagehub.cc/images/2023/11/04/176f5e054b743f74bcba67f51b5d6d61.jpeg
+- https://s1.imagehub.cc/images/2023/11/04/67fb15063985aea5cc4ba3ce52c65890.jpeg
+- https://s1.imagehub.cc/images/2023/11/04/8bd09bee7aa240bfdee0506a4f38a750.jpeg
+- https://s1.imagehub.cc/images/2023/11/04/cc869bf71d4773829f0c9b0f879ae7e0.jpeg
+- https://s1.imagehub.cc/images/2023/11/04/08ac31e85059713f1261161308224c4b.jpeg
+- https://s1.imagehub.cc/images/2023/11/04/2745b543e7de104b1ac0a49dd8a367a3.jpeg
+- https://s1.imagehub.cc/images/2023/11/04/e6e8abf9cb6ec7d615942bd78f1aa421.jpeg
+- https://s1.imagehub.cc/images/2023/11/04/0971003a0ab9b8144af208d9e8da1ac7.jpeg
+- https://s1.imagehub.cc/images/2023/11/04/115f0064ee90be505d85308174fc95a2.jpeg
+- https://s1.imagehub.cc/images/2023/11/04/4b7b37bc783a3480d6882715ccd83993.jpeg
+- https://s1.imagehub.cc/images/2023/11/04/8804f5e1d8ee68b0051e88f490bb5bac.jpeg
+- https://s1.imagehub.cc/images/2023/11/04/a0a69d14e8d840b0bc42e21b5c406a90.png
+- https://s1.imagehub.cc/images/2023/11/04/22151b058a8bc4b63138b0eb2d71090c.jpeg
+- https://s1.imagehub.cc/images/2023/11/04/37677acce248f58b71f8ea062bf38ec5.jpeg
+```
+
+
 
 ```log
 2023 年 11 月 03 日 —— 日志6
@@ -29,7 +56,7 @@ date: 2023-11-03
 ```log
 2023 年 11 月 03 日 —— 日志5
 更换随机图库，并更换图床。
-大部分图片图片取自Wallhaven，图床采用ImageHub。
+大部分图片取自Wallhaven，图床采用ImageHub。
 本地端修改文件路径：my-hexo-blog\themes\shoka\_images.yml
 图片链接如下：
 - https://s1.imagehub.cc/images/2023/11/03/59a81ec6028c58fe55359d6226280a5c.jpeg
