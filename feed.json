@@ -7,6 +7,26 @@
     "home_page_url": "http://hening25.gitee.io",
     "items": [
         {
+            "id": "http://hening25.gitee.io/2023/11/27/2023-11-27_%E7%89%B9%E5%BE%81%E5%9B%BE%E5%8F%AF%E8%A7%86%E5%8C%96/",
+            "url": "http://hening25.gitee.io/2023/11/27/2023-11-27_%E7%89%B9%E5%BE%81%E5%9B%BE%E5%8F%AF%E8%A7%86%E5%8C%96/",
+            "title": "特征图可视化",
+            "date_published": "2023-11-26T16:00:00.000Z",
+            "content_html": "<p>卷积神经网络各层特征图的可视化</p>\n<p><span id=\"more\"></span></p>\n<h1 id=\"特征图可视化\"><a class=\"anchor\" href=\"#特征图可视化\">#</a> 特征图可视化</h1>\n",
+            "tags": [
+                "技能工具"
+            ]
+        },
+        {
+            "id": "http://hening25.gitee.io/2023/11/27/2023-11-27_%E7%AC%AC%E4%B8%80%E7%AF%87%E8%AE%BA%E6%96%87/",
+            "url": "http://hening25.gitee.io/2023/11/27/2023-11-27_%E7%AC%AC%E4%B8%80%E7%AF%87%E8%AE%BA%E6%96%87/",
+            "title": "第一篇论文",
+            "date_published": "2023-11-26T16:00:00.000Z",
+            "content_html": "<p>关于第一篇论文......</p>\n<p><span id=\"more\"></span></p>\n<h2 id=\"论文链接\"><a class=\"anchor\" href=\"#论文链接\">#</a> 论文链接</h2>\n<p><span class=\"exturl\" data-url=\"aHR0cHM6Ly93d3cuc2NpZW5jZWRpcmVjdC5jb20vc2NpZW5jZS9hcnRpY2xlL3BpaS9TMDMwNjI2MTkyMzAxNDEyNT9kZ2NpZD1jb2F1dGhvcg==\">Early prediction of battery lifetime based on graphical features and convolutional neural networks - ScienceDirect</span></p>\n<h2 id=\"发文进度\"><a class=\"anchor\" href=\"#发文进度\">#</a> 发文进度</h2>\n<p>｜2023.06.02  投稿<br />\n｜2023.06.18  大修<br />\n｜2023.08.02  大修返稿<br />\n｜2023.08.30  RRC<br />\n｜2023.09.07  小修<br />\n｜2023.09.26  小修返稿<br />\n｜2023.09.28  Accept<br />\n｜2023.10.14  Online<br />\n｜2024.01.01  出刊</p>\n<h2 id=\"论文简介\"><a class=\"anchor\" href=\"#论文简介\">#</a> 论文简介</h2>\n",
+            "tags": [
+                "杂谈"
+            ]
+        },
+        {
             "id": "http://hening25.gitee.io/2023/10/28/2023-10-29-%E7%8A%B6%E6%80%81%E6%96%B9%E7%A8%8B%E7%9A%84%E8%A7%A3/",
             "url": "http://hening25.gitee.io/2023/10/28/2023-10-29-%E7%8A%B6%E6%80%81%E6%96%B9%E7%A8%8B%E7%9A%84%E8%A7%A3/",
             "title": "03 状态方程的解",

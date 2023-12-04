@@ -8,12 +8,46 @@
     <author>
       <name>Hening</name>
     </author>
-    <updated>2023-10-27T16:00:00.000Z</updated>
+    <updated>2023-11-26T16:00:00.000Z</updated>
     <category term="控制" />
     <category term="深度学习" />
     <category term="人工智能" />
     <category term="锂电池" />
     <category term="" />
+    <entry>
+        <id>http://hening25.gitee.io/2023/11/27/2023-11-27_%E7%89%B9%E5%BE%81%E5%9B%BE%E5%8F%AF%E8%A7%86%E5%8C%96/</id>
+        <title>特征图可视化</title>
+        <link rel="alternate" href="http://hening25.gitee.io/2023/11/27/2023-11-27_%E7%89%B9%E5%BE%81%E5%9B%BE%E5%8F%AF%E8%A7%86%E5%8C%96/"/>
+        <content type="html">&lt;p&gt;卷积神经网络各层特征图的可视化&lt;/p&gt;
+&lt;p&gt;&lt;span id=&#34;more&#34;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;h1 id=&#34;特征图可视化&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#特征图可视化&#34;&gt;#&lt;/a&gt; 特征图可视化&lt;/h1&gt;
+</content>
+        <category term="技能工具" scheme="http://hening25.gitee.io/categories/%E6%8A%80%E8%83%BD%E5%B7%A5%E5%85%B7/" />
+        <updated>2023-11-26T16:00:00.000Z</updated>
+    </entry>
+    <entry>
+        <id>http://hening25.gitee.io/2023/11/27/2023-11-27_%E7%AC%AC%E4%B8%80%E7%AF%87%E8%AE%BA%E6%96%87/</id>
+        <title>第一篇论文</title>
+        <link rel="alternate" href="http://hening25.gitee.io/2023/11/27/2023-11-27_%E7%AC%AC%E4%B8%80%E7%AF%87%E8%AE%BA%E6%96%87/"/>
+        <content type="html">&lt;p&gt;关于第一篇论文......&lt;/p&gt;
+&lt;p&gt;&lt;span id=&#34;more&#34;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;h2 id=&#34;论文链接&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#论文链接&#34;&gt;#&lt;/a&gt; 论文链接&lt;/h2&gt;
+&lt;p&gt;&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly93d3cuc2NpZW5jZWRpcmVjdC5jb20vc2NpZW5jZS9hcnRpY2xlL3BpaS9TMDMwNjI2MTkyMzAxNDEyNT9kZ2NpZD1jb2F1dGhvcg==&#34;&gt;Early prediction of battery lifetime based on graphical features and convolutional neural networks - ScienceDirect&lt;/span&gt;&lt;/p&gt;
+&lt;h2 id=&#34;发文进度&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#发文进度&#34;&gt;#&lt;/a&gt; 发文进度&lt;/h2&gt;
+&lt;p&gt;｜2023.06.02  投稿&lt;br /&gt;
+｜2023.06.18  大修&lt;br /&gt;
+｜2023.08.02  大修返稿&lt;br /&gt;
+｜2023.08.30  RRC&lt;br /&gt;
+｜2023.09.07  小修&lt;br /&gt;
+｜2023.09.26  小修返稿&lt;br /&gt;
+｜2023.09.28  Accept&lt;br /&gt;
+｜2023.10.14  Online&lt;br /&gt;
+｜2024.01.01  出刊&lt;/p&gt;
+&lt;h2 id=&#34;论文简介&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#论文简介&#34;&gt;#&lt;/a&gt; 论文简介&lt;/h2&gt;
+</content>
+        <category term="杂谈" scheme="http://hening25.gitee.io/categories/%E6%9D%82%E8%B0%88/" />
+        <updated>2023-11-26T16:00:00.000Z</updated>
+    </entry>
     <entry>
         <id>http://hening25.gitee.io/2023/10/28/2023-10-29-%E7%8A%B6%E6%80%81%E6%96%B9%E7%A8%8B%E7%9A%84%E8%A7%A3/</id>
         <title>03 状态方程的解</title>
