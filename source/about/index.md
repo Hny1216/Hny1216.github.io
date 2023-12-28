@@ -84,7 +84,7 @@ Github：[https://github.com/Hny1216](https://github.com/Hny1216)
 
 ### 论文
 
-[[1] He N, Wang Q, Lu Z, et al. Early prediction of battery lifetime based on graphical features and convolutional neural networks[J]. Applied Energy, 2024, 353: 122048.](https://authors.elsevier.com/c/1hwPi15eif8INj)
+[[1] He N, Wang Q, Lu Z, Chai Y, Yang F. Early prediction of battery lifetime based on graphical features and convolutional neural networks. Applied Energy, 2024, 353: 122048.](https://www.sciencedirect.com/science/article/pii/S0306261923014125)
 
 ### 专利
 
