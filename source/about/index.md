@@ -14,7 +14,7 @@ date: 2023-10-25 13:58:03
 
 Github：[https://github.com/Hny1216](https://github.com/Hny1216)
 
-个人简历：[预推免面试简历](/source/downloads/cv20231025.pdf)
+个人简历：预推免面试简历
 
 
 
@@ -40,7 +40,7 @@ Github：[https://github.com/Hny1216](https://github.com/Hny1216)
 
 - 技术技能：控制系统设计（PID控制，状态空间控制），机器学习（监督学习，无监督学习），深度学习（卷积神经网络，循环神经网络，生成对抗网络，自编码网络）
 
-- 其他技能：数据处理（插值法，滤波器平滑，Nadaraya-Watson非参数核估计），数据可视化（[卷积神经网络特征图可视化](https://github.com/Hny1216/FeatureMapVisualization.git)，[数据降维可视化(t-SNE)]()）
+- 其他技能：数据处理（插值法，滤波器平滑，Nadaraya-Watson非参数核估计），数据可视化（[卷积神经网络特征图可视化](https://github.com/Hny1216/FeatureMapVisualization.git)，[数据降维可视化(t-SNE)]()），深度学习可解释性（CAM，Grad-CAM，Grad-CAM++）
 
 
 
@@ -66,7 +66,7 @@ Github：[https://github.com/Hny1216](https://github.com/Hny1216)
 
 - 基于深度学习(卷积神经网络)的电动汽车锂离子电池健康特征的自动提取以及寿命周期准确预测。（Concluded）
 
-- 当前研究方向（毕设or研究生）：基于自编码-解码深度学习方法的电动汽车异常检测。（Ongoing）
+- 当前研究方向（毕设or研究生）：基于自编码-解码深度学习方法的电动汽车异常检测 + 深度学习可解释性分析 + 特征融合 （Ongoing）
 
 
 
@@ -93,11 +93,3 @@ Github：[https://github.com/Hny1216](https://github.com/Hny1216)
 [[2] 何宁, 柴艺柯, 李弈霆, 郭烨年, 杨芳芳. 一种基于卷积神经网络的电池早期寿命预测方法及系统, CN116068407A[P],2023.](http://epub.cnipa.gov.cn/patent/CN116068407A)
 
 
-
-
-
----
-
-## 附:预推免简历：
-
-{% pdf /source/downloads/cv20231025.pdf  600 1000%}
