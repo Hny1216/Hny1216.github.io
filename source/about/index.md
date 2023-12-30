@@ -10,7 +10,7 @@ date: 2023-10-25 13:58:03
 
 中国共产党预备党员
 
-个人邮箱：hening25@mail2.sysu.edu.cn，hny1216lxy@gmail.com
+个人邮箱：<hening25@mail2.sysu.edu.cn>，<hny1216lxy@gmail.com>
 
 Github：[https://github.com/Hny1216](https://github.com/Hny1216)
 
