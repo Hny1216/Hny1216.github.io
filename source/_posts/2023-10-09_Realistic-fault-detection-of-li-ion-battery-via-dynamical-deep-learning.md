@@ -5,6 +5,10 @@ categories:
 - 论文文献阅读
 ---
 
+基于动态自编码网络的电池故障检测
+
+<!-- more -->
+
 # Realistic fault detection of li-ion battery via dynamical deep learning
 
 Article link: [Realistic fault detection of li-ion battery via dynamical deep learning (nature.com)](https://www.nature.com/articles/s41467-023-41226-5.pdf)
