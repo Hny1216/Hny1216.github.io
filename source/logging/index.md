@@ -6,6 +6,13 @@ date: 2023-11-03
 # 日志
 
 ```log
+2024 年 06 月 26 日 —— 日志9
+由于Gitee Pages暂停服务，将个人网页迁移至Github上。（网页地址：https://hny1216.github.io）
+```
+
+
+
+```log
 2023 年 11 月 16 日 —— 日志8
 解决图片加载缓慢问题。
 本地端修改文件路径：my-hexo-blog\themes\shoka\_images.yml
