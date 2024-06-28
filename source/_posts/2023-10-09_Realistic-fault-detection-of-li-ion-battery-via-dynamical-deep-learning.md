@@ -1,4 +1,5 @@
 ---
+math: True
 title: Realistic fault detection of li-ion battery via dynamical deep learning
 date: 2023-10-21
 categories:
