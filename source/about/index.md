@@ -33,7 +33,7 @@ Github：[https://github.com/Hny1216](https://github.com/Hny1216)
 
 - 软件工具：Matlab，TensorFlow， PyTorch
 
-- 技术技能：控制系统设计（PID控制，状态空间控制），机器学习（监督学习，无监督学习），深度学习（卷积神经网络，循环神经网络，生成对抗网络，自编码网络）
+- 技术技能：控制系统设计（PID控制，状态空间控制），机器学习（监督学习，无监督学习），深度学习（卷积神经网络，Transformer，ViT，3DCNN）
 
 - 其他技能：数据处理（插值法，滤波器平滑，Nadaraya-Watson非参数核估计），数据可视化（[卷积神经网络特征图可视化](https://github.com/Hny1216/FeatureMapVisualization.git)，[数据降维可视化(t-SNE)]()），深度学习可解释性（CAM，Grad-CAM，Grad-CAM++）
 
@@ -86,6 +86,10 @@ Github：[https://github.com/Hny1216](https://github.com/Hny1216)
 ### 论文
 
 [[1] He N, Wang Q, Lu Z, Chai Y, Yang F. Early prediction of battery lifetime based on graphical features and convolutional neural networks. Applied Energy, 2024, 353: 122048.](https://www.sciencedirect.com/science/article/pii/S0306261923014125)
+
+[[2] 何宁, 杨芳芳. 考虑能量和温度特征的锂离子电池早期寿命预测[J]. 储能科学与技术, 2024, 13(9): 3016-3029.](https://esst.cip.com.cn/CN/10.19799/j.cnki.2095-4239.2024.0583)
+
+​	 [Ning HE, Fangfang YANG. Early prediction of battery lifetime based on energy and temperature features[J]. Energy Storage Science and Technology, 2024, 13(9): 3016-3029.](https://esst.cip.com.cn/CN/10.19799/j.cnki.2095-4239.2024.0583)
 
 ### 专利
 
