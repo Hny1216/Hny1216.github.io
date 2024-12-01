@@ -6,13 +6,13 @@ date: 2023-10-25 13:58:03
 
 # 何宁
 
-[中山大学智能工程学院](https://ise.sysu.edu.cn/index.htm) 2024级硕士研究生
-
 中共党员 
 
-个人邮箱：<hening25@mail2.sysu.edu.cn>，<hny1216lxy@gmail.com>
+[中山大学智能工程学院](https://ise.sysu.edu.cn/index.htm)    2024级硕士研究生
 
 Github：[https://github.com/Hny1216](https://github.com/Hny1216)
+
+个人邮箱：<hening25@mail2.sysu.edu.cn>，<hny1216lxy@gmail.com>，<632678809@qq.com>
 
 
 
@@ -31,9 +31,9 @@ Github：[https://github.com/Hny1216](https://github.com/Hny1216)
 
 - 排版工具：Latex（TexStudio，WinEdit），Markdown（Typora），EndNote
 
-- 软件工具：Matlab，TensorFlow， PyTorch
+- 软件工具：Matlab， PyTorch，TensorFlow
 
-- 技术技能：控制系统设计（PID控制，状态空间控制），机器学习（监督学习，无监督学习），深度学习（卷积神经网络，Transformer，ViT，3DCNN）
+- 技术技能：机器学习（监督学习，无监督学习），深度学习（卷积神经网络，Transformer，ViT，3DCNN）,控制系统设计（PID控制，状态空间控制）
 
 - 其他技能：数据处理（插值法，滤波器平滑，Nadaraya-Watson非参数核估计），数据可视化（[卷积神经网络特征图可视化](https://github.com/Hny1216/FeatureMapVisualization.git)，[数据降维可视化(t-SNE)]()），深度学习可解释性（CAM，Grad-CAM，Grad-CAM++）
 
@@ -67,7 +67,7 @@ Github：[https://github.com/Hny1216](https://github.com/Hny1216)
 
 ### 硕士
 
-
++ 主修课程：数据结构与算法，人工智能编程语言，机器学习，深度学习，信号与系统，自动控制原理，现代控制理论，智能机器人技术
 
 
 
@@ -89,11 +89,11 @@ Github：[https://github.com/Hny1216](https://github.com/Hny1216)
 
 [[2] 何宁, 杨芳芳. 考虑能量和温度特征的锂离子电池早期寿命预测[J]. 储能科学与技术, 2024, 13(9): 3016-3029.](https://esst.cip.com.cn/CN/10.19799/j.cnki.2095-4239.2024.0583)
 
-​	 [Ning HE, Fangfang YANG. Early prediction of battery lifetime based on energy and temperature features[J]. Energy Storage Science and Technology, 2024, 13(9): 3016-3029.](https://esst.cip.com.cn/CN/10.19799/j.cnki.2095-4239.2024.0583)
+[Ning HE, Fangfang YANG. Early prediction of battery lifetime based on energy and temperature features[J]. Energy Storage Science and Technology, 2024, 13(9): 3016-3029.](https://esst.cip.com.cn/CN/10.19799/j.cnki.2095-4239.2024.0583)
 
 ### 专利
 
 [[1] 杨芳芳, 何宁, 柴艺柯, 李弈霆, 郭烨年. 一种基于三维电压特征的锂离子电池早期寿命预测方法, CN115856646A[P],2023.](http://epub.cnipa.gov.cn/patent/CN115856646B?8kt2YOWWXQBD=1698297409975)
 
-[[2] 何宁, 柴艺柯, 李弈霆, 郭烨年, 杨芳芳. 一种基于卷积神经网络的电池早期寿命预测方法及系统, CN116068407A[P],2023.](http://epub.cnipa.gov.cn/patent/CN116068407A)
+[[2] 何宁, 杨芳芳. 一种基于卷积神经网络的电池早期寿命预测方法及系统, CN116068407A[P],2023.](http://epub.cnipa.gov.cn/patent/CN116068407A)
 
