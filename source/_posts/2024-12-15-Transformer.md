@@ -4,7 +4,7 @@ math: true
 date: 2024-12-15
 hidden: False
 categories:
-- 深度学习
+- [深度学习,Transformer]
 ---
 
 Transformer——Transformer
