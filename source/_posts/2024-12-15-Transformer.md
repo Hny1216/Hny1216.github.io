@@ -2,9 +2,9 @@
 title: Transformer
 math: true
 date: 2024-12-15
-hidden: True
+hidden: False
 categories:
-- 论文文献阅读
+- [深度学习,Transformer]
 ---
 
 Transformer——Transformer
