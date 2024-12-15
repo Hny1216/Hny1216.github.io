@@ -4,7 +4,7 @@ math: true
 date: 2024-12-15
 hidden: True
 categories:
-- [深度学习, Transformer]
+- 论文文献阅读
 ---
 
 Transformer——Transformer
