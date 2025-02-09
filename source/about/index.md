@@ -60,7 +60,7 @@ Github：[https://github.com/Hny1216](https://github.com/Hny1216)
 ## 研究方向及专业知识
 
 - **本科**
-  - 主修课程：数据结构与算法，人工智能编程语言，机器学习，深度学习，信号与系统，自动控制原理，现代控制理论，智能机器人技术。
+  - 主修课程：机器学习，深度学习，数据结构与算法，人工智能编程语言，信号与系统，自动控制原理，现代控制理论，智能机器人技术。
   - 大创项目：基于深度学习(卷积神经网络)的电动汽车锂离子电池健康特征的自动提取以及寿命周期准确预测。
   - 毕业设计：考虑能量与温度特征的锂离子电池早期寿命预测研究。
 
@@ -97,15 +97,15 @@ Github：[https://github.com/Hny1216](https://github.com/Hny1216)
 
 [[1] He Ning, Wang Qiqi, Lu Zhenfeng, Chai Yike, Yang Fangfang. Early prediction of battery lifetime based on graphical features and convolutional neural networks. Applied Energy, 2024, 353: 122048.](https://www.sciencedirect.com/science/article/pii/S0306261923014125)（中科院1区，IF：11.2）
 
-[[2] 何宁, 杨芳芳. 考虑能量和温度特征的锂离子电池早期寿命预测[J]. 储能科学与技术, 2024, 13(9): 3016-3029.](https://esst.cip.com.cn/CN/10.19799/j.cnki.2095-4239.2024.0583)
+[[2] 何宁, 杨芳芳. 考虑能量和温度特征的锂离子电池早期寿命预测[J]. 储能科学与技术, 2024, 13(9): 3016-3029.<br>Ning HE, Fangfang YANG. Early prediction of battery lifetime based on energy and temperature features[J]. Energy Storage Science and Technology, 2024, 13(9): 3016-3029.](https://esst.cip.com.cn/CN/10.19799/j.cnki.2095-4239.2024.0583)
 
-[Ning HE, Fangfang YANG. Early prediction of battery lifetime based on energy and temperature features[J]. Energy Storage Science and Technology, 2024, 13(9): 3016-3029.](https://esst.cip.com.cn/CN/10.19799/j.cnki.2095-4239.2024.0583)
+
 
 ### 专利
 
-[[1] 杨芳芳, 何宁, 柴艺柯, 李弈霆, 郭烨年. 一种基于三维电压特征的锂离子电池早期寿命预测方法, CN115856646A[P],2023.](http://epub.cnipa.gov.cn/patent/CN115856646B?8kt2YOWWXQBD=1698297409975)
+[[1] 何宁, 杨芳芳. 一种基于卷积神经网络的电池早期寿命预测方法及系统, CN116068407A[P],2023.](http://epub.cnipa.gov.cn/patent/CN116068407A)
 
-[[2] 何宁, 杨芳芳. 一种基于卷积神经网络的电池早期寿命预测方法及系统, CN116068407A[P],2023.](http://epub.cnipa.gov.cn/patent/CN116068407A)
+[[2] 杨芳芳, 何宁, 柴艺柯, 李弈霆, 郭烨年. 一种基于三维电压特征的锂离子电池早期寿命预测方法, CN115856646A[P],2023.](http://epub.cnipa.gov.cn/patent/CN115856646B?8kt2YOWWXQBD=1698297409975)
 
 [[3] 杨芳芳, 卢振锋, 彭卫文, 何宁, 肖悦盈. 基于特征融合的卷积神经网络电池健康状态估计方法及系统, CN116774089A[P],2023](http://epub.cnipa.gov.cn/patent/CN116774089A)
 
