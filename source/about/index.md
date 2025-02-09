@@ -109,5 +109,5 @@ Github：[https://github.com/Hny1216](https://github.com/Hny1216)
 
 [[3] 杨芳芳, 卢振锋, 彭卫文, 何宁, 肖悦盈. 基于特征融合的卷积神经网络电池健康状态估计方法及系统, CN116774089A[P],2023](http://epub.cnipa.gov.cn/patent/CN116774089A)
 
-[<br>]()继续内容
+
 
