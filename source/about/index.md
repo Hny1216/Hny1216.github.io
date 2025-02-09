@@ -97,9 +97,9 @@ Github：[https://github.com/Hny1216](https://github.com/Hny1216)
 
 [[1] He Ning, Wang Qiqi, Lu Zhenfeng, Chai Yike, Yang Fangfang. Early prediction of battery lifetime based on graphical features and convolutional neural networks. Applied Energy, 2024, 353: 122048.](https://www.sciencedirect.com/science/article/pii/S0306261923014125)（中科院1区，IF：11.2）
 
-[[2] 何宁, 杨芳芳. 考虑能量和温度特征的锂离子电池早期寿命预测[J]. 储能科学与技术, 2024, 13(9): 3016-3029.  \\  Ning HE, Fangfang YANG. Early prediction of battery lifetime based on energy and temperature features[J]. Energy Storage Science and Technology, 2024, 13(9): 3016-3029.](https://esst.cip.com.cn/CN/10.19799/j.cnki.2095-4239.2024.0583)
+[[2] 何宁, 杨芳芳. 考虑能量和温度特征的锂离子电池早期寿命预测[J]. 储能科学与技术, 2024, 13(9): 3016-3029.  <br>  Ning HE, Fangfang YANG. Early prediction of battery lifetime based on energy and temperature features[J]. Energy Storage Science and Technology, 2024, 13(9): 3016-3029.](https://esst.cip.com.cn/CN/10.19799/j.cnki.2095-4239.2024.0583)
 
-5
+6
 
 ### 专利
 
