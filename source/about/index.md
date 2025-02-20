@@ -6,7 +6,9 @@ date: 2023-10-25 13:58:03
 
 # 何宁
 
-中共党员  汉族
+中共党员  
+
+汉族  广东省湛江市
 
 [中山大学智能工程学院](https://ise.sysu.edu.cn/index.htm)    2024级硕士研究生
 
@@ -27,15 +29,23 @@ Github：[https://github.com/Hny1216](https://github.com/Hny1216)
 
 ## 技能知识
 
-- 编程语言：C，C++，R（可视化），Python，Matlab
-
-- 排版工具：Latex（TexStudio，WinEdit），Markdown（Typora），EndNote
-
+- 编程语言：Python，Matlab，C，C++，R（可视化）
+- 排版工具：Latex（TexStudio，WinEdit，Overleaf），Markdown（Typora），EndNote
 - 软件工具：Matlab， PyTorch，TensorFlow
+- 专业技能：
+  - 机器学习：SVM，XGBoost，ANN
+  - 深度学习：卷积神经网络（2DCNN，3DCNN），Transformer，Vision Transformer，GAN
+  - 控制系统设计：PID控制，状态空间控制
+- 技术技能：
+  - 数据处理：插值法，滤波器平滑，傅里叶变化平滑，Nadaraya-Watson非参数核估计
+  - 数据可视化：[卷积神经网络特征图可视化](https://github.com/Hny1216/FeatureMapVisualization.git)，[数据降维可视化(t-SNE)]()
+  - 深度学习可解释性：CAM，Grad-CAM，Grad-CAM++
 
-- 技术技能：机器学习（监督学习，无监督学习），深度学习（卷积神经网络，Transformer，ViT，3DCNN）,控制系统设计（PID控制，状态空间控制）
+- 其他技能经验：
+  - 专利交底书撰写：已完成3篇专利的交底书撰写工作。
+  - 论文撰写和审稿：已完成3篇论文初稿撰写和修改。
 
-- 其他技能：数据处理（插值法，滤波器平滑，Nadaraya-Watson非参数核估计），数据可视化（[卷积神经网络特征图可视化](https://github.com/Hny1216/FeatureMapVisualization.git)，[数据降维可视化(t-SNE)]()），深度学习可解释性（CAM，Grad-CAM，Grad-CAM++）
+
 
 
 
@@ -59,14 +69,18 @@ Github：[https://github.com/Hny1216](https://github.com/Hny1216)
 
 ## 研究方向及专业知识
 
+- **硕士**
+  
+  - 主修课程：矩阵论，高级工程数学，现代数学，高等算法与分析。
+  - 研究方向：动力电池安全管理系统，锂离子电池早期寿命预测，深度学习及应用。
+
 - **本科**
+  
   - 主修课程：机器学习，深度学习，数据结构与算法，人工智能编程语言，信号与系统，自动控制原理，现代控制理论，智能机器人技术。
   - 大创项目：基于深度学习(卷积神经网络)的电动汽车锂离子电池健康特征的自动提取以及寿命周期准确预测。
   - 毕业设计：考虑能量与温度特征的锂离子电池早期寿命预测研究。
-
-- **硕士**
-  - 主修课程：矩阵论，高级工程数学，现代数学。
-  - 研究方向：动力电池安全管理系统，锂离子电池早期寿命预测，深度学习及应用。
+  
+  
 
 
 
@@ -88,6 +102,10 @@ Github：[https://github.com/Hny1216](https://github.com/Hny1216)
 3. 2021年11月—2022年11月，**大数据下新能源汽车锂电池早期性能预测**，**项目负责人** 。（Concluded）
    - **项目内容**：分析锂离子电池各项终端数据，研究终端数据与电池寿命存在的潜在联系和相关性，提出一种将电池一维时序性电压数据转换为三维图像数据的构造图形数据的方法，利用卷积神经网络模型（AlexNet，VGG16，ResNet等）自动提取相关特征并映射到电池的早期寿命预测上，并通过不同的裁剪和数据组合方式研究电池放电周期内局部数据所包含的潜在信息。
    - **项目成果**：提出了一种三维图像特征，丰富了当前锂电池**早期寿命健康特征**；基于AlexNet模型搭建了轻量准确的电池**早期寿命预测模型**，只利用电池数据的前100个周期的放电电压和容量数据即可将预测均方根误差控制在100个cycle内。
+
+
+
+
 
 
 
