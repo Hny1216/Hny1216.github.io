@@ -1,0 +1,660 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#FFF">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+
+<link rel="icon" type="image/ico" sizes="32x32" href="/images/favicon.ico">
+  <meta http-equiv="Cache-Control" content="no-transform">
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+<link rel="alternate" type="application/rss+xml" title="Hny" href="http://hening25.gitee.io/rss.xml" />
+<link rel="alternate" type="application/atom+xml" title="Hny" href="http://hening25.gitee.io/atom.xml" />
+<link rel="alternate" type="application/json" title="Hny" href="http://hening25.gitee.io/feed.json" />
+
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Mulish:300,300italic,400,400italic,700,700italic%7CFredericka%20the%20Great:300,300italic,400,400italic,700,700italic%7CNoto%20Serif%20JP:300,300italic,400,400italic,700,700italic%7CNoto%20Serif%20SC:300,300italic,400,400italic,700,700italic%7CInconsolata:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+
+<link rel="stylesheet" href="/css/app.css?v=0.2.5">
+
+  
+  <meta name="keywords" content="矩阵,相似变换" />
+
+
+<link rel="canonical" href="http://hening25.gitee.io/2024/09/21/2024-09-21-%E7%9F%A9%E9%98%B5%E7%9A%84%E7%9B%B8%E4%BC%BC%E5%8F%98%E6%8D%A2/">
+
+
+
+  <title>
+01 矩阵的相似变换 - 矩阵论 |
+Hening = Hny = 终有弱水替沧海 再无相思寄巫山</title>
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.3.0"></head>
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div id="loading">
+    <div class="cat">
+      <div class="body"></div>
+      <div class="head">
+        <div class="face"></div>
+      </div>
+      <div class="foot">
+        <div class="tummy-end"></div>
+        <div class="bottom"></div>
+        <div class="legs left"></div>
+        <div class="legs right"></div>
+      </div>
+      <div class="paw">
+        <div class="hands left"></div>
+        <div class="hands right"></div>
+      </div>
+    </div>
+  </div>
+  <div id="container">
+    <header id="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="inner">
+        <div id="brand">
+          <div class="pjax">
+          
+  <h1 itemprop="name headline">01 矩阵的相似变换
+  </h1>
+  
+<div class="meta">
+  <span class="item" title="创建时间：2024-09-21 00:00:00">
+    <span class="icon">
+      <i class="ic i-calendar"></i>
+    </span>
+    <span class="text">发表于</span>
+    <time itemprop="dateCreated datePublished" datetime="2024-09-21T00:00:00+08:00">2024-09-21</time>
+  </span>
+  <span class="item" title="本文字数">
+    <span class="icon">
+      <i class="ic i-pen"></i>
+    </span>
+    <span class="text">本文字数</span>
+    <span>14k</span>
+    <span class="text">字</span>
+  </span>
+  <span class="item" title="阅读时长">
+    <span class="icon">
+      <i class="ic i-clock"></i>
+    </span>
+    <span class="text">阅读时长</span>
+    <span>13 分钟</span>
+  </span>
+</div>
+
+
+          </div>
+        </div>
+        <nav id="nav">
+  <div class="inner">
+    <div class="toggle">
+      <div class="lines" aria-label="切换导航栏">
+        <span class="line"></span>
+        <span class="line"></span>
+        <span class="line"></span>
+      </div>
+    </div>
+    <ul class="menu">
+      <li class="item title"><a href="/" rel="start">Hening</a></li>
+    </ul>
+    <ul class="right">
+      <li class="item theme">
+        <i class="ic i-sun"></i>
+      </li>
+      <li class="item search">
+        <i class="ic i-search"></i>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+      </div>
+      <div id="imgs" class="pjax">
+        <ul>
+          <li class="item" data-background-image="https://s1.imagehub.cc/images/2023/11/16/d510f3deb47f879a1428070128b03dfb.jpeg"></li>
+          <li class="item" data-background-image="https://s1.imagehub.cc/images/2023/11/16/3eabfecbc99731b66bc1f0c9d7d7705a.jpeg"></li>
+          <li class="item" data-background-image="https://s1.imagehub.cc/images/2023/11/16/1e4b2f392f23bc88f7627aa5d84d1a4d.jpeg"></li>
+          <li class="item" data-background-image="https://s1.imagehub.cc/images/2023/11/16/d363516087e633dc9e2a1cd2ac5a2caa.jpeg"></li>
+          <li class="item" data-background-image="https://s1.imagehub.cc/images/2023/11/16/f0233915560e384ccd9c54ade1c1f8e6.png"></li>
+          <li class="item" data-background-image="https://s1.imagehub.cc/images/2023/11/16/a02d84aca731da5d5f52ac03f74cb4d8.jpeg"></li>
+        </ul>
+      </div>
+    </header>
+    <div id="waves">
+      <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+        <defs>
+          <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+        </defs>
+        <g class="parallax">
+          <use xlink:href="#gentle-wave" x="48" y="0" />
+          <use xlink:href="#gentle-wave" x="48" y="3" />
+          <use xlink:href="#gentle-wave" x="48" y="5" />
+          <use xlink:href="#gentle-wave" x="48" y="7" />
+        </g>
+      </svg>
+    </div>
+    <main>
+      <div class="inner">
+        <div id="main" class="pjax">
+          
+  <div class="article wrap">
+    
+<div class="breadcrumb" itemscope itemtype="https://schema.org/BreadcrumbList">
+<i class="ic i-home"></i>
+<span><a href="/">首页</a></span><i class="ic i-angle-right"></i>
+<span  class="current" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="/categories/%E7%9F%A9%E9%98%B5%E8%AE%BA/" itemprop="item" rel="index" title="分类于 矩阵论"><span itemprop="name">矩阵论</span></a>
+<meta itemprop="position" content="1" /></span>
+</div>
+
+    <article itemscope itemtype="http://schema.org/Article" class="post block" lang="zh-CN">
+  <link itemprop="mainEntityOfPage" href="http://hening25.gitee.io/2024/09/21/2024-09-21-%E7%9F%A9%E9%98%B5%E7%9A%84%E7%9B%B8%E4%BC%BC%E5%8F%98%E6%8D%A2/">
+
+  <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="image" content="/images/avatar.jpg">
+    <meta itemprop="name" content="Hening">
+    <meta itemprop="description" content="终有弱水替沧海 再无相思寄巫山, 终有弱水替沧海 再无相思寄巫山">
+  </span>
+
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="Hny">
+  </span>
+
+  <div class="body md" itemprop="articleBody">
+    
+
+    <p>矩阵论——01 矩阵的相似变换</p>
+<span id="more"></span>
+
+<h1 id="控制系统的状态空间描述"><a href="#控制系统的状态空间描述" class="headerlink" title="控制系统的状态空间描述"></a>控制系统的状态空间描述</h1><h2 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h2><h3 id="系统的状态空间模型"><a href="#系统的状态空间模型" class="headerlink" title="系统的状态空间模型"></a>系统的状态空间模型</h3><ol>
+<li>线性时变系统的状态空间模型：系数矩阵与时间无关。</li>
+</ol>
+<p>$$\left{ \begin{matrix} \dot{x}&#x3D;Ax+Bu\y&#x3D;Cx+Du\\end{matrix}\right.   \tag{1}$$</p>
+<p>其中，$u&#x3D;R^r$为输入向量；$y&#x3D;R^m$为输出向量；$x\in R^n$为状态向量。$A,B,C,D$为系数矩阵。</p>
+<ol start="2">
+<li>线性时不变系统的状态空间模型：系数矩阵与时间有关。</li>
+</ol>
+<p>$$\left{ \begin{matrix} \dot{x}&#x3D;A(t)x+B(t)u\y&#x3D;C(t)x+D(t)u\\end{matrix}\right.   \tag{2}$$</p>
+<ol start="3">
+<li>离散线性系统的状态空间模型。</li>
+</ol>
+<p>$$\left{ \begin{matrix} x(k+1)&#x3D;A(k)x(k)+B(k)u(k)\y(k)&#x3D;C(k)x(k)+D(k)u(k)\\end{matrix}\right.   \tag{3}$$</p>
+<h3 id="状态空间描述的特点"><a href="#状态空间描述的特点" class="headerlink" title="状态空间描述的特点"></a>状态空间描述的特点</h3><ol>
+<li>系统的状态变量的个数&#x3D;系统中包含的独立储能元件的个数&#x3D;系统的阶数。</li>
+<li>在给定的系统中，状态变量的选择不唯一，但是状态变量的个数是一致的。</li>
+<li>基于状态变量选取的不同，同一系统可以用不同的动态方程来描述。</li>
+</ol>
+<p>+++primary 证明</p>
+<p>对于一个状态方程$\left{ \begin{matrix} \dot{x}&#x3D;Ax+Bu\y&#x3D;Cx\\end{matrix}\right.$，选择非奇异矩阵$P\in R^{n\times n}$作为变换阵，有$x&#x3D;P\overline{x}$，那么此时状态方程可表示为：</p>
+<p>$$\dot{\overline{x}}&#x3D;P^{-1}\dot{x}&#x3D;P^{-1}[Ax+Bu]&#x3D;P^{-1}AP\overline{x}+P^{-1}Bu&#x3D;\overline{A}\overline{x}+\overline{B}u   \tag{4}$$</p>
+<p>$$y&#x3D;Cx&#x3D;CP\overline{x}&#x3D;\overline{C}\overline{x}    \tag{5}$$</p>
+<p>其中，$\overline{A}&#x3D;P^{-1}AP,\overline{B}&#x3D;P^{-1}B,\overline{C}&#x3D;CP$。</p>
+<p>因此当状态变量 $x$ 改变时，一定存在变换矩阵 $P$ 使得状态方程发生变化。</p>
+<p>+++</p>
+<h3 id="状态空间模型的建立步骤"><a href="#状态空间模型的建立步骤" class="headerlink" title="状态空间模型的建立步骤"></a>状态空间模型的建立步骤</h3><ol>
+<li>选择状态变量。</li>
+<li>根据物体或其他机理列写微分方程。</li>
+<li>转化为矩阵形式，得到状态空间模型。</li>
+</ol>
+<h3 id="状态空间表达式的系统方框图"><a href="#状态空间表达式的系统方框图" class="headerlink" title="状态空间表达式的系统方框图"></a>状态空间表达式的系统方框图</h3><p>公式（1）是线性时不变系统状态空间表达式的一般形式。其系统方框图可表示如下：</p>
+
+
+<h3 id="状态空间表达式的状态变量图"><a href="#状态空间表达式的状态变量图" class="headerlink" title="状态空间表达式的状态变量图"></a>状态空间表达式的状态变量图</h3><ol>
+<li>状态变量图的基本元素符号</li>
+</ol>
+
+
+<ol start="2">
+<li>绘制步骤</li>
+</ol>
+<ul>
+<li><strong>绘制积分器</strong>  积分器数量等于状态变量数目。</li>
+<li><strong>由状态方程和输出方程绘制加法器和放大器</strong></li>
+<li><strong>连接各元件</strong></li>
+</ul>
+<p>+++info 例题</p>
+<p>;;;id1 例题1</p>
+<p>:::info no-icon</p>
+<p>设有三阶系统状态空间表达式如下，试绘制其状态变量图。</p>
+<p>$$\left{ \begin{aligned}\begin{matrix} \dot{x}_1&#x3D;x_2\\dot{x}_2&#x3D;x_3\\dot{x}_3&#x3D;-6x_1-3x_2-2x_3+u\y&#x3D;x_1+x_2\end{matrix}\end{aligned}\right.$$</p>
+<p>:::</p>
+<p>其状态变量图可绘制如下：</p>
+
+
+<p>;;;</p>
+<p>+++</p>
+<h2 id="传递函数和传递函数矩阵"><a href="#传递函数和传递函数矩阵" class="headerlink" title="传递函数和传递函数矩阵"></a>传递函数和传递函数矩阵</h2><h3 id="单输入单输出系统"><a href="#单输入单输出系统" class="headerlink" title="单输入单输出系统"></a>单输入单输出系统</h3><p>对于单输入单输出系统$\left{ \begin{matrix} \dot{x}&#x3D;Ax+Bu\y&#x3D;Cx+Du\\end{matrix}\right.$，在零初始条件下其传递函数可表示为：</p>
+<p>$$g(s)&#x3D;\frac{Y(s)}{U(s)}&#x3D;C(sI-A)^{-1}B+D    \tag{6}$$</p>
+<p>+++primary 推导</p>
+<p>在系统$\left{ \begin{matrix} \dot{x}&#x3D;Ax+Bu\y&#x3D;Cx+Du\\end{matrix}\right.$ 中，在零初始条件下取拉氏变换有：$\left{ \begin{matrix} sX(s)&#x3D;AX(s)+BU(s)\Y(s)&#x3D;CX(s)+DU(s)\\end{matrix}\right.$，整理得到$\left{ \begin{matrix} X(s)&#x3D;(sI-A)^{-1}BU(s)\Y(s)&#x3D;C(sI-A)^{-1}BU(s)+DU(s)\\end{matrix}\right.$，故$g(s)&#x3D;\frac{Y(s)}{U(s)}&#x3D;C(sI-A)^{-1}B+D$</p>
+<p>+++</p>
+<p>在 $D&#x3D;0$ 时，$g(s)&#x3D;\frac{Y(s)}{U(s)}&#x3D;C(sI-A)^{-1}B&#x3D;\frac{Cadj(sI-A)B}{|sI-A|}$，其中$adj(sI-A)$表示矩阵$sI-A$的伴随矩阵。</p>
+<p>对比自控原理中传递函数的表达式：$g(s)&#x3D;\frac{b_0s^n+b_1s^{n-1}+\cdots +b_{n-1}s+b_n}{s^n+a_1s^{n-1}+\cdots +a_{n-1}s+a_n}$，可知：</p>
+<ol>
+<li>系统矩阵$A$的特征多项式等同于传递函数的分母多项式。</li>
+<li>传递函数的极点就是系统矩阵$A$的特征值。</li>
+<li><strong>传递函数的不变性</strong>  同一系统的状态空间描述不唯一，但传递函数是唯一的。</li>
+</ol>
+<p>+++primary 证明：同一系统的不同状态空间描述具有相同的特征值。</p>
+<p>对于同一系统，选择两个不同的状态向量 $x\in{R^n}$ 和 $\overline{x}\in{R^n}$ 分别得到不同的状态空间描述：</p>
+<p>$$\begin{matrix}\left{ \begin{matrix} \dot{x}&#x3D;Ax+Bu\y&#x3D;Cx+Du\\end{matrix}\right.&amp;&amp;&amp;\left{ \begin{matrix} \dot{\overline{x}}&#x3D;\overline{A}\overline{x}+\overline{B}u\y&#x3D;\overline{C}\overline{x}+\overline{D}u\\end{matrix}\right.\end{matrix}$$</p>
+<p>两种状态变量一定存在着可逆变化关系：$x&#x3D;P\overline{x}$，故：</p>
+<p>$$\left{ \begin{matrix} \dot{x}&#x3D;Ax+Bu\y&#x3D;Cx+Du\\end{matrix}\right.\Rightarrow \left{ \begin{matrix} P\dot{\overline{x}}&#x3D;AP\overline{x}+Bu\y&#x3D;CP\overline{x}+Du\\end{matrix}\right.\Rightarrow \left{ \begin{matrix} \dot{\overline{x}}&#x3D;P^{-1}AP\overline{x}+P^{-1}Bu\y&#x3D;CP\overline{x}+Du\\end{matrix}\right.$$</p>
+<p>故 $\overline{A}&#x3D;P^{-1}AP$，所以矩阵 $A$ 与矩阵 $\overline{A}$ 相似，故特征值相同。</p>
+<p>:::info</p>
+<p>相似矩阵具体相同的特征值</p>
+<p>:::</p>
+<p>+++</p>
+<h3 id="多输入多输出系统"><a href="#多输入多输出系统" class="headerlink" title="多输入多输出系统"></a>多输入多输出系统</h3><p>对于多输入多输出系统，输入向量$u&#x3D;[u_1\cdots u_p]^T$，输出向量$y&#x3D;[y_1\dots y_q]^T$。我们把第$i$个输出$y_i$和第$j$个输入$u_j$间的传递函数定义为：$g_{ij}(s)&#x3D;\frac{Y_i(s)}{U_j(s)}$。故系统的输入输出关系可表示为：</p>
+<p>$$\begin{bmatrix}Y_1(s)\Y_2(s)\\vdots\Y_q(s)\end{bmatrix}&#x3D;\begin{bmatrix}g_{11}(s)&amp;g_{12}(s)&amp;\cdots&amp;g_{1p}(s)\g_{21}(s)&amp;g_{22}(s)&amp;\cdots&amp;g_{2p}(s)\\vdots&amp;\vdots&amp;\ddots&amp;\vdots\g_{q1}(s)&amp;g_{q2}(s)&amp;\cdots&amp;g_{qp}(s)\end{bmatrix}\begin{bmatrix}U_1(s)\U_2(s)\\vdots\U_q(s)\end{bmatrix}$$</p>
+<p>以矩阵的形式表示：$Y(s)&#x3D;G(s)U(s)$，其中 $G(s)$称为传递函数矩阵。</p>
+<p>对于多输入多输出系统$\left{ \begin{matrix} \dot{x}&#x3D;Ax+Bu\y&#x3D;Cx+Du\\end{matrix}\right.$，同样传递函数矩阵为：</p>
+<p>$$G(s)&#x3D;C(sI-A)^{-1}B+D&#x3D;\frac{Cadj(sI-A)B+D|sI-A|}{|sI-A|}$$</p>
+<p>+++info 例题</p>
+<p>;;;id2 例题1</p>
+<p>:::info no-icon</p>
+<p>已知系统动态方程为$\begin{bmatrix}\dot{x}_1\\dot{x}_2\end{bmatrix}&#x3D;\begin{bmatrix}0&amp;1\0&amp;-2\end{bmatrix}\begin{bmatrix}x_1\x_2\end{bmatrix}+\begin{bmatrix}1&amp;0\0&amp;1\end{bmatrix}\begin{bmatrix}u_1\u_2\end{bmatrix}$，$\begin{bmatrix}y_1\y_2\end{bmatrix}&#x3D;\begin{bmatrix}1&amp;0\0&amp;1\end{bmatrix}\begin{bmatrix}x_1\x_2\end{bmatrix}$，试求系统的传递函数矩阵。</p>
+<p>:::</p>
+<p>由题，$G(s)&#x3D;C(sI-A)^{-1}B+D&#x3D;\begin{bmatrix}1&amp;0\0&amp;1\end{bmatrix}\begin{bmatrix}\frac{1}{s}&amp;\frac{1}{s(s+2)}\0&amp;\frac{1}{s+2}\end{bmatrix}\begin{bmatrix}1&amp;0\0&amp;1\end{bmatrix}&#x3D;\begin{bmatrix}\frac{1}{s}&amp;\frac{1}{s(s+2)}\0&amp;\frac{1}{s+2}\end{bmatrix}$。</p>
+<p>;;;</p>
+<p>+++</p>
+<h2 id="建立状态空间表达式"><a href="#建立状态空间表达式" class="headerlink" title="建立状态空间表达式"></a>建立状态空间表达式</h2><h3 id="高阶微分方程化为状态空间描述"><a href="#高阶微分方程化为状态空间描述" class="headerlink" title="高阶微分方程化为状态空间描述"></a>高阶微分方程化为状态空间描述</h3><p>在单输入单输出线性时不变系统中，系统的输出与输入的关系可用如下高阶微分方程描述：</p>
+<p>$$y^{(n)}+a_1y^{(n-1)}+\cdots +a_{n-1}\dot{y}+a_ny&#x3D;b_0u^{(m)}+b_1u^{(m-1)}+\cdots +b_{m-1}\dot{u}+b_mu    \tag{7}$$</p>
+<p>其中，$m\leq n$。根据微分方程右侧是否含有输入函数的导数（即$m$是否等于0）分两种情况讨论。</p>
+<h4 id="常微分方程中不含输入函数的导数"><a href="#常微分方程中不含输入函数的导数" class="headerlink" title="常微分方程中不含输入函数的导数"></a>常微分方程中不含输入函数的导数</h4><p>若常微分方程中不含有输入函数的导数，即：$y^{(n)}+a_1y^{(n-1)}+\cdots +a_{n-1}\dot{y}+a_ny&#x3D;b_mu$。</p>
+<p>那么可以选取状态变量：</p>
+<p>$$x_1&#x3D;\frac{1}{b_m}y,\quad x_2&#x3D;\frac{1}{b_m}\dot{y},\quad \cdots \quad  x_n&#x3D;\frac{1}{b_m}y^{(n-1)}      \tag{8}$$</p>
+<p>那么就可以得到状态方程（前$n-1$条通过求导获得，最后一条通过原微分方程获得）：</p>
+<p>$$\left{ \begin{matrix} \dot{x}_1&#x3D;x_2\\dot{x}_2&#x3D;x_3\\vdots\\dot{x}<em>n&#x3D;y^{(n)}&#x3D;-a_nx_1-a</em>{n-1}x_2-\cdots -a_1x_n+u\end{matrix}\right.$$</p>
+<p>输出方程为：$y&#x3D;b_mx_1$。</p>
+<p>以矩阵的形式可表示为：</p>
+<p>$$\dot{x}&#x3D;\begin{bmatrix}0&amp;1&amp;\cdots &amp;0\\vdots&amp;\vdots&amp;\ddots&amp;\vdots\0&amp;0&amp;\cdots&amp;1\-a_n&amp;-a_{n-1}&amp;\cdots&amp;-a_1\end{bmatrix}x+\begin{bmatrix}0\0\\vdots\1\end{bmatrix}u    \tag{9}$$</p>
+<p>$$y&#x3D;\begin{bmatrix}1&amp;0&amp;\cdots&amp;0\end{bmatrix}x     \tag{10}$$</p>
+<p>+++primary 能控标准型</p>
+<p>形如公式（9）的状态空间模型称为能控标准型。即$A$与$b$可用以下形式表示：</p>
+<p>$$A&#x3D;\begin{bmatrix}0&amp;1&amp;\cdots &amp;0\\vdots&amp;\vdots&amp;\ddots&amp;\vdots\0&amp;0&amp;\cdots&amp;1\-a_n&amp;-a_{n-1}&amp;\cdots&amp;-a_1\end{bmatrix},\quad b&#x3D;\begin{bmatrix}0\0\\vdots\1\end{bmatrix}$$</p>
+<p>+++</p>
+<p>+++info 例题</p>
+<p>;;;id3 例题1</p>
+<p>:::info no-icon</p>
+<p>设系统的运动方程为：$y^{(3)}+5\ddot{y}+8\dot{y}+6y&#x3D;3u$，试求其状态空间表达式。</p>
+<p>:::</p>
+<p>选取状态变量$x_1&#x3D;y,\quad x_2&#x3D;\dot{y},\quad x_3&#x3D;\ddot{y}$，则有状态方程：</p>
+<p>$$\left{ \begin{matrix} \dot{x}_1&#x3D;x_2\\dot{x}_2&#x3D;x_3\\dot{x}_3&#x3D;y^{(3)}&#x3D;-6x_1-8x_2 -5x_3+3u\end{matrix}\right.$$</p>
+<p>输出方程为$y&#x3D;x_1$。</p>
+<p>故状态空间表达式为：</p>
+<p>$$\dot{x}&#x3D;\begin{bmatrix}0&amp;1 &amp;0\0&amp;0&amp;1\-6&amp;-8&amp;-5\end{bmatrix}x+\begin{bmatrix}0\0\3\end{bmatrix}u $$</p>
+<p>$$y&#x3D;\begin{bmatrix}1&amp;0&amp;0\end{bmatrix}x$$</p>
+<p>;;;</p>
+<p>+++</p>
+<h4 id="常微分方程中含有输入函数的导数"><a href="#常微分方程中含有输入函数的导数" class="headerlink" title="常微分方程中含有输入函数的导数"></a>常微分方程中含有输入函数的导数</h4><p>若常微分方程中含有输入函数的导数，即：$y^{(n)}+a_1y^{(n-1)}+\cdots +a_{n-1}\dot{y}+a_ny&#x3D;b_0u^{(m)}+b_1u^{(m-1)}+\cdots +b_{m-1}\dot{u}+b_mu$。</p>
+<p>选择状态变量：</p>
+<p>$$\left{ \begin{matrix} x_1&#x3D;y-\beta_0u\x_2&#x3D;\dot{x}<em>1-\beta_1u&#x3D;\dot{y}-\beta_0\dot{u}-\beta_1u\x_3&#x3D;\dot{x}<em>2-\beta_2u&#x3D;\ddot{y}-\beta_0\ddot{u}-\beta_1\dot{u}-\beta_2u\\vdots\x_n&#x3D;\dot{x}</em>{n-1}-\beta</em>{n-1}u&#x3D;y^{(n)}-\beta_0u^{(n-1)}-\beta_1u^{(n-2)}-\cdots -\beta_{n-2}\dot{u}-\beta_{n-1}u\end{matrix}\right.   \tag{11}$$</p>
+<p>其中参数$\beta_0,\beta_1,\cdots,\beta_n$由下式决定：</p>
+<p>$$\begin{bmatrix}\beta_0\\beta_1\\beta_2\\vdots\\beta_n\end{bmatrix}&#x3D;\begin{bmatrix}1&amp;0&amp;\cdots&amp;0&amp;0\a_1&amp;1&amp;\cdots&amp;0&amp;0\\vdots&amp;\vdots&amp;\ddots&amp;\vdots&amp;\vdots\a_{n-1}&amp;a_{n-2}&amp;\cdots&amp;1&amp;0\a_n&amp;a_{n-1}&amp;\cdots&amp;a_1&amp;1\end{bmatrix}\begin{bmatrix}b_0\b_1\b_2\\vdots\b_n\end{bmatrix}    \tag{12}$$</p>
+<p>由（11）可得到状态方程：$\left{ \begin{matrix} \dot{x}<em>1&#x3D;x_2+\beta_1u\\dot{x}<em>2&#x3D;x_3+\beta_2u\\vdots\\dot{x}</em>{n-1}&#x3D;x_n+\beta</em>{n-1}u\\begin{aligned}\dot{x}<em>n&amp;&#x3D;y^{(n)}-\beta_0u^{(u)}-\beta_1u^{(n-1)}-\cdots -\beta</em>{n-2}\ddot{u}-\beta_{n-1}\dot{u}\&amp;&#x3D;-a_nx_1-a_{n-1}x_2-\cdots -a_1x_n+\beta_nu\end{aligned} \end{matrix}\right.$。</p>
+<p>+++info 最后一个等式怎么化简得到的？</p>
+<p>+++</p>
+<p>因此，状态空间表达式为：</p>
+<p>$$\dot{x}&#x3D;\begin{bmatrix}0&amp;1&amp;0&amp;\cdots&amp;0\0&amp;0&amp;1&amp;\cdots&amp;0\\vdots&amp;\vdots&amp;\vdots&amp;\ddots&amp;\vdots\0&amp;0&amp;0&amp;\cdots&amp;1\-a_n&amp;-a_{n-1}&amp;-a_{n-2}&amp;\cdots&amp;-a_1\end{bmatrix}x+\begin{bmatrix}\beta_0\\beta_1\\vdots\\beta_{n-1}\\beta_n\end{bmatrix}u   \tag{13}$$</p>
+<p>$$y&#x3D;[1\quad 0\quad \cdots\quad 0 ]x+\beta_0u$$</p>
+<h3 id="通过传递函数建立状态空间描述"><a href="#通过传递函数建立状态空间描述" class="headerlink" title="通过传递函数建立状态空间描述"></a>通过传递函数建立状态空间描述</h3><p>后续的方法我们讨论的传递函数的分子多项式次数均小于分母多项式次数。因为对于实际系统，分子多项式次数总是小于或等于分母多项式次数，在次数相等时可以通过化简的方法转化为分子多项式次数小于分母多项式次数。</p>
+<p>+++primary 推导</p>
+<p>若传递函数的分子多项式次数等于分母多项式次数，即</p>
+<p>$$g(s)&#x3D;\frac{b_0s^m+b_1s^{m-1}+\cdots +b_{m-1}s+b_m}{s^n+a_1s^{n-1}+\cdots +a_{n-1}s+a_n},m&#x3D;n$$</p>
+<p>它总是可以化简为：</p>
+<p>$$g(s)&#x3D;\frac{b_1s^{m-1}+\cdots +b_{m-1}s+b_m}{s^n+a_1s^{n-1}+\cdots +a_{n-1}s+a_n}&#x3D;\overline{g}(s)+b_0,m&#x3D;n$$</p>
+<p>其中 $\overline{g}(s)$ 为分子多项式次数小于分母多项式次数的传递函数，$b_0$ 为常数，整体视为两者的并联结构。</p>
+<p>+++</p>
+<h4 id="直接分解法"><a href="#直接分解法" class="headerlink" title="直接分解法"></a>直接分解法</h4><p>对于$n$阶传递函数：$g(s)&#x3D;\frac{Y(s)}{U(s)}&#x3D;\frac{b_1s^{n-1}+\cdots +b_{n-1}s+b_n}{s^n+a_1s^{n-1}+\cdots +a_{n-1}s+a_n}$。</p>
+<p>同时除以$s^n$有：$Y(s)&#x3D;U(s)\frac{b_1s^{-1}+\cdots +b_{n-1}s^{-(n-1)}+b_ns^{-n}}{1+a_1s^{-1}+\cdots +a_{n-1}s^{-(n-1)}+a_ns^{-n}}$。</p>
+<p>令中间变量$E(s)&#x3D;U(s)\frac{1}{1+a_1s^{-1}+\cdots +a_{n-1}s^{-(n-1)}+a_ns^{-n}}$，即$E(s)&#x3D;U(s)-a_1s^{-1}E(s)-\cdots -a_{n-1}s^{-(n-1)}E(s)-a_ns^{-n}E(s)$。</p>
+<p>则输入$U(s)$、中间变量$E(s)$和输出$Y(s)$的关系流程图如下：</p>
+
+
+<p>则$Y(s)&#x3D;b_1s^{-1}E(s)+b_2s^{-2}E(s)+\cdots +b_{n-1}s^{-(n-1)}E(s)+b_ns^{-n}E(s)$。</p>
+<p>令$x_n,x_{n-1},\cdots,x_1$为$s^{-1}E(s),s^{-2}E(s),\cdots,s^{-n}E(s)$的拉氏逆变换，那么就可以绘制状态变量图并得到系统的状态空间表达式（能控标准型）。</p>
+
+
+<p>$$\dot{x}&#x3D;\begin{bmatrix}0&amp;1&amp;\cdots&amp;0\\vdots&amp;\vdots&amp;\ddots&amp;\vdots\0&amp;0&amp;\cdots&amp;1\-a_n&amp;-a_{n-1}&amp;\cdots&amp;-a_1\end{bmatrix}x+\begin{bmatrix}0\\vdots\0\1\end{bmatrix}u   \tag{14}$$</p>
+<p>$$y&#x3D;[b_n\quad b_{n-1}\quad \cdots\quad b_1 ]x$$</p>
+<p>+++info 补充</p>
+<p>如果该$n$阶系统传递函数的分子多项式次数等于分母多项式次数（在<a href="#%E9%80%9A%E8%BF%87%E4%BC%A0%E9%80%92%E5%87%BD%E6%95%B0%E5%BB%BA%E7%AB%8B%E7%8A%B6%E6%80%81%E7%A9%BA%E9%97%B4%E6%8F%8F%E8%BF%B0">通过传递函数建立状态空间描述</a>中讨论过该情况）即 $g(s)&#x3D;\frac{b_1s^{m-1}+\cdots +b_{m-1}s+b_m}{s^n+a_1s^{n-1}+\cdots +a_{n-1}s+a_n}&#x3D;\overline{g}(s)+b_0,m&#x3D;n$，那么先算出 $\overline{g}(s)$ 后在输入到输出之间直接连接一个比例环节即可。</p>
+<p>+++</p>
+<h4 id="串联分解法"><a href="#串联分解法" class="headerlink" title="串联分解法"></a>串联分解法</h4><p>该方法适用于传递函数可分解为因式相乘的形式，即$g(s)&#x3D;\frac{b_1(s-z_1)(s-z_2)\cdots(s-z_{n-1})}{(s-p_1)(s-p_2)\dots(s-p_n)}$。</p>
+<p>以一个三阶系统进行说明：$g(s)&#x3D;\frac{b_1(s-z_1)(s-z_2)}{(s-p_1)(s-p_2)(s-p_3)}$。</p>
+<p>上式中可分为两种：$\frac{1}{s-p}&#x3D;\frac{\frac{1}{s}}{1-\frac{1}{s}p}$，$\frac{s-z}{s-p}&#x3D;1+\frac{p-z}{s-p}&#x3D;1+(p-z)\frac{\frac{1}{s}}{1-\frac{1}{s}p}$。</p>
+<p>因此系统可视为三个一阶系统串联而成，结构图如下：</p>
+
+
+<p>取每个积分器的输出为状态变量，那么可以得到状态空间表达式如下：</p>
+<p>$$\left{ \begin{matrix} \dot{x}_1&#x3D;p_1x_1+b_1u\\dot{x}_2&#x3D;x_1+p_2x_2\\dot{x}_3&#x3D;x_1+(p_2-z_2)x_2+p_3x_3\y&#x3D;x_1+(p_2-z_2)x_2+(p_3-z_3)x_3\end{matrix}\right.$$</p>
+<p>写成向量的形式为：</p>
+<p>$$\dot{x}&#x3D;\begin{bmatrix}p_1&amp;0&amp;0\1&amp;p_2&amp;0\1&amp;p_2-z_2&amp;p_3\end{bmatrix}x+\begin{bmatrix}b_1\0\0\end{bmatrix}u   \tag{15}$$</p>
+<p>$$y&#x3D;[1\quad p_2-z_2\quad \quad p_3-z_3 ]x$$</p>
+<h4 id="并联分解法"><a href="#并联分解法" class="headerlink" title="并联分解法"></a>并联分解法</h4><ol>
+<li>若传递函数的极点两两相异。</li>
+</ol>
+<p>传递函数极点两两相异，则$g(s)&#x3D;\frac{N(s)}{(s-p_1)(s-p_2)\dots(s-p_n)}&#x3D;\frac{c_1}{s-p_1}+\frac{c_2}{s-p_2}+\cdots+\frac{c_n}{s-p_n}$，其中$c_i&#x3D;\lim_{s\to p_i}(s-p_i)g(s)$。</p>
+<p>选取状态变量 $x_i(s)&#x3D;\frac{1}{s-p_i}U(s)$，即 $sx_i(s)&#x3D;p_ix_i(s)+u(s)$，做拉氏逆变换有：</p>
+<p>$$\dot{x}_i(t)&#x3D;p_ix_i(t)+u(t)$$</p>
+<p>输出 $y(s)&#x3D;g(s)u(s)&#x3D;\sum_{i&#x3D;1}^n\frac{c_i}{s-p_i}u_i(s)&#x3D;\sum_{i&#x3D;1}^nc_ix_i(s)$，做拉氏逆变换有：</p>
+<p>$$y(t)&#x3D;\sum_{i&#x3D;1}^nc_ix_i(t)$$</p>
+<p>写成向量的形式为：</p>
+<p>$$\dot{x}&#x3D;\begin{bmatrix}p_1&amp;0&amp;\cdots&amp;0\0&amp;p_2&amp;\cdots&amp;0\\vdots&amp;\vdots&amp;\ddots&amp;0\0&amp;0&amp;\cdots&amp;p_n\end{bmatrix}x+\begin{bmatrix}1\1\\vdots\1\end{bmatrix}u   \tag{16}$$</p>
+<p>$$y&#x3D;[c_1\quad c_2\quad\cdots \quad c_n]x$$</p>
+<p>+++info 上式为对角标准型</p>
+<p>对于系统 $\left{ \begin{matrix} \dot{x}&#x3D;Ax+Bu\y&#x3D;Cx\\end{matrix}\right.$ ，若$A$为对角阵且各元素为传递函数的极点，$B$为全1矩阵，$C$内各元素为对应极点的留数，那么称该矩阵表达式为对角标准型。</p>
+<p>+++</p>
+<ol start="2">
+<li>若传递函数具有重极点。</li>
+</ol>
+<p>先考虑只有一个重极点和若干个单极点，重数为$r$，$g(s)&#x3D;\frac{c_{11}}{(s-p_1)^{r}}+\frac{c_{12}}{(s-p_1)^{r-1}}+\cdots+\frac{c_{1r}}{(s-p_1)^{}}+\frac{c_{r+1}}{s-p_{r+1}}+\cdots+\frac{c_n}{s-p_n}$，其中对于单极点仍有：$c_i&#x3D;\lim_{s\to p_i}(s-p_i)g(s)$，而对于重极点则有：$c_1j&#x3D;\frac{1}{(j-1)!}\lim_{s\to p_1}\frac{d^{j-1}}{ds^{j-1}}[(s-p_1)g(s)],\quad j&#x3D;1,2,\cdots,r$。</p>
+<p>选取状态变量，化简求拉氏逆变换得到状态方程：</p>
+<p>$$\begin{matrix}\left{ \begin{matrix} x_1(s)&#x3D;\frac{U(s)}{(s-p_1)^{r}}\x_2(s)&#x3D;\frac{U(s)}{(s-p_1)^{r-1}}\\vdots\x_r(s)&#x3D;\frac{U(s)}{(s-p_1)}\x_{r+1}(s)&#x3D;\frac{U(s)}{s-p_{r+1}}\\vdots\x_{1}(s)&#x3D;\frac{U(s)}{s-p_{n}}\end{matrix}\right.\quad\stackrel{}{\Rightarrow}\quad\left{ \begin{matrix} x_1(s)&#x3D;\frac{1}{s-p_1}x_2(s)\x_2(s)&#x3D;\frac{1}{s-p_1}x_3(s)\\vdots\x_r(s)&#x3D;\frac{1}{s-p_1}U(s)\x_{r+1}(s)&#x3D;\frac{1}{s-p_{r+1}}U(s)\\vdots\x_n(s)&#x3D;\frac{1}{s-p_n}U(s)\end{matrix}\right.\quad\stackrel{L^{-1}}{\Rightarrow}\quad \left{ \begin{matrix} \dot{x}<em>1(t)&#x3D;p_1x_1+x_2\\dot{x}<em>2(t)&#x3D;p_1x_2+x_3\\vdots\\dot{x}<em>r(t)&#x3D;p_1x_r+u\\dot{x}</em>{r+1}(t)&#x3D;p</em>{r+1}x</em>{x+1}+u\\vdots\\dot{x}_n(t)&#x3D;p_nx_n+u\end{matrix}\right.     \end{matrix}$$</p>
+<p>输出方程的拉氏变换为：</p>
+<p>$$Y(s)&#x3D;c_{11}x_1(s)+c_{12}x_2(s)+\cdots+c_{1r}x_r(s)+c_{r+1}x_{r+1}(s)+\cdots+c_{nx_n(s)}$$</p>
+<p>求拉氏逆变换有：</p>
+<p>$$y(t)&#x3D;c_{11}x_1(t)+c_{12}x_2(t)+\cdots+c_{1r}x_r(t)+c_{r+1}x_{r+1}(t)+\cdots+c_{nx_n(t)}$$</p>
+<p>得到状态空间表达式为：</p>
+<p>$$\begin{bmatrix}\dot{x_1}\\dot{x_2}\\vdots\\dot{x_r}\\dot{x_{r+1}}\\vdots\\dot{x_n}\end{bmatrix}&#x3D;\begin{bmatrix}p_1&amp;1&amp;&amp;&amp;&amp;&amp;\&amp;p_1&amp;\ddots&amp;&amp;&amp;\bold{0}&amp;\&amp;&amp;\ddots&amp;1\&amp;&amp;&amp;p_1\&amp;&amp;&amp;&amp;p_{r+1}&amp;&amp;\&amp;\bold{0}&amp;&amp;&amp;&amp;\ddots&amp;\&amp;&amp;&amp;&amp;&amp;&amp;p_n\end{bmatrix}\begin{bmatrix}x_1\x_2\\vdots\x_r\x_{r+1}\\vdots\x_n\end{bmatrix}+\begin{bmatrix}0\0\\vdots\1\1\\vdots\1\end{bmatrix}u   \tag{17}$$</p>
+<p>$$y&#x3D;\begin{bmatrix}c_{11}&amp; c_{12}&amp;\cdots&amp; c_{1r}&amp;c_{r+1}&amp;\cdots&amp;c_{n}\end{bmatrix}\begin{bmatrix}x_1\x_2\\vdots\x_r\x_{r+1}\\vdots\x_n\end{bmatrix}$$</p>
+<p>对于重根部分，矩阵$A$中对应的是若尔当块，$B$中为一个只有末行是1其余行为0的矩阵，$C$中对应元素为$r$重极点对应的留数。而对于其中的单极点部分，形式与<a href="#%E5%B9%B6%E8%81%94%E5%88%86%E8%A7%A3%E6%B3%95">无重根</a>时一致。</p>
+<p>拓展到具有多个重极点的情况。矩阵$A$中在对角上补充对应的若尔当块，$B$中对应补充只有末行是1其余行为0的矩阵，$C$中补充对应元素为$r$重极点对应的留数。</p>
+<h2 id="组合系统"><a href="#组合系统" class="headerlink" title="组合系统"></a>组合系统</h2><h3 id="并联联结"><a href="#并联联结" class="headerlink" title="并联联结"></a>并联联结</h3><p>在$n$个子系统并联的并联系统中，组合系统的传递函数矩阵等于子系统传递函数矩阵的和。</p>
+<p>$$G(s)&#x3D;G_1(s)+G_2(s)+\cdots+G_n(s)   \tag{18}$$</p>
+<h3 id="串联联结"><a href="#串联联结" class="headerlink" title="串联联结"></a>串联联结</h3><p>在$n$个子系统串联的串联系统中，组合系统的传递函数矩阵等于子系统传递函数矩阵的积。</p>
+<p>$$G(s)&#x3D;G_n(s)\cdots G_2(s)G_1(s)   \tag{19}$$</p>
+<p>:::info </p>
+<p>注：子系统传递函数矩阵的积遵循左乘原则。</p>
+<p>:::</p>
+<h3 id="反馈联结"><a href="#反馈联结" class="headerlink" title="反馈联结"></a>反馈联结</h3><p>对于系统 $G_1(s)$，若添加反馈环节（动态反馈$G_2(s)$或常数反馈$H$），则可得到组合系统的传递函数矩阵：</p>
+<ol>
+<li><strong>动态反馈</strong> 反馈子系统为动态系统$G_2(s)$。</li>
+</ol>
+<p>组合系统的传递函数矩阵为：</p>
+<p>$$G(s)&#x3D;[I+G_2(s)G_1(s)]^{-1}G_1(s)   \tag{20}$$</p>
+<ol start="2">
+<li><strong>常数反馈</strong>  反馈环节为常数矩阵$H$。</li>
+</ol>
+<p>组合系统的传递函数矩阵为：</p>
+<p>$$G(s)&#x3D;[I+HG_1(s)]^{-1}G_1(s)   \tag{21}$$</p>
+<h2 id="线性变换"><a href="#线性变换" class="headerlink" title="线性变换"></a>线性变换</h2><h3 id="系统状态的线性变换"><a href="#系统状态的线性变换" class="headerlink" title="系统状态的线性变换"></a>系统状态的线性变换</h3><p>对于一个状态方程$\left{ \begin{matrix} \dot{x}&#x3D;Ax+Bu\y&#x3D;Cx+Du\\end{matrix}\right.$，选择非奇异矩阵$P\in R^{n\times n}$作为变换阵，有$x&#x3D;P\overline{x}$，那么此时状态方程可表示为：</p>
+<p>$$\dot{\overline{x}}&#x3D;P^{-1}\dot{x}&#x3D;P^{-1}[Ax+Bu]&#x3D;P^{-1}AP\overline{x}+P^{-1}Bu&#x3D;\overline{A}\overline{x}+\overline{B}u   \tag{22}$$</p>
+<p>$$y&#x3D;Cx&#x3D;CP\overline{x}&#x3D;\overline{C}\overline{x}    \tag{23}$$</p>
+<p>其中，$\overline{A}&#x3D;P^{-1}AP,\overline{B}&#x3D;P^{-1}B,\overline{C}&#x3D;CP,\overline{D}&#x3D;D$。</p>
+<p>:::info</p>
+<p>该方法通常用于将非对角阵$A$转化为对角阵$\overline{A}$，从而实现状态变量的解耦。</p>
+<p>:::</p>
+<p>:::danger no-icon</p>
+<p>线性定常系统的系统矩阵A的特征值是表征系统的动力学特性的重要参量。系统的状态方程可通过适当的线性非奇异变换化为由特征值表征的标准形，对分析系统的结构特性非常直观。 </p>
+<ol>
+<li>特征值互异时，标准形为对角阵。</li>
+<li>特征值非互异时，标准形一般为约当阵。</li>
+</ol>
+<p>:::</p>
+<h3 id="状态方程转化为对角标准型"><a href="#状态方程转化为对角标准型" class="headerlink" title="状态方程转化为对角标准型"></a>状态方程转化为对角标准型</h3><h3 id="状态方程转化为若尔当标准型"><a href="#状态方程转化为若尔当标准型" class="headerlink" title="状态方程转化为若尔当标准型"></a>状态方程转化为若尔当标准型</h3><h3 id="状态变换后特征值及传递函数矩阵的不变形"><a href="#状态变换后特征值及传递函数矩阵的不变形" class="headerlink" title="状态变换后特征值及传递函数矩阵的不变形"></a>状态变换后特征值及传递函数矩阵的不变形</h3>
+      <div class="tags">
+          <a href="/tags/%E7%9F%A9%E9%98%B5/" rel="tag"><i class="ic i-tag"></i> 矩阵</a>
+          <a href="/tags/%E7%9B%B8%E4%BC%BC%E5%8F%98%E6%8D%A2/" rel="tag"><i class="ic i-tag"></i> 相似变换</a>
+      </div>
+  </div>
+
+   <footer>
+
+    <div class="meta">
+  <span class="item">
+    <span class="icon">
+      <i class="ic i-calendar-check"></i>
+    </span>
+    <span class="text">更新于</span>
+    <time title="修改时间：2024-09-21 13:58:30" itemprop="dateModified" datetime="2024-09-21T13:58:30+08:00">2024-09-21</time>
+  </span>
+  <span id="2024/09/21/2024-09-21-矩阵的相似变换/" class="item leancloud_visitors" data-flag-title="01 矩阵的相似变换" title="阅读次数">
+      <span class="icon">
+        <i class="ic i-eye"></i>
+      </span>
+      <span class="text">阅读次数</span>
+      <span class="leancloud-visitors-count"></span>
+      <span class="text">次</span>
+  </span>
+</div>
+
+      
+
+
+
+
+
+  </footer>
+
+</article>
+
+  </div>
+  
+
+<div class="post-nav">
+    <div class="item left">
+      
+
+  <a href="/2023/12/21/2023-12-21-%E7%8A%B6%E6%80%81%E5%8F%8D%E9%A6%88%E5%92%8C%E7%8A%B6%E6%80%81%E8%A7%82%E6%B5%8B%E5%99%A8/" itemprop="url" rel="prev" data-background-image="https:&#x2F;&#x2F;s1.imagehub.cc&#x2F;images&#x2F;2023&#x2F;11&#x2F;16&#x2F;dcf1a78731e17da8ed98f1c2a632ba9d.png" title="06 状态反馈和状态观测器">
+  <span class="type">上一篇</span>
+  <span class="category"><i class="ic i-flag"></i> 现代控制理论</span>
+  <h3>06 状态反馈和状态观测器</h3>
+  </a>
+
+    </div>
+    <div class="item right">
+      
+
+  <a href="/2024/12/01/2024-12-01_Life%20prediction%20model%20for%20lithium-ion%20battery%20via%20a%203D%20convolutional%20network%20enhanced%20by%20channel%20attention%20considering%20charging%20and%20discharging%20process/" itemprop="url" rel="next" data-background-image="https:&#x2F;&#x2F;s1.imagehub.cc&#x2F;images&#x2F;2023&#x2F;11&#x2F;16&#x2F;cda9116bffa367e060ec77f46623d241.jpeg" title="Life prediction model for lithium-ion battery via a 3D convolutional network enhanced by channel attention considering charging and discharging process">
+  <span class="type">下一篇</span>
+  <span class="category"><i class="ic i-flag"></i> 论文文献阅读</span>
+  <h3>Life prediction model for lithium-ion battery via a 3D convolutional network enhanced by channel attention considering charging and discharging process</h3>
+  </a>
+
+    </div>
+</div>
+
+  
+  <div class="wrap" id="comments"></div>
+
+
+        </div>
+        <div id="sidebar">
+          
+
+<div class="inner">
+
+  <div class="panels">
+    <div class="inner">
+      <div class="contents panel pjax" data-title="文章目录">
+          <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%8E%A7%E5%88%B6%E7%B3%BB%E7%BB%9F%E7%9A%84%E7%8A%B6%E6%80%81%E7%A9%BA%E9%97%B4%E6%8F%8F%E8%BF%B0"><span class="toc-number">1.</span> <span class="toc-text">控制系统的状态空间描述</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5"><span class="toc-number">1.1.</span> <span class="toc-text">基本概念</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%B3%BB%E7%BB%9F%E7%9A%84%E7%8A%B6%E6%80%81%E7%A9%BA%E9%97%B4%E6%A8%A1%E5%9E%8B"><span class="toc-number">1.1.1.</span> <span class="toc-text">系统的状态空间模型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%8A%B6%E6%80%81%E7%A9%BA%E9%97%B4%E6%8F%8F%E8%BF%B0%E7%9A%84%E7%89%B9%E7%82%B9"><span class="toc-number">1.1.2.</span> <span class="toc-text">状态空间描述的特点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%8A%B6%E6%80%81%E7%A9%BA%E9%97%B4%E6%A8%A1%E5%9E%8B%E7%9A%84%E5%BB%BA%E7%AB%8B%E6%AD%A5%E9%AA%A4"><span class="toc-number">1.1.3.</span> <span class="toc-text">状态空间模型的建立步骤</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%8A%B6%E6%80%81%E7%A9%BA%E9%97%B4%E8%A1%A8%E8%BE%BE%E5%BC%8F%E7%9A%84%E7%B3%BB%E7%BB%9F%E6%96%B9%E6%A1%86%E5%9B%BE"><span class="toc-number">1.1.4.</span> <span class="toc-text">状态空间表达式的系统方框图</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%8A%B6%E6%80%81%E7%A9%BA%E9%97%B4%E8%A1%A8%E8%BE%BE%E5%BC%8F%E7%9A%84%E7%8A%B6%E6%80%81%E5%8F%98%E9%87%8F%E5%9B%BE"><span class="toc-number">1.1.5.</span> <span class="toc-text">状态空间表达式的状态变量图</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BC%A0%E9%80%92%E5%87%BD%E6%95%B0%E5%92%8C%E4%BC%A0%E9%80%92%E5%87%BD%E6%95%B0%E7%9F%A9%E9%98%B5"><span class="toc-number">1.2.</span> <span class="toc-text">传递函数和传递函数矩阵</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8D%95%E8%BE%93%E5%85%A5%E5%8D%95%E8%BE%93%E5%87%BA%E7%B3%BB%E7%BB%9F"><span class="toc-number">1.2.1.</span> <span class="toc-text">单输入单输出系统</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A4%9A%E8%BE%93%E5%85%A5%E5%A4%9A%E8%BE%93%E5%87%BA%E7%B3%BB%E7%BB%9F"><span class="toc-number">1.2.2.</span> <span class="toc-text">多输入多输出系统</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BB%BA%E7%AB%8B%E7%8A%B6%E6%80%81%E7%A9%BA%E9%97%B4%E8%A1%A8%E8%BE%BE%E5%BC%8F"><span class="toc-number">1.3.</span> <span class="toc-text">建立状态空间表达式</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%AB%98%E9%98%B6%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B%E5%8C%96%E4%B8%BA%E7%8A%B6%E6%80%81%E7%A9%BA%E9%97%B4%E6%8F%8F%E8%BF%B0"><span class="toc-number">1.3.1.</span> <span class="toc-text">高阶微分方程化为状态空间描述</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B8%B8%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B%E4%B8%AD%E4%B8%8D%E5%90%AB%E8%BE%93%E5%85%A5%E5%87%BD%E6%95%B0%E7%9A%84%E5%AF%BC%E6%95%B0"><span class="toc-number">1.3.1.1.</span> <span class="toc-text">常微分方程中不含输入函数的导数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B8%B8%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B%E4%B8%AD%E5%90%AB%E6%9C%89%E8%BE%93%E5%85%A5%E5%87%BD%E6%95%B0%E7%9A%84%E5%AF%BC%E6%95%B0"><span class="toc-number">1.3.1.2.</span> <span class="toc-text">常微分方程中含有输入函数的导数</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%80%9A%E8%BF%87%E4%BC%A0%E9%80%92%E5%87%BD%E6%95%B0%E5%BB%BA%E7%AB%8B%E7%8A%B6%E6%80%81%E7%A9%BA%E9%97%B4%E6%8F%8F%E8%BF%B0"><span class="toc-number">1.3.2.</span> <span class="toc-text">通过传递函数建立状态空间描述</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%9B%B4%E6%8E%A5%E5%88%86%E8%A7%A3%E6%B3%95"><span class="toc-number">1.3.2.1.</span> <span class="toc-text">直接分解法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%B2%E8%81%94%E5%88%86%E8%A7%A3%E6%B3%95"><span class="toc-number">1.3.2.2.</span> <span class="toc-text">串联分解法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B9%B6%E8%81%94%E5%88%86%E8%A7%A3%E6%B3%95"><span class="toc-number">1.3.2.3.</span> <span class="toc-text">并联分解法</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BB%84%E5%90%88%E7%B3%BB%E7%BB%9F"><span class="toc-number">1.4.</span> <span class="toc-text">组合系统</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B9%B6%E8%81%94%E8%81%94%E7%BB%93"><span class="toc-number">1.4.1.</span> <span class="toc-text">并联联结</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%B2%E8%81%94%E8%81%94%E7%BB%93"><span class="toc-number">1.4.2.</span> <span class="toc-text">串联联结</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%8D%E9%A6%88%E8%81%94%E7%BB%93"><span class="toc-number">1.4.3.</span> <span class="toc-text">反馈联结</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BA%BF%E6%80%A7%E5%8F%98%E6%8D%A2"><span class="toc-number">1.5.</span> <span class="toc-text">线性变换</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%B3%BB%E7%BB%9F%E7%8A%B6%E6%80%81%E7%9A%84%E7%BA%BF%E6%80%A7%E5%8F%98%E6%8D%A2"><span class="toc-number">1.5.1.</span> <span class="toc-text">系统状态的线性变换</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%8A%B6%E6%80%81%E6%96%B9%E7%A8%8B%E8%BD%AC%E5%8C%96%E4%B8%BA%E5%AF%B9%E8%A7%92%E6%A0%87%E5%87%86%E5%9E%8B"><span class="toc-number">1.5.2.</span> <span class="toc-text">状态方程转化为对角标准型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%8A%B6%E6%80%81%E6%96%B9%E7%A8%8B%E8%BD%AC%E5%8C%96%E4%B8%BA%E8%8B%A5%E5%B0%94%E5%BD%93%E6%A0%87%E5%87%86%E5%9E%8B"><span class="toc-number">1.5.3.</span> <span class="toc-text">状态方程转化为若尔当标准型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%8A%B6%E6%80%81%E5%8F%98%E6%8D%A2%E5%90%8E%E7%89%B9%E5%BE%81%E5%80%BC%E5%8F%8A%E4%BC%A0%E9%80%92%E5%87%BD%E6%95%B0%E7%9F%A9%E9%98%B5%E7%9A%84%E4%B8%8D%E5%8F%98%E5%BD%A2"><span class="toc-number">1.5.4.</span> <span class="toc-text">状态变换后特征值及传递函数矩阵的不变形</span></a></li></ol></li></ol></li></ol>
+      </div>
+      <div class="related panel pjax" data-title="系列文章">
+        <ul>
+          <li class="active"><a href="/2024/09/21/2024-09-21-%E7%9F%A9%E9%98%B5%E7%9A%84%E7%9B%B8%E4%BC%BC%E5%8F%98%E6%8D%A2/" rel="bookmark" title="01 矩阵的相似变换">01 矩阵的相似变换</a></li>
+        </ul>
+      </div>
+      <div class="overview panel" data-title="站点概览">
+        <div class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <img class="image" itemprop="image" alt="Hening"
+      data-src="/images/avatar.jpg">
+  <p class="name" itemprop="name">Hening</p>
+  <div class="description" itemprop="description">终有弱水替沧海 再无相思寄巫山</div>
+</div>
+
+<nav class="state">
+    <div class="item posts">
+      <a href="/archives/">
+        <span class="count">17</span>
+        <span class="name">文章</span>
+      </a>
+    </div>
+    <div class="item categories">
+      <a href="/categories/">
+        <span class="count">10</span>
+        <span class="name">分类</span>
+      </a>
+    </div>
+    <div class="item tags">
+      <a href="/tags/">
+        <span class="count">10</span>
+        <span class="name">标签</span>
+      </a>
+    </div>
+</nav>
+
+<div class="social">
+      <span class="exturl item github" data-url="aHR0cHM6Ly9naXRodWIuY29tL0hueTEyMTY=" title="https:&#x2F;&#x2F;github.com&#x2F;Hny1216"><i class="ic i-github"></i></span>
+      <span class="exturl item email" data-url="bWFpbHRvOmhlbmluZzI1QG1haWwyLnN5c3UuZWR1LmNu" title="mailto:hening25@mail2.sysu.edu.cn"><i class="ic i-envelope"></i></span>
+</div>
+
+<ul class="menu">
+  
+    
+  <li class="item">
+    <a href="/" rel="section"><i class="ic i-home"></i>首页</a>
+  </li>
+
+    
+  <li class="item">
+    <a href="/about/" rel="section"><i class="ic i-user"></i>关于</a>
+  </li>
+
+        
+  <li class="item dropdown">
+      <a href="javascript:void(0);"><i class="ic i-feather"></i>文章</a>
+    <ul class="submenu">
+
+        
+  <li class="item">
+    <a href="/archives/" rel="section"><i class="ic i-list-alt"></i>归档</a>
+  </li>
+
+        
+  <li class="item">
+    <a href="/categories/" rel="section"><i class="ic i-th"></i>分类</a>
+  </li>
+
+        
+  <li class="item">
+    <a href="/tags/" rel="section"><i class="ic i-tags"></i>标签</a>
+  </li>
+
+  </ul>
+    
+  <li class="item">
+    <a href="/amusement/" rel="section"><i class="ic i-magic"></i>摸鱼</a>
+  </li>
+
+    
+  <li class="item">
+    <a href="/logging/" rel="section"><i class="ic i-file"></i>日志</a>
+  </li>
+
+
+</ul>
+
+      </div>
+    </div>
+  </div>
+
+  <ul id="quick">
+    <li class="prev pjax">
+        <a href="/2023/12/21/2023-12-21-%E7%8A%B6%E6%80%81%E5%8F%8D%E9%A6%88%E5%92%8C%E7%8A%B6%E6%80%81%E8%A7%82%E6%B5%8B%E5%99%A8/" rel="prev" title="上一篇"><i class="ic i-chevron-left"></i></a>
+    </li>
+    <li class="up"><i class="ic i-arrow-up"></i></li>
+    <li class="down"><i class="ic i-arrow-down"></i></li>
+    <li class="next pjax">
+        <a href="/2024/12/01/2024-12-01_Life%20prediction%20model%20for%20lithium-ion%20battery%20via%20a%203D%20convolutional%20network%20enhanced%20by%20channel%20attention%20considering%20charging%20and%20discharging%20process/" rel="next" title="下一篇"><i class="ic i-chevron-right"></i></a>
+    </li>
+    <li class="percent"></li>
+  </ul>
+</div>
+
+
+        </div>
+        <div class="dimmer"></div>
+      </div>
+    </main>
+    <footer id="footer">
+      <div class="inner">
+        <div class="widgets">
+          
+
+        </div>
+        <div class="status">
+  <div class="copyright">
+    
+    &copy; 2010 – 
+    <span itemprop="copyrightYear">2025</span>
+    <span class="with-love">
+      <i class="ic i-sakura rotate"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">Hening @ Hening</span>
+  </div>
+  <div class="count">
+    <span class="post-meta-item-icon">
+      <i class="ic i-chart-area"></i>
+    </span>
+    <span title="站点总字数">156k 字</span>
+
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="ic i-coffee"></i>
+    </span>
+    <span title="站点阅读时长">2:22</span>
+  </div>
+  <div class="powered-by">
+    基于 <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> & Theme.<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2FtZWhpbWUvaGV4by10aGVtZS1zaG9rYQ==">Shoka</span>
+  </div>
+</div>
+
+      </div>
+    </footer>
+  </div>
+<script data-config type="text/javascript">
+  var LOCAL = {
+    path: '2024/09/21/2024-09-21-矩阵的相似变换/',
+    favicon: {
+      show: "Hening",
+      hide: "(´Д｀)大変だ！"
+    },
+    search : {
+      placeholder: "文章搜索",
+      empty: "关于 「 ${query} 」，什么也没搜到",
+      stats: "${time} ms 内找到 ${hits} 条结果"
+    },
+    valine: true,copy_tex: true,
+    katex: true,fancybox: true,
+    copyright: '复制成功，转载请遵守 <i class="ic i-creative-commons"></i>BY-NC-SA 协议。',
+    ignores : [
+      function(uri) {
+        return uri.includes('#');
+      },
+      function(uri) {
+        return new RegExp(LOCAL.path+"$").test(uri);
+      }
+    ]
+  };
+</script>
+
+<script src="https://cdn.polyfill.io/v2/polyfill.js"></script>
+
+<script src="//cdn.jsdelivr.net/combine/npm/pace-js@1.0.2/pace.min.js,npm/pjax@0.2.8/pjax.min.js,npm/whatwg-fetch@3.4.0/dist/fetch.umd.min.js,npm/animejs@3.2.0/lib/anime.min.js,npm/algoliasearch@4/dist/algoliasearch-lite.umd.js,npm/instantsearch.js@4/dist/instantsearch.production.min.js,npm/lozad@1/dist/lozad.min.js,npm/quicklink@2/dist/quicklink.umd.js"></script>
+
+<script src="/js/app.js?v=0.2.5"></script>
+
+
+
+
+</body>
+</html>

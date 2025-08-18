@@ -1,0 +1,505 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#FFF">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+
+<link rel="icon" type="image/ico" sizes="32x32" href="/images/favicon.ico">
+  <meta http-equiv="Cache-Control" content="no-transform">
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+<link rel="alternate" type="application/rss+xml" title="Hny" href="http://hening25.gitee.io/rss.xml" />
+<link rel="alternate" type="application/atom+xml" title="Hny" href="http://hening25.gitee.io/atom.xml" />
+<link rel="alternate" type="application/json" title="Hny" href="http://hening25.gitee.io/feed.json" />
+
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Mulish:300,300italic,400,400italic,700,700italic%7CFredericka%20the%20Great:300,300italic,400,400italic,700,700italic%7CNoto%20Serif%20JP:300,300italic,400,400italic,700,700italic%7CNoto%20Serif%20SC:300,300italic,400,400italic,700,700italic%7CInconsolata:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+
+<link rel="stylesheet" href="/css/app.css?v=0.2.5">
+
+  
+  <meta name="keywords" content="java,git,cas" />
+
+
+<link rel="canonical" href="http://hening25.gitee.io/2023/12/21/2023-12-21-%E7%8A%B6%E6%80%81%E5%8F%8D%E9%A6%88%E5%92%8C%E7%8A%B6%E6%80%81%E8%A7%82%E6%B5%8B%E5%99%A8/">
+
+
+
+  <title>
+06 状态反馈和状态观测器 - 现代控制理论 |
+Hening = Hny = 终有弱水替沧海 再无相思寄巫山</title>
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.3.0"></head>
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div id="loading">
+    <div class="cat">
+      <div class="body"></div>
+      <div class="head">
+        <div class="face"></div>
+      </div>
+      <div class="foot">
+        <div class="tummy-end"></div>
+        <div class="bottom"></div>
+        <div class="legs left"></div>
+        <div class="legs right"></div>
+      </div>
+      <div class="paw">
+        <div class="hands left"></div>
+        <div class="hands right"></div>
+      </div>
+    </div>
+  </div>
+  <div id="container">
+    <header id="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="inner">
+        <div id="brand">
+          <div class="pjax">
+          
+  <h1 itemprop="name headline">06 状态反馈和状态观测器
+  </h1>
+  
+<div class="meta">
+  <span class="item" title="创建时间：2023-12-21 00:00:00">
+    <span class="icon">
+      <i class="ic i-calendar"></i>
+    </span>
+    <span class="text">发表于</span>
+    <time itemprop="dateCreated datePublished" datetime="2023-12-21T00:00:00+08:00">2023-12-21</time>
+  </span>
+  <span class="item" title="本文字数">
+    <span class="icon">
+      <i class="ic i-pen"></i>
+    </span>
+    <span class="text">本文字数</span>
+    <span>4.8k</span>
+    <span class="text">字</span>
+  </span>
+  <span class="item" title="阅读时长">
+    <span class="icon">
+      <i class="ic i-clock"></i>
+    </span>
+    <span class="text">阅读时长</span>
+    <span>4 分钟</span>
+  </span>
+</div>
+
+
+          </div>
+        </div>
+        <nav id="nav">
+  <div class="inner">
+    <div class="toggle">
+      <div class="lines" aria-label="切换导航栏">
+        <span class="line"></span>
+        <span class="line"></span>
+        <span class="line"></span>
+      </div>
+    </div>
+    <ul class="menu">
+      <li class="item title"><a href="/" rel="start">Hening</a></li>
+    </ul>
+    <ul class="right">
+      <li class="item theme">
+        <i class="ic i-sun"></i>
+      </li>
+      <li class="item search">
+        <i class="ic i-search"></i>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+      </div>
+      <div id="imgs" class="pjax">
+        <ul>
+          <li class="item" data-background-image="https://s1.imagehub.cc/images/2023/11/16/3eabfecbc99731b66bc1f0c9d7d7705a.jpeg"></li>
+          <li class="item" data-background-image="https://s1.imagehub.cc/images/2023/11/16/ec096dea8315c4068cd0e2aac4ac628f.jpeg"></li>
+          <li class="item" data-background-image="https://s1.imagehub.cc/images/2023/11/16/a94c1ab5035dabcbb45959e3e8c2ce8d.jpeg"></li>
+          <li class="item" data-background-image="https://s1.imagehub.cc/images/2023/11/16/012010a425f462ca2654fdd8a7517fc8.jpeg"></li>
+          <li class="item" data-background-image="https://s1.imagehub.cc/images/2023/11/16/142d2ce10548c990a335b356aaff4ed5.jpeg"></li>
+          <li class="item" data-background-image="https://s1.imagehub.cc/images/2023/11/16/1e4b2f392f23bc88f7627aa5d84d1a4d.jpeg"></li>
+        </ul>
+      </div>
+    </header>
+    <div id="waves">
+      <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+        <defs>
+          <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+        </defs>
+        <g class="parallax">
+          <use xlink:href="#gentle-wave" x="48" y="0" />
+          <use xlink:href="#gentle-wave" x="48" y="3" />
+          <use xlink:href="#gentle-wave" x="48" y="5" />
+          <use xlink:href="#gentle-wave" x="48" y="7" />
+        </g>
+      </svg>
+    </div>
+    <main>
+      <div class="inner">
+        <div id="main" class="pjax">
+          
+  <div class="article wrap">
+    
+<div class="breadcrumb" itemscope itemtype="https://schema.org/BreadcrumbList">
+<i class="ic i-home"></i>
+<span><a href="/">首页</a></span><i class="ic i-angle-right"></i>
+<span  class="current" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="/categories/%E7%8E%B0%E4%BB%A3%E6%8E%A7%E5%88%B6%E7%90%86%E8%AE%BA/" itemprop="item" rel="index" title="分类于 现代控制理论"><span itemprop="name">现代控制理论</span></a>
+<meta itemprop="position" content="1" /></span>
+</div>
+
+    <article itemscope itemtype="http://schema.org/Article" class="post block" lang="zh-CN">
+  <link itemprop="mainEntityOfPage" href="http://hening25.gitee.io/2023/12/21/2023-12-21-%E7%8A%B6%E6%80%81%E5%8F%8D%E9%A6%88%E5%92%8C%E7%8A%B6%E6%80%81%E8%A7%82%E6%B5%8B%E5%99%A8/">
+
+  <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="image" content="/images/avatar.jpg">
+    <meta itemprop="name" content="Hening">
+    <meta itemprop="description" content="终有弱水替沧海 再无相思寄巫山, 终有弱水替沧海 再无相思寄巫山">
+  </span>
+
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="Hny">
+  </span>
+
+  <div class="body md" itemprop="articleBody">
+    
+
+    <p>现代控制理论——06 状态反馈和状态观测器</p>
+<span id="more"></span>
+
+<h1 id="状态反馈和状态观测器"><a href="#状态反馈和状态观测器" class="headerlink" title="状态反馈和状态观测器"></a>状态反馈和状态观测器</h1><h2 id="状态反馈"><a href="#状态反馈" class="headerlink" title="状态反馈"></a>状态反馈</h2><p>状态反馈的公式可表示为：</p>
+<p>$$u&#x3D;Lv-Kx     \tag{1}$$</p>
+<p>定常系统$\left{\begin{aligned}\dot{x}&amp;&#x3D;Ax+Bu\y&amp;&#x3D;Cx\end{aligned}\right.$ 表示为 $\left{\begin{aligned}\dot{x}&amp;&#x3D;(A-BK)x+BLv\y&amp;&#x3D;Cx\end{aligned}\right.$ 。</p>
+<p>:::info no-icon</p>
+<p>引入状态反馈并不影响系统的能控性，但有可能影响系统的能观测性。</p>
+<p>:::</p>
+<h3 id="极点配置定理"><a href="#极点配置定理" class="headerlink" title="极点配置定理"></a>极点配置定理</h3><p>给定系统 $\Sigma:\left{\begin{aligned}\dot{x}&amp;&#x3D;Ax+Bu\y&amp;&#x3D;Cx+Du\end{aligned}\right.$ 通过状态反馈 $u&#x3D;Lv-Kx$ 能使闭环极点位于预先任意指定位置上的充要条件是该系统 $\Sigma$ 完全能控。</p>
+<p>+++info 证明</p>
+<p><strong>充分性</strong>：</p>
+<p><strong>必要性</strong>：</p>
+<p>+++</p>
+<h3 id="单输入系统极点配置算法"><a href="#单输入系统极点配置算法" class="headerlink" title="单输入系统极点配置算法"></a>单输入系统极点配置算法</h3><p>求 $1\times n$ 的实向量 $K$，使得矩阵 $(A-bK)$ 的特征值为给定的复共轭成对出现的 $\lambda_1^<em>,\lambda_2^</em>,\dots,\lambda_n^*$。</p>
+<ol>
+<li><strong>算法1</strong>  适用于系统维数较高，控制矩阵中非零元素较多的情况。</li>
+</ol>
+<p>:::info no-icon</p>
+<p>计算前先判断系统是否完全可控，即判断 $rank(U_c)&#x3D;n$ 。具体原因见<a href="#%E6%9E%81%E7%82%B9%E9%85%8D%E7%BD%AE%E5%AE%9A%E7%90%86">极点配置定理</a></p>
+<p>:::</p>
+<ul>
+<li>求 $A$ 的特征多项式：$a(s)&#x3D;det(sI-A)&#x3D;s^n+a_1s^{n-1}+\dots+a_{n-1}s+a_n$ 。</li>
+<li>求闭环系统的期望特征多项式：$a^<em>(s)&#x3D;(s-\lambda_1^</em>)(s-\lambda_2^<em>)\dots (s-\lambda_n^</em>)&#x3D;s^n+a_1^*s^{n-1}+\dots+a_{n-1}s+a_n$ 。</li>
+<li>计算：$\tilde{K}&#x3D;\begin{bmatrix}a_n^<em>-a_n&amp;a_{n-1}^</em>-a_{n-1}&amp;\dots&amp;a_1^*-a_1\end{bmatrix}$ 。</li>
+<li>计算：$Q&#x3D;\begin{bmatrix}b&amp;Ab&amp;\dots&amp;A^{n-1}b\end{bmatrix}\cdot{}\begin{bmatrix}a_{n-1}&amp;\dots&amp;a_1&amp;1\\vdots&amp;\cdot^{\cdot^{\cdot}}&amp;\cdot^{\cdot^{\cdot}}&amp;\a_1&amp;\cdot^{\cdot^{\cdot}}&amp;0&amp;\1\end{bmatrix}$ 。</li>
+<li>令 $P&#x3D;Q^{-1}$，求 $K&#x3D;\tilde{K}P$ 。</li>
+</ul>
+<p>+++info 例题</p>
+<p>;;;id1 例题1</p>
+<p>:::info no-icon</p>
+<p>给定系统的状态空间表达式 $\dot{x}&#x3D;\begin{bmatrix}0&amp;0&amp;0\1&amp;-1&amp;0\0&amp;1&amp;-1\end{bmatrix}x+\begin{bmatrix}1\0\0\end{bmatrix}u$，求状态反馈矩阵 $K$ 使得反馈后闭环特征值为 $\lambda_1^<em>&#x3D;-2,\lambda_{2,3}^</em>&#x3D;-1\pm j\sqrt{3}$。</p>
+<p>:::</p>
+<p>由于 $rank(U_c)&#x3D;rank(\begin{bmatrix}b&amp;Ab&amp;A^2b\end{bmatrix})&#x3D;rank\begin{bmatrix}1&amp;0&amp;0\0&amp;1&amp;-1\0&amp;0&amp;1\end{bmatrix}&#x3D;3$，故系统完全可控。</p>
+<ul>
+<li>$det({sI-A})&#x3D;det\begin{bmatrix}s&amp;0&amp;0\-1&amp;s+1&amp;0\0&amp;-1&amp;s+1\end{bmatrix}&#x3D;s^3+2s^2+s$，得到 $a_1&#x3D;2,a_2&#x3D;1,a_3&#x3D;0$。</li>
+<li>$(s-\lambda_1^<em>)(s-\lambda_2^</em>)(s-\lambda_3^<em>)&#x3D;(s+2)(s+1+j\sqrt3)(s+1-j\sqrt3)&#x3D;s^3+4s^2+8s+8$，得到 $a_1^</em>&#x3D;4,a_2^<em>&#x3D;8,a_3^</em>&#x3D;8$。</li>
+<li>$\tilde{K}&#x3D;\begin{bmatrix}a_3^<em>-a_3&amp;a_2^</em>-a_2&amp;a_1^*-a_1\end{bmatrix}&#x3D;\begin{bmatrix}8&amp;7&amp;2\end{bmatrix}$ 。</li>
+<li>$Q&#x3D;\begin{bmatrix}b&amp;Ab&amp;A^2b\end{bmatrix}\cdot{}\begin{bmatrix}a_2&amp;a_1&amp;1\a_1&amp;1&amp;0\1&amp;0&amp;0\end{bmatrix}&#x3D;\begin{bmatrix}1&amp;2&amp;1\1&amp;1&amp;0\1&amp;0&amp;0\end{bmatrix}$ 。</li>
+<li>$P&#x3D;Q^{-1}&#x3D;\begin{bmatrix}1&amp;2&amp;1\1&amp;1&amp;0\1&amp;0&amp;0\end{bmatrix}^{-1}&#x3D;\begin{bmatrix}0&amp;0&amp;1\0&amp;1&amp;-1\1&amp;-2&amp;1\end{bmatrix}$， $K&#x3D;\tilde{K}P&#x3D;\begin{bmatrix}8&amp;7&amp;2\end{bmatrix}\begin{bmatrix}0&amp;0&amp;1\0&amp;1&amp;-1\1&amp;-2&amp;1\end{bmatrix}&#x3D;\begin{bmatrix}2&amp;3&amp;3\end{bmatrix}$ 。</li>
+</ul>
+<p>;;;</p>
+<p>+++</p>
+<ol start="2">
+<li><strong>算法2</strong>  适用于系统维数较低，控制矩阵中只有一个非零元素的情况。</li>
+</ol>
+<ul>
+<li>将 $u&#x3D;-Kx$ 代入系统状态方程 $sI-A+bK$，求得相应闭环系统的特征多项式： $a(s)&#x3D;s^n+a_1(K)s^{n-1}+\cdots+a_{n-1}(K)s+a_n(K)$。</li>
+<li>计算理想特征多项式：$a^<em>(x)&#x3D;(s-\lambda_1^</em>)(s-\lambda_2^<em>)\cdots(s-\lambda_n^</em>)&#x3D;s^n+a_1^*s^{n-1}+\cdots+a_{n-1}^<em>s+a_n^</em>$。</li>
+<li>将 $a(s)$ 与 $a^*(s)$ 各项一一对应即可求解。</li>
+</ul>
+<p>+++info 例题</p>
+<p>;;;id2 例题1</p>
+<p>:::info no-icon</p>
+<p>给定系统的状态空间表达式 $\dot{x}&#x3D;\begin{bmatrix}0&amp;0&amp;0\1&amp;-1&amp;0\0&amp;1&amp;-1\end{bmatrix}x+\begin{bmatrix}1\0\0\end{bmatrix}u$，求状态反馈矩阵 $K$ 使得反馈后闭环特征值为 $\lambda_1^<em>&#x3D;-2,\lambda_{2,3}^</em>&#x3D;-1\pm j\sqrt{3}$。</p>
+<p>:::</p>
+<p>由于 $rank(U_c)&#x3D;rank(\begin{bmatrix}b&amp;Ab&amp;A^2b\end{bmatrix})&#x3D;rank\begin{bmatrix}1&amp;0&amp;0\0&amp;1&amp;-1\0&amp;0&amp;1\end{bmatrix}&#x3D;3$，故系统完全可控。</p>
+<ul>
+<li>设所需的状态反馈矩阵 $K$ 为 $K&#x3D;\begin{bmatrix}k_1&amp;k_2&amp;k_3\end{bmatrix}$，则经过状态反馈 $u&#x3D;v-Kx$ 后闭环系统的特征多项式为:</li>
+</ul>
+<p>$$\begin{aligned}a(s)&amp;&#x3D;det(sI-A+bK)\&amp;&#x3D;det\begin{Bmatrix}\begin{bmatrix}s&amp;0&amp;0\0&amp;s&amp;0\0&amp;0&amp;s\end{bmatrix}-\begin{bmatrix}0&amp;0&amp;0\1&amp;-1&amp;0\0&amp;1&amp;-1\end{bmatrix}+\begin{bmatrix}1\0\0\end{bmatrix}\begin{bmatrix}k_1&amp;k_2&amp;k_3\end{bmatrix}\end{Bmatrix}\&amp;&#x3D;s^3+(2+k_1)s^2+(2k_1+k_2+1)s+(k_1+k_2+k_3)\end{aligned}$$</p>
+<ul>
+<li>由题，目标闭环期望极点对应的闭环特征多项式为：$a^*(s)&#x3D;(s+2)(s+1+j\sqrt{3})(s+1-j\sqrt{3})&#x3D;s^3+4s^2+8s+8$。</li>
+<li>对比 $a(s)$ 与 $a^*(s)$ ，可得 $2+k_1&#x3D;4,2k_1+k_2+1&#x3D;8,k_1+k_2+k_3&#x3D;8$。解得 $K&#x3D;\begin{bmatrix}k_1&amp;k_2&amp;k_3\end{bmatrix}&#x3D;\begin{bmatrix}2&amp;3&amp;3\end{bmatrix}$。</li>
+</ul>
+<p>;;;</p>
+<p>+++</p>
+<h2 id="状态观测器"><a href="#状态观测器" class="headerlink" title="状态观测器"></a>状态观测器</h2><h3 id="状态观测器的存在条件"><a href="#状态观测器的存在条件" class="headerlink" title="状态观测器的存在条件"></a>状态观测器的存在条件</h3><p>:::info no-icon</p>
+<ol>
+<li>充分条件：能观测。</li>
+<li>充要条件：不能观测的部分渐进稳定。</li>
+</ol>
+<p>:::</p>
+<p> 给定定常系统 $\Sigma:\left{\begin{aligned}\dot{x}&amp;&#x3D;Ax+Bu\y&amp;&#x3D;Cx\end{aligned}\right.$ ，若状态完全能观测，则状态向量 $x$ 能够由输入 $x$ 和输出 $y$ 表示。</p>
+<p>+++info 证明</p>
+<p>由于 $\left{\begin{aligned}y&amp;&#x3D;Cx\\dot{y}&amp;&#x3D;C\dot{x}&#x3D;CAx+CBu\y^{(n)}&amp;&#x3D;CA\dot{x}+CB\dot{u}&#x3D;CA^2x+CABu+CB\dot{u}\ &amp;\vdots\y^{(n-1)}&amp;&#x3D;CA^{n-1}x+CA^{n-2}Bu+\cdots+CBu^{(n-2)}\end{aligned}\right.$ ，则</p>
+<p>$$\begin{bmatrix}y\\dot{y}-CBu\y^{(n)}-CABu-CB\dot{u}\ \vdots\y^{(n-1)}-CA^{n-2}Bu-\cdots-CBu^{(n-2)}\end{bmatrix}&#x3D;\begin{bmatrix}C\CA\CA^2\\vdots\CA^{n-1}\end{bmatrix}x&#x3D;Nx$$</p>
+<p>当且仅当 $rank(N)&#x3D;n$ 时，上述 $x$ 有唯一解。$N$即是能观性矩阵。</p>
+<p>+++</p>
+
+  </div>
+
+   <footer>
+
+    <div class="meta">
+  <span class="item">
+    <span class="icon">
+      <i class="ic i-calendar-check"></i>
+    </span>
+    <span class="text">更新于</span>
+    <time title="修改时间：2024-01-06 14:02:03" itemprop="dateModified" datetime="2024-01-06T14:02:03+08:00">2024-01-06</time>
+  </span>
+  <span id="2023/12/21/2023-12-21-状态反馈和状态观测器/" class="item leancloud_visitors" data-flag-title="06 状态反馈和状态观测器" title="阅读次数">
+      <span class="icon">
+        <i class="ic i-eye"></i>
+      </span>
+      <span class="text">阅读次数</span>
+      <span class="leancloud-visitors-count"></span>
+      <span class="text">次</span>
+  </span>
+</div>
+
+      
+
+
+
+
+
+  </footer>
+
+</article>
+
+  </div>
+  
+
+<div class="post-nav">
+    <div class="item left">
+      
+
+  <a href="/2023/12/15/2023-12-15-%E6%8E%A7%E5%88%B6%E7%B3%BB%E7%BB%9F%E7%9A%84%E6%9D%8E%E9%9B%85%E6%99%AE%E8%AF%BA%E5%A4%AB%E7%A8%B3%E5%AE%9A%E6%80%A7%E5%88%86%E6%9E%90/" itemprop="url" rel="prev" data-background-image="https:&#x2F;&#x2F;s1.imagehub.cc&#x2F;images&#x2F;2023&#x2F;11&#x2F;16&#x2F;e4b67af1a831d25041ba2dbaad974f93.jpeg" title="05 控制系统的李雅普诺夫稳定性分析">
+  <span class="type">上一篇</span>
+  <span class="category"><i class="ic i-flag"></i> 现代控制理论</span>
+  <h3>05 控制系统的李雅普诺夫稳定性分析</h3>
+  </a>
+
+    </div>
+    <div class="item right">
+      
+
+  <a href="/2024/09/21/2024-09-21-%E7%9F%A9%E9%98%B5%E7%9A%84%E7%9B%B8%E4%BC%BC%E5%8F%98%E6%8D%A2/" itemprop="url" rel="next" data-background-image="https:&#x2F;&#x2F;s1.imagehub.cc&#x2F;images&#x2F;2023&#x2F;11&#x2F;16&#x2F;a21b7cb6e20d9aad346b196a9119ff96.jpeg" title="01 矩阵的相似变换">
+  <span class="type">下一篇</span>
+  <span class="category"><i class="ic i-flag"></i> 矩阵论</span>
+  <h3>01 矩阵的相似变换</h3>
+  </a>
+
+    </div>
+</div>
+
+  
+  <div class="wrap" id="comments"></div>
+
+
+        </div>
+        <div id="sidebar">
+          
+
+<div class="inner">
+
+  <div class="panels">
+    <div class="inner">
+      <div class="contents panel pjax" data-title="文章目录">
+          <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%8A%B6%E6%80%81%E5%8F%8D%E9%A6%88%E5%92%8C%E7%8A%B6%E6%80%81%E8%A7%82%E6%B5%8B%E5%99%A8"><span class="toc-number">1.</span> <span class="toc-text">状态反馈和状态观测器</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%8A%B6%E6%80%81%E5%8F%8D%E9%A6%88"><span class="toc-number">1.1.</span> <span class="toc-text">状态反馈</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9E%81%E7%82%B9%E9%85%8D%E7%BD%AE%E5%AE%9A%E7%90%86"><span class="toc-number">1.1.1.</span> <span class="toc-text">极点配置定理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8D%95%E8%BE%93%E5%85%A5%E7%B3%BB%E7%BB%9F%E6%9E%81%E7%82%B9%E9%85%8D%E7%BD%AE%E7%AE%97%E6%B3%95"><span class="toc-number">1.1.2.</span> <span class="toc-text">单输入系统极点配置算法</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%8A%B6%E6%80%81%E8%A7%82%E6%B5%8B%E5%99%A8"><span class="toc-number">1.2.</span> <span class="toc-text">状态观测器</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%8A%B6%E6%80%81%E8%A7%82%E6%B5%8B%E5%99%A8%E7%9A%84%E5%AD%98%E5%9C%A8%E6%9D%A1%E4%BB%B6"><span class="toc-number">1.2.1.</span> <span class="toc-text">状态观测器的存在条件</span></a></li></ol></li></ol></li></ol>
+      </div>
+      <div class="related panel pjax" data-title="系列文章">
+        <ul>
+          <li><a href="/2023/10/21/2023-10-21-%E6%8E%A7%E5%88%B6%E7%B3%BB%E7%BB%9F%E7%9A%84%E7%8A%B6%E6%80%81%E7%A9%BA%E9%97%B4%E6%8F%8F%E8%BF%B0/" rel="bookmark" title="02 控制系统的状态空间描述">02 控制系统的状态空间描述</a></li><li><a href="/2023/10/28/2023-10-29-%E7%8A%B6%E6%80%81%E6%96%B9%E7%A8%8B%E7%9A%84%E8%A7%A3/" rel="bookmark" title="03 状态方程的解">03 状态方程的解</a></li><li><a href="/2023/10/28/2023-10-29-test/" rel="bookmark" title="test">test</a></li><li><a href="/2023/12/06/2023-12-06-%E7%BA%BF%E6%80%A7%E7%B3%BB%E7%BB%9F%E7%9A%84%E8%83%BD%E6%8E%A7%E6%80%A7%E5%92%8C%E8%83%BD%E8%A7%82%E6%B5%8B%E6%80%A7/" rel="bookmark" title="04 线性系统的能控性和能观测性">04 线性系统的能控性和能观测性</a></li><li><a href="/2023/12/15/2023-12-15-%E6%8E%A7%E5%88%B6%E7%B3%BB%E7%BB%9F%E7%9A%84%E6%9D%8E%E9%9B%85%E6%99%AE%E8%AF%BA%E5%A4%AB%E7%A8%B3%E5%AE%9A%E6%80%A7%E5%88%86%E6%9E%90/" rel="bookmark" title="05 控制系统的李雅普诺夫稳定性分析">05 控制系统的李雅普诺夫稳定性分析</a></li><li class="active"><a href="/2023/12/21/2023-12-21-%E7%8A%B6%E6%80%81%E5%8F%8D%E9%A6%88%E5%92%8C%E7%8A%B6%E6%80%81%E8%A7%82%E6%B5%8B%E5%99%A8/" rel="bookmark" title="06 状态反馈和状态观测器">06 状态反馈和状态观测器</a></li>
+        </ul>
+      </div>
+      <div class="overview panel" data-title="站点概览">
+        <div class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <img class="image" itemprop="image" alt="Hening"
+      data-src="/images/avatar.jpg">
+  <p class="name" itemprop="name">Hening</p>
+  <div class="description" itemprop="description">终有弱水替沧海 再无相思寄巫山</div>
+</div>
+
+<nav class="state">
+    <div class="item posts">
+      <a href="/archives/">
+        <span class="count">17</span>
+        <span class="name">文章</span>
+      </a>
+    </div>
+    <div class="item categories">
+      <a href="/categories/">
+        <span class="count">10</span>
+        <span class="name">分类</span>
+      </a>
+    </div>
+    <div class="item tags">
+      <a href="/tags/">
+        <span class="count">10</span>
+        <span class="name">标签</span>
+      </a>
+    </div>
+</nav>
+
+<div class="social">
+      <span class="exturl item github" data-url="aHR0cHM6Ly9naXRodWIuY29tL0hueTEyMTY=" title="https:&#x2F;&#x2F;github.com&#x2F;Hny1216"><i class="ic i-github"></i></span>
+      <span class="exturl item email" data-url="bWFpbHRvOmhlbmluZzI1QG1haWwyLnN5c3UuZWR1LmNu" title="mailto:hening25@mail2.sysu.edu.cn"><i class="ic i-envelope"></i></span>
+</div>
+
+<ul class="menu">
+  
+    
+  <li class="item">
+    <a href="/" rel="section"><i class="ic i-home"></i>首页</a>
+  </li>
+
+    
+  <li class="item">
+    <a href="/about/" rel="section"><i class="ic i-user"></i>关于</a>
+  </li>
+
+        
+  <li class="item dropdown">
+      <a href="javascript:void(0);"><i class="ic i-feather"></i>文章</a>
+    <ul class="submenu">
+
+        
+  <li class="item">
+    <a href="/archives/" rel="section"><i class="ic i-list-alt"></i>归档</a>
+  </li>
+
+        
+  <li class="item">
+    <a href="/categories/" rel="section"><i class="ic i-th"></i>分类</a>
+  </li>
+
+        
+  <li class="item">
+    <a href="/tags/" rel="section"><i class="ic i-tags"></i>标签</a>
+  </li>
+
+  </ul>
+    
+  <li class="item">
+    <a href="/amusement/" rel="section"><i class="ic i-magic"></i>摸鱼</a>
+  </li>
+
+    
+  <li class="item">
+    <a href="/logging/" rel="section"><i class="ic i-file"></i>日志</a>
+  </li>
+
+
+</ul>
+
+      </div>
+    </div>
+  </div>
+
+  <ul id="quick">
+    <li class="prev pjax">
+        <a href="/2023/12/15/2023-12-15-%E6%8E%A7%E5%88%B6%E7%B3%BB%E7%BB%9F%E7%9A%84%E6%9D%8E%E9%9B%85%E6%99%AE%E8%AF%BA%E5%A4%AB%E7%A8%B3%E5%AE%9A%E6%80%A7%E5%88%86%E6%9E%90/" rel="prev" title="上一篇"><i class="ic i-chevron-left"></i></a>
+    </li>
+    <li class="up"><i class="ic i-arrow-up"></i></li>
+    <li class="down"><i class="ic i-arrow-down"></i></li>
+    <li class="next pjax">
+        <a href="/2024/09/21/2024-09-21-%E7%9F%A9%E9%98%B5%E7%9A%84%E7%9B%B8%E4%BC%BC%E5%8F%98%E6%8D%A2/" rel="next" title="下一篇"><i class="ic i-chevron-right"></i></a>
+    </li>
+    <li class="percent"></li>
+  </ul>
+</div>
+
+
+        </div>
+        <div class="dimmer"></div>
+      </div>
+    </main>
+    <footer id="footer">
+      <div class="inner">
+        <div class="widgets">
+          
+
+        </div>
+        <div class="status">
+  <div class="copyright">
+    
+    &copy; 2010 – 
+    <span itemprop="copyrightYear">2025</span>
+    <span class="with-love">
+      <i class="ic i-sakura rotate"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">Hening @ Hening</span>
+  </div>
+  <div class="count">
+    <span class="post-meta-item-icon">
+      <i class="ic i-chart-area"></i>
+    </span>
+    <span title="站点总字数">156k 字</span>
+
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="ic i-coffee"></i>
+    </span>
+    <span title="站点阅读时长">2:22</span>
+  </div>
+  <div class="powered-by">
+    基于 <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> & Theme.<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2FtZWhpbWUvaGV4by10aGVtZS1zaG9rYQ==">Shoka</span>
+  </div>
+</div>
+
+      </div>
+    </footer>
+  </div>
+<script data-config type="text/javascript">
+  var LOCAL = {
+    path: '2023/12/21/2023-12-21-状态反馈和状态观测器/',
+    favicon: {
+      show: "Hening",
+      hide: "(´Д｀)大変だ！"
+    },
+    search : {
+      placeholder: "文章搜索",
+      empty: "关于 「 ${query} 」，什么也没搜到",
+      stats: "${time} ms 内找到 ${hits} 条结果"
+    },
+    valine: true,copy_tex: true,
+    katex: true,fancybox: true,
+    copyright: '复制成功，转载请遵守 <i class="ic i-creative-commons"></i>BY-NC-SA 协议。',
+    ignores : [
+      function(uri) {
+        return uri.includes('#');
+      },
+      function(uri) {
+        return new RegExp(LOCAL.path+"$").test(uri);
+      }
+    ]
+  };
+</script>
+
+<script src="https://cdn.polyfill.io/v2/polyfill.js"></script>
+
+<script src="//cdn.jsdelivr.net/combine/npm/pace-js@1.0.2/pace.min.js,npm/pjax@0.2.8/pjax.min.js,npm/whatwg-fetch@3.4.0/dist/fetch.umd.min.js,npm/animejs@3.2.0/lib/anime.min.js,npm/algoliasearch@4/dist/algoliasearch-lite.umd.js,npm/instantsearch.js@4/dist/instantsearch.production.min.js,npm/lozad@1/dist/lozad.min.js,npm/quicklink@2/dist/quicklink.umd.js"></script>
+
+<script src="/js/app.js?v=0.2.5"></script>
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,715 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#FFF">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+
+<link rel="icon" type="image/ico" sizes="32x32" href="/images/favicon.ico">
+  <meta http-equiv="Cache-Control" content="no-transform">
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+<link rel="alternate" type="application/rss+xml" title="Hny" href="http://hening25.gitee.io/rss.xml" />
+<link rel="alternate" type="application/atom+xml" title="Hny" href="http://hening25.gitee.io/atom.xml" />
+<link rel="alternate" type="application/json" title="Hny" href="http://hening25.gitee.io/feed.json" />
+
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Mulish:300,300italic,400,400italic,700,700italic%7CFredericka%20the%20Great:300,300italic,400,400italic,700,700italic%7CNoto%20Serif%20JP:300,300italic,400,400italic,700,700italic%7CNoto%20Serif%20SC:300,300italic,400,400italic,700,700italic%7CInconsolata:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+
+<link rel="stylesheet" href="/css/app.css?v=0.2.5">
+
+  
+  <meta name="keywords" content="状态方程的解,矩阵指数,状态转移矩阵,离散化" />
+
+
+<link rel="canonical" href="http://hening25.gitee.io/2023/10/28/2023-10-29-test/">
+
+
+
+  <title>
+test - 现代控制理论 |
+Hening = Hny = 终有弱水替沧海 再无相思寄巫山</title>
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.3.0"></head>
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div id="loading">
+    <div class="cat">
+      <div class="body"></div>
+      <div class="head">
+        <div class="face"></div>
+      </div>
+      <div class="foot">
+        <div class="tummy-end"></div>
+        <div class="bottom"></div>
+        <div class="legs left"></div>
+        <div class="legs right"></div>
+      </div>
+      <div class="paw">
+        <div class="hands left"></div>
+        <div class="hands right"></div>
+      </div>
+    </div>
+  </div>
+  <div id="container">
+    <header id="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="inner">
+        <div id="brand">
+          <div class="pjax">
+          
+  <h1 itemprop="name headline">test
+  </h1>
+  
+<div class="meta">
+  <span class="item" title="创建时间：2023-10-28 00:00:00">
+    <span class="icon">
+      <i class="ic i-calendar"></i>
+    </span>
+    <span class="text">发表于</span>
+    <time itemprop="dateCreated datePublished" datetime="2023-10-28T00:00:00+08:00">2023-10-28</time>
+  </span>
+  <span class="item" title="本文字数">
+    <span class="icon">
+      <i class="ic i-pen"></i>
+    </span>
+    <span class="text">本文字数</span>
+    <span>22k</span>
+    <span class="text">字</span>
+  </span>
+  <span class="item" title="阅读时长">
+    <span class="icon">
+      <i class="ic i-clock"></i>
+    </span>
+    <span class="text">阅读时长</span>
+    <span>20 分钟</span>
+  </span>
+</div>
+
+
+          </div>
+        </div>
+        <nav id="nav">
+  <div class="inner">
+    <div class="toggle">
+      <div class="lines" aria-label="切换导航栏">
+        <span class="line"></span>
+        <span class="line"></span>
+        <span class="line"></span>
+      </div>
+    </div>
+    <ul class="menu">
+      <li class="item title"><a href="/" rel="start">Hening</a></li>
+    </ul>
+    <ul class="right">
+      <li class="item theme">
+        <i class="ic i-sun"></i>
+      </li>
+      <li class="item search">
+        <i class="ic i-search"></i>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+      </div>
+      <div id="imgs" class="pjax">
+        <ul>
+          <li class="item" data-background-image="https://s1.imagehub.cc/images/2023/11/16/b8c713f1e45a0c42c346832e877a70e3.jpeg"></li>
+          <li class="item" data-background-image="https://s1.imagehub.cc/images/2023/11/16/ab33d9ccc1ae179c46f6edcd970d1e6b.jpeg"></li>
+          <li class="item" data-background-image="https://s1.imagehub.cc/images/2023/11/16/66a8a8bc0791b5140db06e3b9d60800c.jpeg"></li>
+          <li class="item" data-background-image="https://s1.imagehub.cc/images/2023/11/16/71cd12ece8ed395331909da77a7e5c97.png"></li>
+          <li class="item" data-background-image="https://s1.imagehub.cc/images/2023/11/16/71416ed0066bbdac1c19194eb1a1e684.jpeg"></li>
+          <li class="item" data-background-image="https://s1.imagehub.cc/images/2023/11/16/f0233915560e384ccd9c54ade1c1f8e6.png"></li>
+        </ul>
+      </div>
+    </header>
+    <div id="waves">
+      <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+        <defs>
+          <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+        </defs>
+        <g class="parallax">
+          <use xlink:href="#gentle-wave" x="48" y="0" />
+          <use xlink:href="#gentle-wave" x="48" y="3" />
+          <use xlink:href="#gentle-wave" x="48" y="5" />
+          <use xlink:href="#gentle-wave" x="48" y="7" />
+        </g>
+      </svg>
+    </div>
+    <main>
+      <div class="inner">
+        <div id="main" class="pjax">
+          
+  <div class="article wrap">
+    
+<div class="breadcrumb" itemscope itemtype="https://schema.org/BreadcrumbList">
+<i class="ic i-home"></i>
+<span><a href="/">首页</a></span><i class="ic i-angle-right"></i>
+<span  class="current" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="/categories/%E7%8E%B0%E4%BB%A3%E6%8E%A7%E5%88%B6%E7%90%86%E8%AE%BA/" itemprop="item" rel="index" title="分类于 现代控制理论"><span itemprop="name">现代控制理论</span></a>
+<meta itemprop="position" content="1" /></span>
+</div>
+
+    <article itemscope itemtype="http://schema.org/Article" class="post block" lang="zh-CN">
+  <link itemprop="mainEntityOfPage" href="http://hening25.gitee.io/2023/10/28/2023-10-29-test/">
+
+  <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="image" content="/images/avatar.jpg">
+    <meta itemprop="name" content="Hening">
+    <meta itemprop="description" content="终有弱水替沧海 再无相思寄巫山, 终有弱水替沧海 再无相思寄巫山">
+  </span>
+
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="Hny">
+  </span>
+
+  <div class="body md" itemprop="articleBody">
+    
+
+    <p>现代控制理论——03 状态方程的解</p>
+<span id="more"></span>
+
+<p>+++primary 证明</p>
+<p>test</p>
+<p>+++</p>
+<p>+++primary  证明</p>
+<p>$e^{\bold{A}t}&#x3D;\bold{I}+\bold{A}t+\frac{1}{2!}\bold{A}^2t^2+\cdots$</p>
+<p>$&#x3D;\begin{bmatrix} 1&amp;0&amp;\cdots&amp;0\ 0&amp;1&amp;\cdots&amp;0\  \vdots&amp;\vdots&amp;\ddots&amp;\vdots\ 0&amp;0&amp;\cdots&amp;1\end{bmatrix}+\begin{bmatrix} \lambda_1&amp;0&amp;\cdots&amp;0\ 0&amp;\lambda_2&amp;\cdots&amp;0\  \vdots&amp;\vdots&amp;\ddots&amp;\vdots\ 0&amp;0&amp;\cdots&amp;\lambda_n\end{bmatrix}t+\frac{1}{2!}\begin{bmatrix} \lambda_1^2&amp;0&amp;\cdots&amp;0\ 0&amp;\lambda_2^2&amp;\cdots&amp;0\  \vdots&amp;\vdots&amp;\ddots&amp;\vdots\ 0&amp;0&amp;\cdots&amp;\lambda_n^2\end{bmatrix}t^2+\cdots$</p>
+<p>$&#x3D;\begin{bmatrix} \sum^{+\infty}<em>{n&#x3D;0}\frac{1}{n!}\lambda_1^nt^n&amp;0&amp;\cdots&amp;0\ 0&amp;\sum^{+\infty}</em>{n&#x3D;0}\frac{1}{n!}\lambda_2^nt^n&amp;\cdots&amp;0\  \vdots&amp;\vdots&amp;\ddots&amp;\vdots\ 0&amp;0&amp;\cdots&amp;\sum^{+\infty}_{n&#x3D;0}\frac{1}{n!}\lambda_n^nt^n\end{bmatrix}&#x3D;\begin{bmatrix} e^{\lambda_1t}&amp;0&amp;\cdots&amp;0\ 0&amp;e^{\lambda_2t}&amp;\cdots&amp;0\  \vdots&amp;\vdots&amp;\ddots&amp;\vdots\ 0&amp;0&amp;\cdots&amp;e^{\lambda_nt}\end{bmatrix}$。</p>
+<p>+++</p>
+<ol start="9">
+<li>若$\bold{A}$为$m\times{m}$的若尔当块，即$\bold{A}&#x3D;\begin{bmatrix} \lambda&amp;1&amp;0&amp;\cdots&amp;0\ 0&amp;\lambda&amp;1&amp;\cdots&amp;0\  \vdots&amp;\vdots&amp;\lambda&amp;\ddots&amp;\vdots\0&amp;0&amp;\cdots&amp;\lambda&amp;1\ 0&amp;0&amp;\cdots&amp;0&amp;\lambda\end{bmatrix}<em>{m\times{m}}$，则$e^{\bold{A}t}&#x3D;e^{\lambda t}\begin{bmatrix} 1&amp;t&amp;\frac{t^{2}}{2!}&amp;\cdots&amp;\frac{t^{m-1}}{(m-1)!}\ 0&amp;1&amp;t&amp;\cdots&amp;\frac{t^{m-2}}{(m-2)!}\  \vdots&amp;\vdots&amp;\ddots&amp;\ddots&amp;\vdots\0&amp;0&amp;\cdots&amp;1&amp;t\ 0&amp;0&amp;\cdots&amp;0&amp;1\end{bmatrix}</em>{m\times{m}}$。</li>
+</ol>
+<p>+++primary 若尔当块</p>
+<p>形如$\begin{bmatrix} \lambda&amp;1&amp;0&amp;\cdots&amp;0\ 0&amp;\lambda&amp;1&amp;\cdots&amp;0\  \vdots&amp;\vdots&amp;\lambda&amp;\ddots&amp;\vdots\0&amp;0&amp;\cdots&amp;\lambda&amp;1\ 0&amp;0&amp;\cdots&amp;0&amp;\lambda\end{bmatrix}_{m\times{m}}$为$m$阶若尔当矩阵，1阶若尔当矩阵为$\lambda$。</p>
+<p>+++</p>
+<ol start="10">
+<li>若$\bold{A}$为一个有多个若尔当块的若尔当矩阵（即若当标准型），即$\bold{A}&#x3D;\begin{bmatrix} \bold{A}_1&amp;0&amp;\cdots&amp;0\ 0&amp;\bold{A}_2&amp;\cdots&amp;0\  \vdots&amp;\vdots&amp;\ddots&amp;\vdots\ 0&amp;0&amp;\cdots&amp;\bold{A}_n\end{bmatrix}$，则$e^{\bold{A}t}&#x3D;\begin{bmatrix} e^{\bold{A}_1t}&amp;0&amp;\cdots&amp;0\ 0&amp;e^{\bold{A}_2t}&amp;\cdots&amp;0\  \vdots&amp;\vdots&amp;\ddots&amp;\vdots\ 0&amp;0&amp;\cdots&amp;e^{\bold{A}_nt}\end{bmatrix}$。</li>
+</ol>
+<h3 id="矩阵指数的计算"><a href="#矩阵指数的计算" class="headerlink" title="矩阵指数的计算"></a>矩阵指数的计算</h3><ol>
+<li>定义计算：$e^{\bold{A}t}&#x3D;\sum^{+\infty}_{n&#x3D;0}\frac{1}{n!}\bold{A}^n(t)^n$。该方法适用于计算机运算。</li>
+</ol>
+<p>+++info  例题</p>
+<p>;;;id1 例题1</p>
+<p>:::info </p>
+<p>已知$\bold{A}&#x3D;\begin{bmatrix} 0&amp;1\-1&amp;0\end{bmatrix}$，求$e^{\bold{A}t}$。</p>
+<p>:::</p>
+<p>由定义，</p>
+<p>$\begin{aligned}e^{\bold{A}t}&amp;&#x3D;\bold{I}+\bold{A}t+\frac{1}{2!}+\cdots&#x3D;\begin{bmatrix}1&amp;0\0&amp;1\end{bmatrix}+\begin{bmatrix}0&amp;t\-t&amp;0\end{bmatrix}+\frac{1}{2!}\begin{bmatrix}-t^2&amp;0\0&amp;-t^2\end{bmatrix}+\cdots\&amp;&#x3D;\begin{bmatrix}1-\frac{t^2}{2!}+\cdots&amp;t-\frac{t^3}{3!}+\cdots\-t+\frac{t^3}{3!}-\cdots&amp;1-\frac{t^2}{2!}+\cdots\end{bmatrix}&#x3D;\begin{bmatrix} \cos{t}&amp;\sin{t}\-\sin{t}&amp;\cos{t}\end{bmatrix}\end{aligned}$.</p>
+<p>;;; </p>
+<p>+++</p>
+<ol start="2">
+<li>拉氏变换法：利用拉氏变换在频域中求解齐次状态方程的解。</li>
+</ol>
+<p>设线性时不变齐次状态方程为 $\bold{\dot{x}}&#x3D;\bold{Ax}(t)$，$\bold{x}(0)&#x3D;\bold{x}_0$，$t\geq{t_0}$。</p>
+<p>作拉氏变换有 $s\bold{X}(s)-\bold{x}(0)&#x3D;\bold{AX}(s)$，即 $(s\bold{I}-\bold{A})\bold{X}(s)&#x3D;\bold{x}(0)$，那么 </p>
+<p>$$\bold{X}(s) &#x3D;(s\bold{I}-\bold{A})^{-1}\bold{x}(0)$$</p>
+<p>取拉氏逆变换有 $\bold{x}(0)&#x3D;L^{-1}[(s\bold{I}-\bold{A})^{-1}\bold{x}(0)]&#x3D;L^{-1}[(s\bold{I}-\bold{A})^{-1}]\bold{x}(0)$，因此 </p>
+<p>$$e^{\bold{A}t}&#x3D;L^{-1}[(s\bold{I}-\bold{A})^{-1}]     \tag{2}$$</p>
+<p>+++info 例题</p>
+<p>;;;id2 例题1</p>
+<p>:::info</p>
+<p>计算矩阵 $\bold{A}&#x3D;\begin{bmatrix}0&amp;1\-2&amp;-3\end{bmatrix}$的矩阵指数。</p>
+<p>:::</p>
+<p>由拉氏变换法，$(s\bold{I}-\bold{A})&#x3D;\begin{bmatrix} s&amp;-1\2&amp;s+3\end{bmatrix}$，则$(s\bold{I}-\bold{A})^{-1}&#x3D;\begin{bmatrix}\frac{s+3}{(s+1)(s+2)}&amp;\frac{1}{(s+1)(s+2)}\\frac{-2}{(s+1)(s+2)}&amp;\frac{s}{(s+1)(s+2)}\end{bmatrix}$，</p>
+<p>则 $e^{\bold{A}t}&#x3D;L^{-1}\begin{bmatrix}\frac{s+3}{(s+1)(s+2)}&amp;\frac{1}{(s+1)(s+2)}\\frac{-2}{(s+1)(s+2)}&amp;\frac{s}{(s+1)(s+2)}\end{bmatrix}&#x3D;\begin{bmatrix}2e^{-t}&amp;e^{-t}-e^{-2t}\-2e^{-t}+2e^{-2t}&amp;-e^{-t}+2e^{-2t}\end{bmatrix}$。</p>
+<p>;;;</p>
+<p>+++</p>
+<ol start="3">
+<li>将矩阵化为对角标准型或若尔当标准型。</li>
+</ol>
+<p>若$\bold{A}&#x3D;\begin{bmatrix} \lambda_1&amp;0&amp;\cdots&amp;0\ 0&amp;\lambda_2&amp;\cdots&amp;0\  \vdots&amp;\vdots&amp;\ddots&amp;\vdots\ 0&amp;0&amp;\cdots&amp;\lambda_n\end{bmatrix}$为对角矩阵，则$e^{\bold{A}t}$也为对角矩阵（<a href="#%E7%9F%A9%E9%98%B5%E6%8C%87%E6%95%B0%E7%9A%84%E6%80%A7%E8%B4%A8">性质8</a>），即$e^{\bold{A}t}&#x3D;\begin{bmatrix} e^{\lambda_1t}&amp;0&amp;\cdots&amp;0\ 0&amp;e^{\lambda_2t}&amp;\cdots&amp;0\  \vdots&amp;\vdots&amp;\ddots&amp;\vdots\ 0&amp;0&amp;\cdots&amp;e^{\lambda_nt}\end{bmatrix}$。</p>
+<p>（1）当矩阵$\bold{A}$的 $n$ 个特征值 $\lambda_1,\lambda_2\dots\lambda_n$ 均两两互异时，则可确定变换阵 $\bold{P}$ 及其逆矩阵 $\bold{P}^{-1}$ ，使得矩阵$\bold{A}$对角化：$\bold{A} &#x3D; \bold{P}\begin{bmatrix}\lambda_1&amp;0&amp;\cdots&amp;0\ 0&amp;\lambda_2&amp;\cdots&amp;0\  \vdots&amp;\vdots&amp;\ddots&amp;\vdots\ 0&amp;0&amp;\cdots&amp;\lambda_n\end{bmatrix}\bold{P}^{-1}$，则有 </p>
+<p>$$e^{\bold{A}t}&#x3D;\bold{P}\begin{bmatrix} e^{\lambda_1t}&amp;0&amp;\cdots&amp;0\ 0&amp;e^{\lambda_2t}&amp;\cdots&amp;0\  \vdots&amp;\vdots&amp;\ddots&amp;\vdots\ 0&amp;0&amp;\cdots&amp;e^{\lambda_nt}\end{bmatrix}\bold{P}^{-1}   \tag{3}$$</p>
+<p>+++primary 解题步骤</p>
+<ol>
+<li>求解系统矩阵$\bold{A}$的特征值 $\lambda_1,\lambda_2\dots\lambda_n$ 。（特征值两两互异）</li>
+<li>求解特征值对应的特征向量$p_1,p_2\dots p_n$，构造变换阵 $\bold{P}$ 并求解其逆矩阵 $\bold{P}^{-1}$ 。</li>
+<li>求解矩阵指数 $e^{\bold{A}t}&#x3D;\bold{P}\begin{bmatrix} e^{\lambda_1t}&amp;0&amp;\cdots&amp;0\ 0&amp;e^{\lambda_2t}&amp;\cdots&amp;0\  \vdots&amp;\vdots&amp;\ddots&amp;\vdots\ 0&amp;0&amp;\cdots&amp;e^{\lambda_nt}\end{bmatrix}\bold{P}^{-1}$。</li>
+</ol>
+<p>+++</p>
+<p>+++info 例题</p>
+<p>;;;id3 例题1</p>
+<p>:::info </p>
+<p>试用化为对角标准型法求解矩阵$\bold{A}&#x3D;\begin{bmatrix}0&amp;1\-2&amp;-3\end{bmatrix}$的矩阵指数 $e^{\bold{A}t}$。</p>
+<p>:::</p>
+<p>求解特征值$|\lambda\bold{I}-\bold{A}|&#x3D;\begin{vmatrix}\lambda&amp;-1\2&amp;\lambda+3\end{vmatrix}&#x3D;(\lambda+1)(\lambda+2)$，得到特征值为$\lambda_1&#x3D;-1$，$\lambda_2&#x3D;-2$。继而求解特征向量$p_1&#x3D;\begin{bmatrix}1\-1\end{bmatrix}$，$p_2&#x3D;\begin{bmatrix}1\-2\end{bmatrix}$。</p>
+<p>故变换矩阵 $\bold{P}&#x3D;\begin{bmatrix}1&amp;1\-1&amp;-2\end{bmatrix}$，求逆有 $\bold{P}^{-1}&#x3D;\begin{bmatrix}2&amp;1\-1&amp;-1\end{bmatrix}$。</p>
+<p>则矩阵指数为 $e^{\bold{A}t}&#x3D;\bold{P}\begin{bmatrix} e^{-t}&amp;0\ 0&amp;e^{-2t}\end{bmatrix}\bold{P}^{-1}&#x3D;\begin{bmatrix} 2e^{-t}-e^{-2t}&amp;e^{-t}-e^{-2t}\ -2e^{-t}+2e^{-2t}&amp;-e^{-t}+2e^{-2t}\end{bmatrix}$。</p>
+<p>;;;</p>
+<p>;;;id3 例题2</p>
+<p>:::info </p>
+<p>试用化为对角标准型法求解矩阵$\bold{A}&#x3D;\begin{bmatrix}0&amp;1&amp;-1\-6&amp;-11&amp;6\-6&amp;-11&amp;5\end{bmatrix}$的矩阵指数 $e^{\bold{A}t}$。</p>
+<p>:::</p>
+<p>求解特征值$|\lambda\bold{I}-\bold{A}|&#x3D;\begin{vmatrix}\lambda&amp;-1&amp;1\6&amp;\lambda+11&amp;-6\6&amp;11&amp;\lambda-5\end{vmatrix}&#x3D;(\lambda+1)(\lambda+2)(\lambda+3)$，得到特征值为$\lambda_1&#x3D;-1$，$\lambda_2&#x3D;-2$，$\lambda_3&#x3D;-3$。继而求解特征向量$p_1&#x3D;\begin{bmatrix}1\0\1\end{bmatrix}$，$p_2&#x3D;\begin{bmatrix}1\2\4\end{bmatrix}$，$p_3&#x3D;\begin{bmatrix}1\6\9\end{bmatrix}$。</p>
+<p>故变换矩阵 $\bold{P}&#x3D;\begin{bmatrix}1&amp;1&amp;1\0&amp;2&amp;6\1&amp;4&amp;9\end{bmatrix}$，求逆有 $\bold{P}^{-1}&#x3D;\begin{bmatrix}3&amp;\frac{5}{2}&amp;-2\-3&amp;-4&amp;3\1&amp;\frac{3}{2}&amp;-1\end{bmatrix}$。</p>
+<p>则矩阵指数为 </p>
+<p>$\begin{aligned}e^{\bold{A}t}&amp;&#x3D;\bold{P}\begin{bmatrix} e^{-t}&amp;0&amp;0\ 0&amp;e^{-2t}&amp;0\0&amp;0&amp;e^{-3t}\end{bmatrix}\bold{P}^{-1}&#x3D;\begin{bmatrix}1&amp;1&amp;1\0&amp;2&amp;6\1&amp;4&amp;9\end{bmatrix}\begin{bmatrix} e^{-t}&amp;0&amp;0\ 0&amp;e^{-2t}&amp;0\0&amp;0&amp;e^{-3t}\end{bmatrix}\begin{bmatrix}3&amp;\frac{5}{2}&amp;-2\-3&amp;-4&amp;3\1&amp;\frac{3}{2}&amp;-1\end{bmatrix}\&amp;&#x3D;\begin{bmatrix} 3e^{-t}-3e^{-2t}+e^{-3t}&amp;\frac{5}{2}e^{-t}-4e^{-2t}+\frac{3}{2}e^{-3t}&amp;-2e^{-t}+3e^{-2t}-e^{-3t}\ -6e^{-t}+6e^{-3t}&amp;-8e^{-2t}+9e^{-3t}&amp;6e^{-2t}-6e^{-3t}\3e^{-t}-12e^{-2t}+9e^{-3t}&amp;\frac{5}{2}e^{-t}-16e^{-2t}+\frac{27}{2}e^{-3t}&amp;-2e^{-t}+12e^{-2t}-9e^{-3t}\end{bmatrix}\end{aligned}$。</p>
+<p>;;;</p>
+<p>+++</p>
+<p>（2）当 $n\times{n}$ 矩阵$\bold{A}$有$n$重特征根时，存在线性非奇异变换 $\bold{P}$ 及其逆矩阵 $\bold{P}^{-1}$ ，将矩阵 $\bold{A}$ 转化为若尔当标准型：$\bold{A} &#x3D; \bold{P}\begin{bmatrix}\lambda&amp;1&amp;\cdots&amp;0\ 0&amp;\lambda&amp;\cdots&amp;0\  \vdots&amp;\vdots&amp;\ddots&amp;1\ 0&amp;0&amp;\cdots&amp;\lambda\end{bmatrix}_{n\times{n}}\bold{P}^{-1}$，则有 </p>
+<p>$$e^{\bold{A}t}&#x3D;\bold{P}e^{\lambda t}\begin{bmatrix} 1&amp;t&amp;\frac{t^2}{2!}&amp;\cdots&amp;\frac{t^{n-1}}{(n-1)!}\ 0&amp;1&amp;t&amp;\cdots&amp;\frac{t^{n-2}}{(n-2)!}\  \vdots&amp;\vdots&amp;\vdots&amp;\ddots&amp;\vdots\0&amp;0&amp;0&amp;\cdots&amp;t\ 0&amp;0&amp;0&amp;\cdots&amp;1\end{bmatrix}_{n\times{n}}\bold{P}^{-1}   \tag{4}$$</p>
+<p>拓展到一般情况，矩阵$\bold{A}$同时存在重特征根和单特征根时,以有三重根$\lambda_1$、两重根$\lambda_2$和单根$\lambda_3$的矩阵$\bold{A}$为例，若存在变换阵 $\bold{P}$ 及其逆矩阵 $\bold{P}^{-1}$ ，将矩阵 $\bold{A}$ 转化为若尔当标准型：$\bold{A} &#x3D; \bold{P}\begin{bmatrix}\lambda_1&amp;1&amp;&amp;&amp;&amp;\bold{0}\ &amp;\lambda_1&amp;1&amp;&amp;&amp;\  &amp;&amp;\lambda_1&amp;&amp;&amp;\&amp;&amp;&amp;\lambda_2&amp;1&amp;\&amp;&amp;&amp;&amp;\lambda_2&amp;\\bold{0}&amp;&amp;&amp;&amp;&amp;\lambda_1\end{bmatrix}\bold{P}^{-1}$，则有 </p>
+<p>$$e^{\bold{A}t}&#x3D;\bold{P}\begin{bmatrix}e^{\lambda_1t}&amp;te^{\lambda_1t}&amp;\frac{1}{2}t^2e^{\lambda_1t}&amp;0&amp;0&amp;0\ 0&amp;e^{\lambda_1t}&amp;te^{\lambda_1t}&amp;0&amp;0&amp;0\  0&amp;0&amp;e^{\lambda_1t}&amp;0&amp;0&amp;0\0&amp;0&amp;0&amp;e^{\lambda_2t}&amp;te^{\lambda_2t}&amp;0\0&amp;0&amp;0&amp;0&amp;e^{\lambda_2t}&amp;0\0&amp;0&amp;0&amp;0&amp;0&amp;e^{\lambda_3t}\end{bmatrix}\bold{P}^{-1}     \tag{5}$$</p>
+<p>+++info 例题</p>
+<p>;;;id4 例题1</p>
+<p>:::info </p>
+<p>试求矩阵$\bold{A}&#x3D;\begin{bmatrix}0&amp;6&amp;-5\1&amp;0&amp;2\3&amp;2&amp;4\end{bmatrix}$的矩阵指数。</p>
+<p>:::</p>
+<p>求解特征值$|\lambda\bold{I}-\bold{A}|&#x3D;\begin{vmatrix}\lambda&amp;-6&amp;5\-1&amp;\lambda&amp;-2\-3&amp;-2&amp;\lambda-4\end{vmatrix}&#x3D;(\lambda-1)^2(\lambda-2)$，得到特征值为$\lambda_1&#x3D;\lambda_2&#x3D;1$，$\lambda_3&#x3D;2$。继而求解特征向量和广义特征向量$p_1&#x3D;\begin{bmatrix}1\-\frac{3}{7}\-\frac{5}{7}\end{bmatrix}$，$p_2&#x3D;\begin{bmatrix}1\-\frac{22}{49}\-\frac{46}{49}\end{bmatrix}$，$p_3&#x3D;\begin{bmatrix}2\-1\-2\end{bmatrix}$。</p>
+<p>故变换矩阵 $\bold{P}&#x3D;\begin{bmatrix}1&amp;1&amp;2\-\frac{3}{7}&amp;-\frac{22}{49}&amp;-1\-\frac{5}{7}&amp;-\frac{46}{49}&amp;-2\end{bmatrix}$，求逆有 $\bold{P}^{-1}&#x3D;\begin{bmatrix}2&amp;-6&amp;5\7&amp;28&amp;-7\-4&amp;-11&amp;1\end{bmatrix}$。</p>
+<p>则矩阵指数为</p>
+<p> $\begin{aligned}e^{\bold{A}t}&amp;&#x3D;\bold{P}\begin{bmatrix} e^{-t}&amp;te^{-t}&amp;0\ 0&amp;e^{t}&amp;0\0&amp;0&amp;e^{2t}\end{bmatrix}\bold{P}^{-1}\&amp;&#x3D;\begin{bmatrix} 9e^{t}+7te^{t}-8e^{2t}&amp;22e^{t}+28te^{t}+-22e^{2t}&amp;-2e^{t}-7te^{t}+2e^{2t}\ -4e^{t}-3te^{t}+4e^{2t}&amp;-10e^{t}-12te^{t}+11e^{2t}&amp;e^{t}+3te^{t}-e^{2t}\-8e^{t}-5te^{t}+8e^{2t}&amp;-22e^{t}-20te^{t}-22e^{2t}&amp;3e^{t}+5te^{t}-2e^{2t}\end{bmatrix}\end{aligned}$。</p>
+<p>;;;</p>
+<p>+++</p>
+<ol start="4">
+<li>化矩阵指数为矩阵$\bold{A}$的有限项。</li>
+</ol>
+<p>该方法将矩阵指数表示为$e^{\bold{A}t}&#x3D;a_0(t)\bold{I}+a_1(t)\bold{A}+\cdots+a_{n-1}\bold{A}^{n-1}$。</p>
+<p>当特征值两两互异时，</p>
+<p>$$\begin{bmatrix}a_0(t)\a_1(t)\\vdots\a_{n-1}(t)\end{bmatrix}&#x3D;\begin{bmatrix}1&amp;\lambda_1&amp;\cdots&amp;\lambda_1^{n-1}\1&amp;\lambda_2&amp;\cdots&amp;\lambda_2^{n-1}\\vdots&amp;\vdots&amp;\ddots&amp;\vdots\1&amp;\lambda_n&amp;\cdots&amp;\lambda_n^{n-1}\end{bmatrix}^{-1}\begin{bmatrix}e^{\lambda_1t}\e^{\lambda_2t}\\vdots\e^{\lambda_nt}\end{bmatrix}    \tag{6}$$</p>
+<p>当存在重特征值时（以三重根$\lambda_1$和二重根$\lambda_2$，其余根为单根为例），</p>
+<p>$$\begin{bmatrix}a_0(t)\a_1(t)\a_2(t)\a_3(t)\a_4(t)\a_5(t)\\vdots\a_{n-1}(t)\end{bmatrix}&#x3D;\begin{bmatrix}0&amp;0&amp;1&amp;3\lambda_1&amp;\cdots&amp;\frac{(n-1)(n-2)}{2!}\lambda_1^{n-3}\0&amp;1&amp;2\lambda_1&amp;3\lambda_1^2&amp;\cdots&amp;\frac{(n-1)}{1!}\lambda_1^{n-2}\1&amp;\lambda_1&amp;\lambda_1^2&amp;\lambda_1^3&amp;\cdots&amp;\lambda_1^{n-1}\0&amp;1&amp;2\lambda_2&amp;3\lambda_2^2&amp;\cdots&amp;\frac{(n-1)}{1!}\lambda_2^{n-2}\1&amp;\lambda_2&amp;\lambda_2^2&amp;\lambda_2^3&amp;\cdots&amp;\lambda_2^{n-1}\1&amp;\lambda_3&amp;\lambda_3^2&amp;\lambda_3^3&amp;\cdots&amp;\lambda_3^{n-1}\\vdots&amp;\vdots&amp;\vdots&amp;\vdots&amp;\ddots&amp;\vdots\1&amp;\lambda_n&amp;\lambda_n^2&amp;\lambda_n^3&amp;\cdots&amp;\lambda_n^{n-1}\end{bmatrix}^{-1}\begin{bmatrix}\frac{1}{2!}t^2e^{\lambda_1t}\\frac{1}{1!}te^{\lambda_1t}\e^{\lambda_1t}\\frac{1}{1!}te^{\lambda_2t}\e^{\lambda_2t}\e^{\lambda_3t}\\vdots\e^{\lambda_{n-3}t}\end{bmatrix}     \tag{7}$$</p>
+<p>+++primary 证明：Cayley-Hamilton定理</p>
+<p>+++</p>
+<p>+++primary 解题步骤</p>
+<ol>
+<li><p>求解系统矩阵$\bold{A}$的特征值 $\lambda_1,\lambda_2\dots\lambda_n$ 。</p>
+</li>
+<li><p>求解有限项，根据特征值的互异性分情况分析：</p>
+<ul>
+<li>当特征值两两互异时，直接根据$\begin{bmatrix}a_0(t)\a_1(t)\\vdots\a_{n-1}(t)\end{bmatrix}&#x3D;\begin{bmatrix}1&amp;\lambda_1&amp;\cdots&amp;\lambda_1^{n-1}\1&amp;\lambda_2&amp;\cdots&amp;\lambda_2^{n-1}\\vdots&amp;\vdots&amp;\ddots&amp;\vdots\1&amp;\lambda_n&amp;\cdots&amp;\lambda_n^{n-1}\end{bmatrix}^{-1}\begin{bmatrix}e^{\lambda_1t}\e^{\lambda_2t}\\vdots\e^{\lambda_nt}\end{bmatrix}$求解有限项。</li>
+<li>当特征值存在重根时，对于单根部分列写方程：</li>
+</ul>
+</li>
+</ol>
+<p>$$e^{\lambda_it}&#x3D;a_0(t)+a_1(t)\lambda_i+\cdots+a_{n-1}(t)\lambda_i^{n-1}$$</p>
+<p>而对于$k$重根部分在列写方程$e^{\lambda_it}&#x3D;a_0(t)+a_1(t)\lambda_i+\cdots+a_{k-1}(t)\lambda_i^{k-1}$外还需要补充方程：</p>
+<p>$$\left{ \begin{matrix} te^{\lambda_it}&#x3D;a_1(t)+2a_2(t)\lambda_i+\cdots+(k-1)a_{k-1}(t)\lambda_i^{k-2}\t^2e^{\lambda_it}&#x3D;2a_2(t)+6a_3(t)\lambda_i+\cdots+(k-1)(k-2)a_{k-1}(t)\lambda_i^{k-3} \\vdots\t^{k-1}e^{\lambda_it}&#x3D;(k-1)!a_{k-1}(t) \\end{matrix}\right.$$</p>
+<p>联立$n$条方程求解有限项</p>
+<ol start="3">
+<li>代入求解矩阵指数：</li>
+</ol>
+<p>$$e^{\bold{A}t}&#x3D;a_0(t)\bold{I}+a_1(t)\bold{A}+\cdots+a_{n-1}\bold{A}^{n-1}$$</p>
+<p>+++</p>
+<p>+++info 例题</p>
+<p>;;;id5 例题1</p>
+<p>:::info </p>
+<p>试求矩阵$\bold{A}&#x3D;\begin{bmatrix}0&amp;1&amp;0\0&amp;0&amp;1\2&amp;3&amp;0\end{bmatrix}$的矩阵指数，利用化为有限项法求解。</p>
+<p>:::</p>
+<p>求解特征值$|\lambda\bold{I}-\bold{A}|&#x3D;\begin{vmatrix}\lambda&amp;-1&amp;0\0&amp;\lambda&amp;-1\-2&amp;-3&amp;\lambda\end{vmatrix}&#x3D;(\lambda+1)^2(\lambda-2)$，得到特征值为$\lambda_{1,2}&#x3D;-1$，$\lambda_3&#x3D;2$。</p>
+<p>对于单根 $\lambda_3&#x3D;2$，有 $e^{2t}&#x3D;a_0(t)+2a_1(t)+4a_2(t)$，</p>
+<p>对于二重根$\lambda_{1,2}&#x3D;-1$，有 $e^{-t}&#x3D;a_0(t)-a_1(t)+a_2(t)$，还需要补充方程：</p>
+<p>$$ te^{-t}&#x3D;a_1(t)-2a_2(t)$$</p>
+<p>联立三组方程解得：</p>
+<p>$$\left{ \begin{matrix} a_0(t)&#x3D;\frac{1}{9}(e^{2t}+8e^{-t}+6te^{-t})\ a_1(t)&#x3D;\frac{1}{9}(2e^{2t}-2e^{-t}+3te^{-t}) \ a_3(t)&#x3D;\frac{1}{9}(e^{2t}-e^{-t}-3te^{-t}) \\end{matrix}\right.$$</p>
+<p> $$\begin{aligned}e^{\bold{A}t}&amp;&#x3D;a_0(t)\bold{I}+a_1(t)\bold{A}+\cdots+a_{n-1}\bold{A}^{n-1}\&amp;&#x3D;\frac{1}{9}\begin{bmatrix} e^{2t}+(8+6t)e^{-t}&amp;e^{2t}-(2-3t)e^{-t}&amp;e^{2t}-(1+3t)e^{-t}\ 2e^{2t}-(2+6t)e^{-t}&amp;4e^{2t}+(5-3t)e^{-t}&amp;2e^{2t}-(2-3t)e^{-t}\4e^{2t}+(6-4t)e^{-t}&amp;8e^{2t}+(3-8t)e^{-t}&amp;4e^{2t}+(5-3t)e^{-t}\end{bmatrix}\end{aligned}$$</p>
+<p>;;;</p>
+<p>+++</p>
+<h2 id="线性时不变系统非齐次状态方程的解"><a href="#线性时不变系统非齐次状态方程的解" class="headerlink" title="线性时不变系统非齐次状态方程的解"></a>线性时不变系统非齐次状态方程的解</h2><p>动态系统在控制的作用下的运动称为受控运动。线性时不变系统非齐次状态方程的解即为线性时不变系统的受控运动。考虑系统 $\dot{x}(t)&#x3D;Ax(t)+Bu(t),x(0),t\geq0$，其动态响应形式为：</p>
+<p>$$x(t)&#x3D;e^{A(t-t_0)}x(t_0)+\int_{t_0}^te^{A(t-\tau)}Bu(\tau),d\tau,  t\geq0   \tag{8}$$</p>
+<p>可理解为由两部分组成：一部分是由初始状态引起的系统自由运动，即零输入响应；另外一部分是由控制输入所产生的受控运动，即零状态响应。</p>
+<p>+++primary 推导过程</p>
+<p>对于系统$\dot{x}(t)&#x3D;Ax(t)+Bu(t),x(0),t\geq0$，左乘$e^{-At}$后求导可得：</p>
+<p>$$\frac{d}{dt}[e^{-At}x(t)]&#x3D;e^{-At}[\dot{x}(t)-Ax(t)]&#x3D;e^{-At}Bu(t)$$</p>
+<p>两边积分得：</p>
+<p>$$\int_0^t{\frac{d}{dt}[e^{-At}x(t)]}d\tau&#x3D;\int_0^te^{-At}Bu(t)d\tau$$</p>
+<p>$$e^{-At}x(t)-x(0)I&#x3D;\int_0^te^{-At}Bu(t)d\tau$$</p>
+<p>$$x(t)&#x3D;e^{A(t-t_0)}x(t_0)+\int_{t_0}^te^{A(t-\tau)}Bu(\tau),d\tau,  t\geq0$$</p>
+<p>+++</p>
+<h2 id="线性时不变系统的状态转移矩阵"><a href="#线性时不变系统的状态转移矩阵" class="headerlink" title="线性时不变系统的状态转移矩阵"></a>线性时不变系统的状态转移矩阵</h2><p>在线性时不变系统解 $x(t)&#x3D;e^{A(t-t_0)}x(t_0)+\int_{t_0}^te^{A(t-\tau)}Bu(\tau),d\tau,  t\geq0$ 中，定义状态转移矩阵$\Phi(t,t_0)&#x3D;e^{A(t-t_0)}$。</p>
+<p>+++ 注</p>
+<ol>
+<li>线性时不变系统的状态转移矩阵可记为：$\Phi(t,t_0)&#x3D;\Phi{(t-t_0)}$。</li>
+<li>$x(t)$是由初始值引起的零输入解和控制产生的零状态解的叠加。</li>
+<li>解的结构显示了从$x(t_0)$到$x(t)$的一种变换关系。</li>
+</ol>
+<p>+++</p>
+<p>+++ 线性连续系统的状态转移矩阵</p>
+<ol>
+<li>定义</li>
+</ol>
+<p>对于线性连续系统的状态方程：$\dot{x}(t)&#x3D;A(t)x(t)+B(t)u(t),x(t_0)&#x3D;x_0,A(t)\in{R^{n\times{n}}}$，那么称满足以下矩阵方程的解$\Phi(t,t_0)$为系统的状态转移矩阵。</p>
+<p>$$\dot{\Phi}(t,t_0)&#x3D;A(t)\Phi(t,t_0),\Phi(t_0,t_0)&#x3D;I,t\geq{t_0}    \tag{9}$$</p>
+<ol start="2">
+<li>状态转移矩阵的性质</li>
+</ol>
+<ul>
+<li>$\frac{d\Phi(t,t_0)}{dt}&#x3D;A(t)\Phi(t,t_0),\Phi(t_0,t_0)&#x3D;I$</li>
+</ul>
+<ul>
+<li>$\Phi(t_2,t_1)\Phi(t_1,t_0)&#x3D;\Phi(t_2,t_0)$</li>
+</ul>
+<ul>
+<li>$\Phi(mt)&#x3D;\Phi(t+t+\cdots+t)&#x3D;[\Phi(t)]^m$</li>
+</ul>
+<p>+++</p>
+<h2 id="线性时变系统状态方程的解"><a href="#线性时变系统状态方程的解" class="headerlink" title="线性时变系统状态方程的解*"></a>线性时变系统状态方程的解*</h2><h3 id="线性时变系统齐次状态方程的解"><a href="#线性时变系统齐次状态方程的解" class="headerlink" title="线性时变系统齐次状态方程的解"></a>线性时变系统齐次状态方程的解</h3><h3 id="线性时变系统的状态转移矩阵"><a href="#线性时变系统的状态转移矩阵" class="headerlink" title="线性时变系统的状态转移矩阵"></a>线性时变系统的状态转移矩阵</h3><h3 id="线性时变系统非齐次状态方程的解"><a href="#线性时变系统非齐次状态方程的解" class="headerlink" title="线性时变系统非齐次状态方程的解"></a>线性时变系统非齐次状态方程的解</h3><h2 id="线性连续系统的时间离散化"><a href="#线性连续系统的时间离散化" class="headerlink" title="线性连续系统的时间离散化"></a>线性连续系统的时间离散化</h2><p>线性连续系统的时间离散化问题本质上就是在一定的采样方式和保持方式下，由系统的连续时间状态空间描述来得到对应的离散时间状态空间描述，并建立两者的系数矩阵间的关系式。</p>
+<h3 id="近似离散化"><a href="#近似离散化" class="headerlink" title="近似离散化"></a>近似离散化</h3><p>考虑以下线性时变系统：$\dot{x}(t)&#x3D;A(t)x(t)+B(t)u(t)$，当采样周期$T$较小且精度要求不高时，可将其离散化为：</p>
+<p>$$\dot{x}(kT)\approx \frac{1}{T}[x((k+1)T)-x(kT)]    \tag{10}$$</p>
+<p>令$t&#x3D;kT$，有</p>
+<p>$$\frac{1}{T}[x((k+1)T)-x(kT)]&#x3D;A(kT)x(kT)+B(kT)u(kT)$$</p>
+<p>$$\begin{aligned}x[(k+1)T]&amp;&#x3D;[I+TA(kT)]x(kT)+TB(kT)u(kT)\&amp;&#x3D;G(kT)x(kT)+H(kT)u(kT)\end{aligned}$$</p>
+<p>其中，$G(kT)&#x3D;I+TA(kT)$，$H(kT)&#x3D;TB(kT)$。</p>
+<p>:::info</p>
+<p>注：一般而言，当采样周期为系统最小时间系数的$\frac{1}{10}$左右，近似度已经足够。</p>
+<p>:::</p>
+<p>+++info 例题</p>
+<p>;;;id6 例题1</p>
+<p>:::info </p>
+<p>系统的状态方程为$\dot{x}(t)&#x3D;A(t)x(t)+B(t)u(t)$，其中$A(t)&#x3D;\begin{bmatrix}0&amp;5(1-e^{-5t})\0&amp;5(e^{-5t}-1)\end{bmatrix}$，$B(t)&#x3D;\begin{bmatrix}5&amp;5e^{-5t}\0&amp;5(1-e^{-5t})\end{bmatrix}$。试求采样周期为$T&#x3D;0.2s$时的离散状态方程。</p>
+<p>:::</p>
+<p>直接代入公式有：</p>
+<p>$$G(kT)&#x3D;I+TA(kT)&#x3D;\begin{bmatrix}1&amp;1-e^{-k}\0&amp;e^{-k}\end{bmatrix}$$</p>
+<p>$$H(kT)&#x3D;TB(kT)&#x3D;\begin{bmatrix}1&amp;e^{-k}\0&amp;1-e^{-k}\end{bmatrix}$$</p>
+<p>那么，离散状态方程为：$x[(k+1)T]&#x3D;G(kT)x(kT)+H(kT)u(kT)$</p>
+<p>;;;</p>
+<p>;;;id6 例题2</p>
+<p>:::info</p>
+<p>将状态方程$\dot{x}&#x3D;\begin{bmatrix}0&amp;1\-2&amp;-3\end{bmatrix}x+\begin{bmatrix}0\1\end{bmatrix}u$ 近似离散化，$T&#x3D;0.2s$。</p>
+<p>:::</p>
+<p>由题：$G&#x3D;I+TA&#x3D;\begin{bmatrix}1&amp;0\0&amp;1\end{bmatrix}+0.2\begin{bmatrix}0&amp;1\-2&amp;-3\end{bmatrix}&#x3D;\begin{bmatrix}1&amp;0.2\-0.4&amp;0.4\end{bmatrix}$，$H&#x3D;0.2\begin{bmatrix}0\1\end{bmatrix}&#x3D;\begin{bmatrix}0\0.2\end{bmatrix}$。</p>
+<p>故离散状态方程为：</p>
+<p>$$$x[0.2(k+1)]&#x3D;\begin{bmatrix}1&amp;0.2\-0.4&amp;0.4\end{bmatrix}x(0.2k)+\begin{bmatrix}0\0.2\end{bmatrix}u(0.2k)$$$</p>
+<p>;;;</p>
+<p>+++</p>
+<h3 id="线性时不变系统状态方程的离散化"><a href="#线性时不变系统状态方程的离散化" class="headerlink" title="线性时不变系统状态方程的离散化"></a>线性时不变系统状态方程的离散化</h3><p>在线性时不变系统中，$\dot{x}(t)&#x3D;A(x)+B(u)$，其时间离散化状态方程为：</p>
+<p>$$x[(k+1)T]&#x3D;Gx(kT)+Hu(kT)    \tag{11}$$</p>
+<p>其中$G&#x3D;e^{AT}$，$H&#x3D;(\int_0^Te^{AT}dt)B$。假设条件为：(1)等采样周期$T$；(2)$u(t)\equiv u(kT),kT\leq t\leq (k+1)T$。</p>
+<p>+++primary 推导证明</p>
+<p>对于线性时不变系统 $\dot{x}(t)&#x3D;A(x)+B(u)$，其状态方程的解为：</p>
+<p>$$x(t)&#x3D;e^{A(t-t_0)}x(t_0)+\int e^{A(t-\tau)}Bu(\tau)d\tau    \tag{12}$$</p>
+<p>假设：(1)等采样周期$T$；(2)$x(k)&#x3D;[x(t)]<em>{t&#x3D;kT}$，$u(k)&#x3D;[u(t)]</em>{t&#x3D;kT}$</p>
+<p>那么令 $t&#x3D;(k+1)T$，$t_0&#x3D;kT$，有：</p>
+<p>$$\begin{aligned}x[(k+1)T]&amp;&#x3D;e^{AT}x(kT)+\int_{kT}^{(k+1)T}e^{A[(k+1)T-\tau]}Bu(\tau)d\tau\&amp;&#x3D;e^{AT}x(kT)+\int_{kT}^{(k+1)T}e^{A[(k+1)T-\tau]}Bd\tau \cdot u(kT)\end{aligned}$$</p>
+<p>令 $t&#x3D;(k+1)T-\tau$，$d\tau &#x3D;-dt$，有：</p>
+<p>$$\begin{aligned}x[(k+1)T]&amp;&#x3D;e^{AT}x(kT)+\int_{0}^{\tau}e^{A(t)}Bdt\cdot u(kT)\&amp;&#x3D;e^{AT}x(kT)+\int_{0}^{\tau}e^{A(t)}dt\cdot Bu(kT)\end{aligned}$$</p>
+<p>令$G&#x3D;e^{AT}$，$H&#x3D;(\int_0^Te^{AT}dt)B$，有线性时不变系统的离散状态方程为：</p>
+<p>$$x[(k+1)T]&#x3D;Gx(kT)+Hu(kT)$$</p>
+<p>+++</p>
+<p>+++primary 解题步骤</p>
+<ol>
+<li>求解矩阵指数，方法见<a href="#%E7%9F%A9%E9%98%B5%E6%8C%87%E6%95%B0%E7%9A%84%E8%AE%A1%E7%AE%97">矩阵指数的计算</a>。</li>
+<li>求解系数矩阵：$G&#x3D;e^{AT}$，$H&#x3D;(\int_0^Te^{AT}dt)B$。</li>
+<li>列写时间离散化状态方程：$x[(k+1)T]&#x3D;Gx(kT)+Hu(kT)$</li>
+</ol>
+<p>+++</p>
+<p>+++info 例题</p>
+<p>;;;id7 例题1</p>
+<p>:::info</p>
+<p>将状态方程$\dot{x}&#x3D;\begin{bmatrix}0&amp;1\0&amp;-2\end{bmatrix}x+\begin{bmatrix}0\1\end{bmatrix}u$ 离散化，$T&#x3D;0.1s$。</p>
+<p>:::</p>
+<p>利用拉氏变换法求解矩阵指数函数。取拉氏变换有：</p>
+<p>$$[sI-A]^{-1}&#x3D;\begin{bmatrix}s&amp;-1\0&amp;s+2\end{bmatrix}^{-1}&#x3D;\begin{bmatrix}\frac{1}{s}&amp;\frac{1}{s(s+2)}\0&amp;\frac{1}{s+2}\end{bmatrix}$$</p>
+<p>取拉氏逆变换得到矩阵指数函数：</p>
+<p>$$e^{At}&#x3D;L^{-1}[sI-A]^{-1}&#x3D;\begin{bmatrix}1&amp;0.5(1-e^{-2T})\0&amp;e^{-2T}\end{bmatrix}$$</p>
+<p>进而求解系数矩阵：</p>
+<p>$$G&#x3D;e^{AT}&#x3D;\begin{bmatrix}1&amp;0.5(1-e^{-2T})\0&amp;e^{-2T}\end{bmatrix}&#x3D;\begin{bmatrix}1&amp;0.091\0&amp;0.819\end{bmatrix}$$</p>
+<p>$$\begin{aligned}H&amp;&#x3D;(\int_0^Te^{AT}dt)B&#x3D;\Bigg[\int_0^T\begin{bmatrix}1&amp;0.5(1-e^{-2T})\0&amp;e^{-2T}\end{bmatrix}dt\Bigg]\begin{bmatrix}0\1\end{bmatrix}\&amp;&#x3D;\begin{bmatrix}T&amp;0.5T+0.25e^{-2T}-0.25\0&amp;-0.5e^{-2T}+0.5\end{bmatrix}\begin{bmatrix}0\1\end{bmatrix}&#x3D;\begin{bmatrix}0.005\0.091\end{bmatrix}\end{aligned}$$</p>
+<p>故时间离散化状态方程为：</p>
+<p>$x[0.1(k+1)]&#x3D;\begin{bmatrix}1&amp;0.091\0&amp;0.819\end{bmatrix}x(0.1k)+\begin{bmatrix}0.005\0.091\end{bmatrix}u(0.1k)$</p>
+<p>;;;</p>
+<p>+++</p>
+<h2 id="线性离散系统状态方程的解"><a href="#线性离散系统状态方程的解" class="headerlink" title="线性离散系统状态方程的解"></a>线性离散系统状态方程的解</h2><p>离散系统的差分方程形状态方程有两种解法：递推法和z变换法。其中递推法在时变系统和时不变系统中都适用，而z变换法只适用于时不变系统。</p>
+<h3 id="递推法"><a href="#递推法" class="headerlink" title="递推法"></a>递推法</h3><ol>
+<li>在线性时变系统中，$x(k+1)&#x3D;G(k)x(k)+H(k)u(k)$，有：</li>
+</ol>
+<p>$$\left{ \begin{matrix} x(1)&#x3D;G(0)x(0)+H(0)u(0)\ x(2)&#x3D;G(1)x(1)+H(1)u(1) \ x(3)&#x3D;G(2)x(2)+H(2)u(2) \\vdots \end{matrix}\right.$$</p>
+<p>给定初始条件$x(0)$和输入序列$u(0),u(1),\cdots$后即可求解$x(k)$。</p>
+<ol start="2">
+<li>在线性时不变系统中，$x(k+1)&#x3D;Gx(k)+Hu(k)$，其中$G,H$均为常数矩阵，因此：</li>
+</ol>
+<p>$$x(k)&#x3D;G^kx(0)+\sum_{i&#x3D;0}^{k-1}G^{k-1-i}Hu(i)    \tag{13}$$</p>
+<p>上式称为线性时不变离散系统的状态转移方程，其中$\Phi(k)&#x3D;G^k$称为线性时不变离散系统的状态转移矩阵。</p>
+<p>状态转移矩阵的性质：</p>
+<ol>
+<li>$\Phi(k+1)&#x3D;G\Phi{k},\Phi(0)&#x3D;I$</li>
+<li>$\Phi(k_2-k_0)&#x3D;\Phi(k_2-k_1)\Phi(k_1-k_0)$</li>
+<li>$\Phi^{-1}(k)&#x3D;\Phi(-k)$</li>
+</ol>
+<h3 id="z-变换法"><a href="#z-变换法" class="headerlink" title="z 变换法"></a>z 变换法</h3><p>考虑时不变离散系统：$x(k+1)&#x3D;Gx(k)+Hu(k)$，取z变换有：</p>
+<p>$$zx(z)-zx(0)&#x3D;Gx(z)+Hu(z)$$</p>
+<p>$$z(z)&#x3D;(zI-G)^{-1}zx(0)+(zI-G)^{-1}Hu(z)   \tag{14}$$</p>
+<p>取z逆变换有：</p>
+<p>$$x(k)&#x3D;z^{-1}\Big[(zI-G)^{-1}z\Big]x(0)+z^{-1}\Big[(zI-G)^{-1}Hu(z)\Big]    \tag{15} $$</p>
+<p>对比公式（13）和公式（15），由解的唯一性可知，</p>
+<p>$$z^{-1}\Big[(zI-G)^{-1}z\Big]&#x3D;G^k    \tag{16}$$</p>
+<p>$$z^{-1}\Big[(zI-G)^{-1}Hu(z)\Big]&#x3D;\sum_{i&#x3D;0}^{k-1}G^{k-1-i}Hu(i)   \tag{17}$$</p>
+<p>+++info 例题</p>
+<p>;;;id8 例题1</p>
+<p>:::info </p>
+<p>考虑离散系统：$x(k+1)&#x3D;Gx(k)+Hu(k)$，其中$G&#x3D;\begin{bmatrix}0&amp;1\-0.16&amp;-1\end{bmatrix}$，$H&#x3D;\begin{bmatrix}1\1\end{bmatrix}$，初始条件为$x(0)&#x3D;\begin{bmatrix}1\-1\end{bmatrix}$，试求当$u(k)&#x3D;1$时状态方程的解。</p>
+<p>:::</p>
+<p>用z变换法求解，先计算$(zI-G)^{-1}$，有</p>
+<p>$$\begin{aligned}(zI-G)^{-1}&amp;&#x3D;\begin{bmatrix}z&amp;-1\0.16&amp;z+1\end{bmatrix}^{-1}&#x3D;\frac{1}{(z+0.2)(z+0.8)}\begin{bmatrix}z+1&amp;1\-0.16&amp;z\end{bmatrix}\&amp;&#x3D;\begin{bmatrix}\frac{4}{3}\times \frac{1}{z+0.2}-\frac{1}{3}\times \frac{1}{z+0.8}&amp;\frac{5}{3}\times \frac{1}{z+0.2}-\frac{5}{3}\times \frac{1}{z+0.8}\-\frac{0.8}{3}\times \frac{1}{z+0.2}+\frac{0.8}{3}\times \frac{1}{z+0.8}&amp;-\frac{1}{3}\times \frac{1}{z+0.2}+\frac{4}{3}\times \frac{1}{z+0.8}\end{bmatrix}\end{aligned}$$</p>
+<p>由于$u(k)&#x3D;1$，则$u(z)&#x3D;\frac{z}{z-1}$，故$zx(0)+Hu(z)&#x3D;\begin{bmatrix}z\-z\end{bmatrix}+\begin{bmatrix}\frac{z}{z-1}\\frac{z}{z-1}\end{bmatrix}&#x3D;\begin{bmatrix}\frac{z^2}{z-1}\\frac{-z^2+2z}{z-1}\end{bmatrix}$。</p>
+<p>那么代入公式（15）有：</p>
+<p>$$\begin{aligned}x(z)&amp;&#x3D;(zI-G)^{-1}[zx(0)+Hu(z)]\&amp;&#x3D;\begin{bmatrix}-\frac{17}{6}\times \frac{z}{z+0.2}+\frac{22}{9}\times \frac{z}{z+0.8}+\frac{25}{18}\times \frac{z}{z-1}\\frac{3.4}{6}\times \frac{z}{z+0.2}-\frac{17.6}{9}\times \frac{z}{z+0.8}+\frac{7}{18}\times \frac{z}{z-1}\end{bmatrix}\end{aligned}$$</p>
+<p>求z逆变换有：</p>
+<p>$$x(k)&#x3D;\begin{bmatrix}-\frac{17}{6}(-0.2)^k+\frac{22}{9}(-0.8)^k+\frac{25}{18}\\frac{3.4}{6}(-0.2)^k-\frac{17.6}{9}(-0.2)^k+\frac{7}{18}\end{bmatrix}$$</p>
+<p>;;;</p>
+<p>+++</p>
+
+      <div class="tags">
+          <a href="/tags/%E7%8A%B6%E6%80%81%E6%96%B9%E7%A8%8B%E7%9A%84%E8%A7%A3/" rel="tag"><i class="ic i-tag"></i> 状态方程的解</a>
+          <a href="/tags/%E7%9F%A9%E9%98%B5%E6%8C%87%E6%95%B0/" rel="tag"><i class="ic i-tag"></i> 矩阵指数</a>
+          <a href="/tags/%E7%8A%B6%E6%80%81%E8%BD%AC%E7%A7%BB%E7%9F%A9%E9%98%B5/" rel="tag"><i class="ic i-tag"></i> 状态转移矩阵</a>
+          <a href="/tags/%E7%A6%BB%E6%95%A3%E5%8C%96/" rel="tag"><i class="ic i-tag"></i> 离散化</a>
+      </div>
+  </div>
+
+   <footer>
+
+    <div class="meta">
+  <span class="item">
+    <span class="icon">
+      <i class="ic i-calendar-check"></i>
+    </span>
+    <span class="text">更新于</span>
+    <time title="修改时间：2024-06-26 15:33:23" itemprop="dateModified" datetime="2024-06-26T15:33:23+08:00">2024-06-26</time>
+  </span>
+  <span id="2023/10/28/2023-10-29-test/" class="item leancloud_visitors" data-flag-title="test" title="阅读次数">
+      <span class="icon">
+        <i class="ic i-eye"></i>
+      </span>
+      <span class="text">阅读次数</span>
+      <span class="leancloud-visitors-count"></span>
+      <span class="text">次</span>
+  </span>
+</div>
+
+      
+
+
+
+
+
+  </footer>
+
+</article>
+
+  </div>
+  
+
+<div class="post-nav">
+    <div class="item left">
+      
+
+  <a href="/2023/10/21/2023-10-09_Realistic-fault-detection-of-li-ion-battery-via-dynamical-deep-learning/" itemprop="url" rel="prev" data-background-image="https:&#x2F;&#x2F;s1.imagehub.cc&#x2F;images&#x2F;2023&#x2F;11&#x2F;16&#x2F;befe95e11d78ada4fa98995e4a103519.jpeg" title="Realistic fault detection of li-ion battery via dynamical deep learning">
+  <span class="type">上一篇</span>
+  <span class="category"><i class="ic i-flag"></i> 论文文献阅读</span>
+  <h3>Realistic fault detection of li-ion battery via dynamical deep learning</h3>
+  </a>
+
+    </div>
+    <div class="item right">
+      
+
+  <a href="/2023/10/28/2023-10-29-%E7%8A%B6%E6%80%81%E6%96%B9%E7%A8%8B%E7%9A%84%E8%A7%A3/" itemprop="url" rel="next" data-background-image="https:&#x2F;&#x2F;s1.imagehub.cc&#x2F;images&#x2F;2023&#x2F;11&#x2F;16&#x2F;01ffe77776f6cd0833a5384812805c4a.png" title="03 状态方程的解">
+  <span class="type">下一篇</span>
+  <span class="category"><i class="ic i-flag"></i> 现代控制理论</span>
+  <h3>03 状态方程的解</h3>
+  </a>
+
+    </div>
+</div>
+
+  
+  <div class="wrap" id="comments"></div>
+
+
+        </div>
+        <div id="sidebar">
+          
+
+<div class="inner">
+
+  <div class="panels">
+    <div class="inner">
+      <div class="contents panel pjax" data-title="文章目录">
+          <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%9F%A9%E9%98%B5%E6%8C%87%E6%95%B0%E7%9A%84%E8%AE%A1%E7%AE%97"><span class="toc-number">1.</span> <span class="toc-text">矩阵指数的计算</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BA%BF%E6%80%A7%E6%97%B6%E4%B8%8D%E5%8F%98%E7%B3%BB%E7%BB%9F%E9%9D%9E%E9%BD%90%E6%AC%A1%E7%8A%B6%E6%80%81%E6%96%B9%E7%A8%8B%E7%9A%84%E8%A7%A3"><span class="toc-number"></span> <span class="toc-text">线性时不变系统非齐次状态方程的解</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BA%BF%E6%80%A7%E6%97%B6%E4%B8%8D%E5%8F%98%E7%B3%BB%E7%BB%9F%E7%9A%84%E7%8A%B6%E6%80%81%E8%BD%AC%E7%A7%BB%E7%9F%A9%E9%98%B5"><span class="toc-number"></span> <span class="toc-text">线性时不变系统的状态转移矩阵</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BA%BF%E6%80%A7%E6%97%B6%E5%8F%98%E7%B3%BB%E7%BB%9F%E7%8A%B6%E6%80%81%E6%96%B9%E7%A8%8B%E7%9A%84%E8%A7%A3"><span class="toc-number"></span> <span class="toc-text">线性时变系统状态方程的解*</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BA%BF%E6%80%A7%E6%97%B6%E5%8F%98%E7%B3%BB%E7%BB%9F%E9%BD%90%E6%AC%A1%E7%8A%B6%E6%80%81%E6%96%B9%E7%A8%8B%E7%9A%84%E8%A7%A3"><span class="toc-number">1.</span> <span class="toc-text">线性时变系统齐次状态方程的解</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BA%BF%E6%80%A7%E6%97%B6%E5%8F%98%E7%B3%BB%E7%BB%9F%E7%9A%84%E7%8A%B6%E6%80%81%E8%BD%AC%E7%A7%BB%E7%9F%A9%E9%98%B5"><span class="toc-number">2.</span> <span class="toc-text">线性时变系统的状态转移矩阵</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BA%BF%E6%80%A7%E6%97%B6%E5%8F%98%E7%B3%BB%E7%BB%9F%E9%9D%9E%E9%BD%90%E6%AC%A1%E7%8A%B6%E6%80%81%E6%96%B9%E7%A8%8B%E7%9A%84%E8%A7%A3"><span class="toc-number">3.</span> <span class="toc-text">线性时变系统非齐次状态方程的解</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BA%BF%E6%80%A7%E8%BF%9E%E7%BB%AD%E7%B3%BB%E7%BB%9F%E7%9A%84%E6%97%B6%E9%97%B4%E7%A6%BB%E6%95%A3%E5%8C%96"><span class="toc-number"></span> <span class="toc-text">线性连续系统的时间离散化</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BF%91%E4%BC%BC%E7%A6%BB%E6%95%A3%E5%8C%96"><span class="toc-number">1.</span> <span class="toc-text">近似离散化</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BA%BF%E6%80%A7%E6%97%B6%E4%B8%8D%E5%8F%98%E7%B3%BB%E7%BB%9F%E7%8A%B6%E6%80%81%E6%96%B9%E7%A8%8B%E7%9A%84%E7%A6%BB%E6%95%A3%E5%8C%96"><span class="toc-number">2.</span> <span class="toc-text">线性时不变系统状态方程的离散化</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BA%BF%E6%80%A7%E7%A6%BB%E6%95%A3%E7%B3%BB%E7%BB%9F%E7%8A%B6%E6%80%81%E6%96%B9%E7%A8%8B%E7%9A%84%E8%A7%A3"><span class="toc-number"></span> <span class="toc-text">线性离散系统状态方程的解</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%80%92%E6%8E%A8%E6%B3%95"><span class="toc-number">1.</span> <span class="toc-text">递推法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#z-%E5%8F%98%E6%8D%A2%E6%B3%95"><span class="toc-number">2.</span> <span class="toc-text">z 变换法</span></a></li></ol>
+      </div>
+      <div class="related panel pjax" data-title="系列文章">
+        <ul>
+          <li><a href="/2023/10/21/2023-10-21-%E6%8E%A7%E5%88%B6%E7%B3%BB%E7%BB%9F%E7%9A%84%E7%8A%B6%E6%80%81%E7%A9%BA%E9%97%B4%E6%8F%8F%E8%BF%B0/" rel="bookmark" title="02 控制系统的状态空间描述">02 控制系统的状态空间描述</a></li><li><a href="/2023/10/28/2023-10-29-%E7%8A%B6%E6%80%81%E6%96%B9%E7%A8%8B%E7%9A%84%E8%A7%A3/" rel="bookmark" title="03 状态方程的解">03 状态方程的解</a></li><li class="active"><a href="/2023/10/28/2023-10-29-test/" rel="bookmark" title="test">test</a></li><li><a href="/2023/12/06/2023-12-06-%E7%BA%BF%E6%80%A7%E7%B3%BB%E7%BB%9F%E7%9A%84%E8%83%BD%E6%8E%A7%E6%80%A7%E5%92%8C%E8%83%BD%E8%A7%82%E6%B5%8B%E6%80%A7/" rel="bookmark" title="04 线性系统的能控性和能观测性">04 线性系统的能控性和能观测性</a></li><li><a href="/2023/12/15/2023-12-15-%E6%8E%A7%E5%88%B6%E7%B3%BB%E7%BB%9F%E7%9A%84%E6%9D%8E%E9%9B%85%E6%99%AE%E8%AF%BA%E5%A4%AB%E7%A8%B3%E5%AE%9A%E6%80%A7%E5%88%86%E6%9E%90/" rel="bookmark" title="05 控制系统的李雅普诺夫稳定性分析">05 控制系统的李雅普诺夫稳定性分析</a></li><li><a href="/2023/12/21/2023-12-21-%E7%8A%B6%E6%80%81%E5%8F%8D%E9%A6%88%E5%92%8C%E7%8A%B6%E6%80%81%E8%A7%82%E6%B5%8B%E5%99%A8/" rel="bookmark" title="06 状态反馈和状态观测器">06 状态反馈和状态观测器</a></li>
+        </ul>
+      </div>
+      <div class="overview panel" data-title="站点概览">
+        <div class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <img class="image" itemprop="image" alt="Hening"
+      data-src="/images/avatar.jpg">
+  <p class="name" itemprop="name">Hening</p>
+  <div class="description" itemprop="description">终有弱水替沧海 再无相思寄巫山</div>
+</div>
+
+<nav class="state">
+    <div class="item posts">
+      <a href="/archives/">
+        <span class="count">17</span>
+        <span class="name">文章</span>
+      </a>
+    </div>
+    <div class="item categories">
+      <a href="/categories/">
+        <span class="count">10</span>
+        <span class="name">分类</span>
+      </a>
+    </div>
+    <div class="item tags">
+      <a href="/tags/">
+        <span class="count">10</span>
+        <span class="name">标签</span>
+      </a>
+    </div>
+</nav>
+
+<div class="social">
+      <span class="exturl item github" data-url="aHR0cHM6Ly9naXRodWIuY29tL0hueTEyMTY=" title="https:&#x2F;&#x2F;github.com&#x2F;Hny1216"><i class="ic i-github"></i></span>
+      <span class="exturl item email" data-url="bWFpbHRvOmhlbmluZzI1QG1haWwyLnN5c3UuZWR1LmNu" title="mailto:hening25@mail2.sysu.edu.cn"><i class="ic i-envelope"></i></span>
+</div>
+
+<ul class="menu">
+  
+    
+  <li class="item">
+    <a href="/" rel="section"><i class="ic i-home"></i>首页</a>
+  </li>
+
+    
+  <li class="item">
+    <a href="/about/" rel="section"><i class="ic i-user"></i>关于</a>
+  </li>
+
+        
+  <li class="item dropdown">
+      <a href="javascript:void(0);"><i class="ic i-feather"></i>文章</a>
+    <ul class="submenu">
+
+        
+  <li class="item">
+    <a href="/archives/" rel="section"><i class="ic i-list-alt"></i>归档</a>
+  </li>
+
+        
+  <li class="item">
+    <a href="/categories/" rel="section"><i class="ic i-th"></i>分类</a>
+  </li>
+
+        
+  <li class="item">
+    <a href="/tags/" rel="section"><i class="ic i-tags"></i>标签</a>
+  </li>
+
+  </ul>
+    
+  <li class="item">
+    <a href="/amusement/" rel="section"><i class="ic i-magic"></i>摸鱼</a>
+  </li>
+
+    
+  <li class="item">
+    <a href="/logging/" rel="section"><i class="ic i-file"></i>日志</a>
+  </li>
+
+
+</ul>
+
+      </div>
+    </div>
+  </div>
+
+  <ul id="quick">
+    <li class="prev pjax">
+        <a href="/2023/10/21/2023-10-09_Realistic-fault-detection-of-li-ion-battery-via-dynamical-deep-learning/" rel="prev" title="上一篇"><i class="ic i-chevron-left"></i></a>
+    </li>
+    <li class="up"><i class="ic i-arrow-up"></i></li>
+    <li class="down"><i class="ic i-arrow-down"></i></li>
+    <li class="next pjax">
+        <a href="/2023/10/28/2023-10-29-%E7%8A%B6%E6%80%81%E6%96%B9%E7%A8%8B%E7%9A%84%E8%A7%A3/" rel="next" title="下一篇"><i class="ic i-chevron-right"></i></a>
+    </li>
+    <li class="percent"></li>
+  </ul>
+</div>
+
+
+        </div>
+        <div class="dimmer"></div>
+      </div>
+    </main>
+    <footer id="footer">
+      <div class="inner">
+        <div class="widgets">
+          
+
+        </div>
+        <div class="status">
+  <div class="copyright">
+    
+    &copy; 2010 – 
+    <span itemprop="copyrightYear">2025</span>
+    <span class="with-love">
+      <i class="ic i-sakura rotate"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">Hening @ Hening</span>
+  </div>
+  <div class="count">
+    <span class="post-meta-item-icon">
+      <i class="ic i-chart-area"></i>
+    </span>
+    <span title="站点总字数">156k 字</span>
+
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="ic i-coffee"></i>
+    </span>
+    <span title="站点阅读时长">2:22</span>
+  </div>
+  <div class="powered-by">
+    基于 <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> & Theme.<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2FtZWhpbWUvaGV4by10aGVtZS1zaG9rYQ==">Shoka</span>
+  </div>
+</div>
+
+      </div>
+    </footer>
+  </div>
+<script data-config type="text/javascript">
+  var LOCAL = {
+    path: '2023/10/28/2023-10-29-test/',
+    favicon: {
+      show: "Hening",
+      hide: "(´Д｀)大変だ！"
+    },
+    search : {
+      placeholder: "文章搜索",
+      empty: "关于 「 ${query} 」，什么也没搜到",
+      stats: "${time} ms 内找到 ${hits} 条结果"
+    },
+    valine: true,copy_tex: true,
+    katex: true,fancybox: true,
+    copyright: '复制成功，转载请遵守 <i class="ic i-creative-commons"></i>BY-NC-SA 协议。',
+    ignores : [
+      function(uri) {
+        return uri.includes('#');
+      },
+      function(uri) {
+        return new RegExp(LOCAL.path+"$").test(uri);
+      }
+    ]
+  };
+</script>
+
+<script src="https://cdn.polyfill.io/v2/polyfill.js"></script>
+
+<script src="//cdn.jsdelivr.net/combine/npm/pace-js@1.0.2/pace.min.js,npm/pjax@0.2.8/pjax.min.js,npm/whatwg-fetch@3.4.0/dist/fetch.umd.min.js,npm/animejs@3.2.0/lib/anime.min.js,npm/algoliasearch@4/dist/algoliasearch-lite.umd.js,npm/instantsearch.js@4/dist/instantsearch.production.min.js,npm/lozad@1/dist/lozad.min.js,npm/quicklink@2/dist/quicklink.umd.js"></script>
+
+<script src="/js/app.js?v=0.2.5"></script>
+
+
+
+
+</body>
+</html>
